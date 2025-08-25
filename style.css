@@ -1,60 +1,12 @@
-/* Définition des couleurs personnalisées */
-:root {
-    --primary-color: #1a1a1a;
-    --accent-color: #6b46c1;
-    --secondary-color: #10b981;
-    --light-color: #f0fdf4;
+/* Couleurs professionnelles */
+.text-accent {
+    color: #4ea0d9; /* bleu acier */
 }
 
-/* Navigation */
-.nav-link {
-    position: relative;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 1px;
+.hover\:text-accent:hover {
+    color: #4ea0d9;
 }
 
-.nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--secondary-color);
-    transition: width 0.3s;
-}
-
-.nav-link:hover::after {
-    width: 100%;
-}
-
-/* Section Accueil */
-#accueil {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-/* Section Formations */
-#formations {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-/* Section À propos */
-#apropos {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-/* Section Contact */
-#contact {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-/* Footer */
-footer {
-    background-color: var(--primary-color);
-    color: white;
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
