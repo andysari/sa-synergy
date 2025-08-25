@@ -1,14 +1,14 @@
+/* ====== Base ====== */
 :root{
   --bg: #000;
   --surface: #0b0b0c;
   --text: #eaeaea;
   --muted: #a7a7a7;
-  --accent1: #7ED957; /* vert pomme subtil */
-  --accent2: #00FF7F; /* vert secondaire */
+  --accent1: #8a2be2;   /* violet */
+  --accent2: #00ff7f;   /* vert */
   --radius: 14px;
 }
 
-/* ====== Base ====== */
 * { box-sizing: border-box; }
 html, body { scroll-behavior: smooth; }
 body {
@@ -19,12 +19,13 @@ body {
   line-height: 1.6;
 }
 
-/* ====== Navbar sticky avec dégradé gris→vert ====== */
+/* ====== Navbar sticky ====== */
 .navbar {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: linear-gradient(90deg, #2c2c2c 0%, var(--accent1) 100%);
+  background: rgba(10,10,10,0.8);
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 .nav-inner{
@@ -37,10 +38,10 @@ body {
   font-weight: 700;
   text-decoration: none;
   font-size: 1.1rem;
-  background: #111; /* fond sombre derrière logo */
-  padding: 4px 10px;
-  border-radius: 6px;
-  color: var(--accent1);
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 .menu{
   list-style: none; margin: 0; padding: 0;
@@ -53,7 +54,7 @@ body {
   border-radius: 10px;
 }
 .menu a:hover, .menu a.active{
-  background: rgba(126,217,87,0.15);
+  background: linear-gradient(135deg, rgba(138,43,226,0.15), rgba(0,255,127,0.15));
   border: 1px solid rgba(255,255,255,0.08);
 }
 .burger{
@@ -74,7 +75,7 @@ body {
   display: grid; place-items: center;
   text-align: center;
   padding: 80px 16px 60px;
-  background: radial-gradient(1200px 600px at 50% -10%, rgba(126,217,87,0.25), transparent),
+  background: radial-gradient(1200px 600px at 50% -10%, rgba(138,43,226,0.25), transparent),
               radial-gradient(1200px 600px at 50% 110%, rgba(0,255,127,0.15), transparent);
 }
 .hero-content h1{
@@ -92,7 +93,7 @@ body {
   border-radius: 999px;
   text-decoration: none;
   color: #000;
-  background: var(--accent1);
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
   transition: transform .18s ease, box-shadow .18s ease;
 }
 .btn:hover{ transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.35); }
@@ -105,4 +106,78 @@ body {
 }
 .section h2{
   text-align: center;
-  font-size: clamp(1.6rem, 
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  margin: 0 0 20px;
+}
+.section.narrow p{
+  max-width: 800px; margin: 0 auto; color: var(--muted);
+}
+
+/* Cards */
+.cards{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+.card{
+  background: var(--surface);
+  padding: 22px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.card:hover{
+  transform: translateY(-6px);
+  border-color: rgba(255,255,255,0.14);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+}
+.card h3{ margin-top: 0; }
+
+/* ====== Contact ====== */
+.contact .contact-grid{
+  display: grid; gap: 18px;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  align-items: start;
+}
+.contact a{ color: var(--text); }
+.contact a:hover{ text-decoration: underline; }
+
+.social-block{
+  display: flex; gap: 12px; justify-content: flex-end; align-items: center;
+}
+.social{
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: #0f0f11;
+  transition: transform .16s ease, border-color .16s ease;
+}
+.social:hover{ transform: translateY(-2px); border-color: rgba(255,255,255,0.3); }
+.social svg{ width: 22px; height: 22px; fill: var(--text); }
+
+/* ====== Footer ====== */
+.footer{
+  border-top: 1px solid rgba(255,255,255,0.06);
+  text-align: center;
+  color: var(--muted);
+  padding: 28px 16px 40px;
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 860px){
+  .burger{ display: inline-block; }
+  .menu{
+    position: fixed; inset: 70px 16px auto 16px;
+    display: none; flex-direction: column; gap: 10px;
+    padding: 14px;
+    background: rgba(15,15,17,0.95);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+  }
+  .menu.open{ display: flex; }
+  .social-block{ justify-content: flex-start; }
+  .contact .contact-grid{ grid-template-columns: 1fr; }
+  .cards{ grid-template-columns: 1fr; }
+}
