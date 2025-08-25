@@ -1,64 +1,93 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SA Synergy</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SA-Synergy - Formations professionnelles</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-  <!-- Navigation -->
-  <header class="navbar">
-    <div class="logo">
-      <img src="assets/logo.png" alt="Logo SA Synergy">
-    </div>
+
+<header>
     <nav>
-      <ul>
-        <li><a href="#hero">Accueil</a></li>
-        <li><a href="#formations">Formations</a></li>
-        <li><a href="about.html">À propos</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+        <ul>
+            <li><a href="#accueil" class="nav-link">Accueil</a></li>
+            <li><a href="#formations" class="nav-link">Formations</a></li>
+            <li><a href="apropos.html" class="nav-link">À propos</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
     </nav>
-  </header>
+</header>
 
-  <!-- Hero -->
-  <section id="hero" class="hero">
-    <h1>SA Synergy</h1>
-    <p>Construisons ensemble vos compétences et votre réussite</p>
-    <a href="#formations" class="btn">Découvrir nos formations</a>
-  </section>
+<main>
+    <section id="accueil">
+        <img src="assets/images/logo.png" alt="Logo SA-Synergy">
+        <h1>
+            <span>Apprenez.</span>
+            <span>Progressez.</span>
+            <span>Performez.</span>
+        </h1>
+        <p>Des parcours pour lycéens, étudiants et professionnels (finance, gestion et management).</p>
+    </section>
 
-  <!-- Formations -->
-  <section id="formations" class="formations">
-    <h2>Nos Formations</h2>
-    <div class="cards">
-      <div class="card">Formations à la carte</div>
-      <div class="card">Formations longues</div>
-      <div class="card">Modules en ligne</div>
-      <div class="card">Développement commercial</div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <h2>Contact</h2>
-    <div class="contact-container">
-      <img src="assets/andy.jpg" alt="Portrait d'Andy Sari" class="avatar">
-      <div class="contact-info">
-        <p>Tél : <a href="tel:+33600000000">+33 6 00 00 00 00</a></p>
-        <p>Email : <a href="mailto:contact@sa-synergy.com">contact@sa-synergy.com</a></p>
-        <div class="socials">
-          <a href="https://www.linkedin.com/in/tonprofil" target="_blank">LinkedIn</a>
-          <a href="https://www.instagram.com/tonprofil" target="_blank">Instagram</a>
+    <section id="formations">
+        <h2>Nos Formations</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>À la carte</h3>
+                <ul>
+                    <li>Comptabilité</li>
+                    <li>Analyse financière</li>
+                    <li>Gestion de budget</li>
+                    <li>Investissement financier</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Formations longues</h3>
+                <ul>
+                    <li>Bureautique</li>
+                    <li>Création & gestion d'entreprise</li>
+                    <li>Management & leadership</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Modules autonomes en ligne</h3>
+                <ul>
+                    <li>Audio</li>
+                    <li>Écrit</li>
+                    <li>Vidéo</li>
+                    <li>Études de cas — en cours</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Développement commercial</h3>
+                <ul>
+                    <li>Création/refonte de site</li>
+                    <li>Stratégie business</li>
+                    <li>Analyses financière & économique</li>
+                </ul>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 SA Synergy</p>
-  </footer>
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-info">
+            <div><i class="fas fa-envelope"></i> contact.sa.synergy@gmail.com</div>
+            <div><i class="fas fa-phone"></i> +33 6 23 13 62 65</div>
+        </div>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/jobs/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/andy.sari13/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    © 2025 SA-Synergy - Tous droits réservés
+</footer>
+
 </body>
 </html>
