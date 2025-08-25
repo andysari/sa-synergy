@@ -7,40 +7,40 @@
     <title>SA-Synergy - Formations professionnelles</title>
     <meta name="description" content="Parcours de formation pour lycéens, étudiants et professionnels en finance, gestion et management">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bg-gray-800 text-white">
+<body class="bg-gray-900 text-gray-100">
 
     <!-- Navigation -->
-    <header class="sticky top-0 z-50 bg-gray-900 shadow-lg">
-        <nav class="container mx-auto px-6 py-4">
-            <ul class="flex justify-center space-x-8">
-                <li><a href="#accueil" class="nav-link px-3 py-2 hover:text-accent transition-colors">Accueil</a></li>
-                <li><a href="#formations" class="nav-link px-3 py-2 hover:text-accent transition-colors">Formations</a></li>
-                <li><a href="#apropos" class="nav-link px-3 py-2 hover:text-accent transition-colors">À propos</a></li>
-                <li><a href="#contact" class="nav-link px-3 py-2 hover:text-accent transition-colors">Contact</a></li>
+    <header class="sticky top-0 z-50 bg-gray-800 shadow-lg">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-400">SA-Synergy</div>
+            <ul class="flex space-x-6">
+                <li><a href="#accueil" class="hover:text-blue-300 transition-colors">Accueil</a></li>
+                <li><a href="#formations" class="hover:text-blue-300 transition-colors">Formations</a></li>
+                <li><a href="#apropos" class="hover:text-blue-300 transition-colors">À propos</a></li>
+                <li><a href="#contact" class="hover:text-blue-300 transition-colors">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Section Accueil -->
-    <section id="accueil" class="py-16 px-6 text-center">
+    <section id="accueil" class="py-20 px-6 text-center">
         <div class="container mx-auto">
-            <img src="assets/logo.png" alt="Logo SA-Synergy" class="mx-auto w-32 h-32 rounded-full">
-            <h1 class="text-4xl font-bold mb-6">Apprenez. Progressez. Performez.</h1>
+            <img src="assets/logo.png" alt="Logo SA-Synergy" class="mx-auto w-36 h-36 rounded-full mb-6">
+            <h1 class="text-5xl font-bold mb-6">Apprenez. Progressez. Performez.</h1>
             <p class="text-xl max-w-3xl mx-auto">Des parcours pour lycéens, étudiants et professionnels en finance, gestion et management.</p>
         </div>
     </section>
 
     <!-- Section Formations -->
-    <section id="formations" class="py-16 px-6 bg-gray-900">
+    <section id="formations" class="py-20 px-6 bg-gray-800">
         <div class="container mx-auto">
-            <h2 class="text-3xl font-bold mb-12 text-center text-accent">Nos Formations</h2>
+            <h2 class="text-4xl font-bold mb-12 text-center text-blue-400">Nos Formations</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Carte 1 -->
-                <div class="bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow">
-                    <h3 class="text-xl font-bold mb-4 text-accent">À la carte</h3>
+                <div class="bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow">
+                    <h3 class="text-2xl font-bold mb-4 text-blue-300">À la carte</h3>
                     <ul class="space-y-2">
                         <li>Comptabilité</li>
                         <li>Analyse financière</li>
@@ -48,18 +48,16 @@
                         <li>Investissement financier</li>
                     </ul>
                 </div>
-                <!-- Carte 2 -->
-                <div class="bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow">
-                    <h3 class="text-xl font-bold mb-4 text-accent">Formations longues</h3>
+                <div class="bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow">
+                    <h3 class="text-2xl font-bold mb-4 text-blue-300">Formations longues</h3>
                     <ul class="space-y-2">
                         <li>Bureautique</li>
                         <li>Création & gestion d'entreprise</li>
                         <li>Management & leadership</li>
                     </ul>
                 </div>
-                <!-- Carte 3 -->
-                <div class="bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow">
-                    <h3 class="text-xl font-bold mb-4 text-accent">Modules autonomes en ligne</h3>
+                <div class="bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow">
+                    <h3 class="text-2xl font-bold mb-4 text-blue-300">Modules autonomes en ligne</h3>
                     <ul class="space-y-2">
                         <li>Audio</li>
                         <li>Écrit</li>
@@ -67,9 +65,8 @@
                         <li>Études de cas — en cours de création</li>
                     </ul>
                 </div>
-                <!-- Carte 4 -->
-                <div class="bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow">
-                    <h3 class="text-xl font-bold mb-4 text-accent">Développement commercial</h3>
+                <div class="bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow">
+                    <h3 class="text-2xl font-bold mb-4 text-blue-300">Développement commercial</h3>
                     <ul class="space-y-2">
                         <li>Création/refonte de site</li>
                         <li>Stratégie business</li>
@@ -81,34 +78,33 @@
     </section>
 
     <!-- Section À propos -->
-    <section id="apropos" class="py-16 px-6">
+    <section id="apropos" class="py-20 px-6">
         <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-12 text-accent">À propos de SA-Synergy</h2>
-            <p class="text-xl max-w-3xl mx-auto">Découvrez Andy Sari, fondateur de SA-Synergy, et sa vision de la formation professionnelle.</p>
+            <h2 class="text-4xl font-bold mb-12 text-blue-400">À propos de SA-Synergy</h2>
+            <div class="flex flex-col items-center">
+                <img src="assets/andy.jpg" alt="Andy Sari" class="w-36 h-36 rounded-full mb-6">
+                <p class="text-xl max-w-3xl mx-auto">Découvrez Andy Sari, fondateur de SA-Synergy, et sa vision de la formation professionnelle.</p>
+            </div>
         </div>
     </section>
 
     <!-- Section Contact -->
-    <section id="contact" class="py-16 px-6 bg-gray-900">
+    <section id="contact" class="py-20 px-6 bg-gray-800">
         <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-12 text-accent">Contact</h2>
+            <h2 class="text-4xl font-bold mb-12 text-blue-400">Contact</h2>
             <p class="text-xl mb-6">Pour toute demande d'information ou inscription à nos formations :</p>
-            <div class="space-y-4 mb-8">
-                <div><i class="fas fa-envelope mr-2 text-accent"></i> contact.sa.synergy@gmail.com</div>
-                <div><i class="fas fa-phone mr-2 text-accent"></i> +33 6 23 13 62 65</div>
+            <div class="space-y-4 mb-8 text-lg">
+                <div><i class="fas fa-envelope mr-2 text-blue-300"></i> contact.sa.synergy@gmail.com</div>
+                <div><i class="fas fa-phone mr-2 text-blue-300"></i> +33 6 23 13 62 65</div>
             </div>
-            <div class="flex justify-center space-x-6">
-                <a href="https://www.linkedin.com/in/andy-sari/" target="_blank" class="text-accent hover:text-white transition-colors">
-                    <i class="fab fa-linkedin text-2xl"></i>
-                </a>
-                <a href="https://www.instagram.com/andy.sari13/" target="_blank" class="text-accent hover:text-white transition-colors">
-                    <i class="fab fa-instagram text-2xl"></i>
-                </a>
+            <div class="flex justify-center space-x-6 text-2xl">
+                <a href="https://www.linkedin.com/in/andy-sari/" target="_blank" class="text-blue-300 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/andy.sari13/" target="_blank" class="text-blue-300 hover:text-white"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
     </section>
 
-    <footer class="bg-gray-900 py-8 px-6 text-center">
+    <footer class="bg-gray-800 py-8 px-6 text-center text-gray-400">
         © 2025 SA-Synergy - Tous droits réservés
     </footer>
 
