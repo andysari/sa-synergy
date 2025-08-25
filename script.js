@@ -1,10 +1,18 @@
-const burger = document.querySelector(".burger");
-const menu = document.querySelector("#menu");
+// Ajoute la classe .active au lien de menu correspondant à la section visible
+const sections = document.querySelectorAll("section, header.hero");
+const links = document.querySelectorAll(".menu a");
 
-burger.addEventListener("click", () => {
-  menu.classList.toggle("active");
-  burger.setAttribute(
-    "aria-expanded",
-    burger.getAttribute("aria-expanded") === "true" ? "false" : "true"
-  );
-});
+function onScroll() {
+  let current = "";
+  sections.forEach(sec => {
+    const top = window.scrollY + 120; // marge pour la navbar
+    if (top >= sec.offsetTop && top < sec.offsetTop + sec.offsetHeight) {
+      current = "#" + sec.id;
+    }
+  });
+  links.forEach(a => {
+    a.classList.toggle("active", a.getAttribute("href") === current);
+  });
+}
+window.addEventListener("scroll", onScroll);
+onScroll();
