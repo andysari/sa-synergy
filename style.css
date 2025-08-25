@@ -1,39 +1,187 @@
-/* Logo */
+/* ============ RESET & BASE ============ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #1e1e1e;           /* gris anthracite */
+  color: #ffffff;
+}
+
+/* ============ NAVBAR STICKY ============ */
+.navbar {
+  position: sticky; top: 0; z-index: 1000;
+  width: 100%;
+  background: #111;              /* bandeau sombre */
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.nav-inner {
+  max-width: 1100px; margin: 0 auto;
+  padding: 10px 20px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+/* Lien logo (texte + éventuelle icône dans la navbar) */
+.logo {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: #8e44ad;                /* violet */
+  font-size: 1.5rem; font-weight: bold;
+  text-decoration: none;
+}
+
+/* Logo (image) dans la NAVBAR */
 .logo-img {
   height: 40px;
   margin-right: 8px;
   vertical-align: middle;
 }
 
-/* Portrait contact */
-.portrait {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+/* Menu principal */
+.menu {
+  list-style: none;
+  display: flex; gap: 20px;
+}
+.menu li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: background .2s, color .2s;
+}
+.menu li a:hover {
+  color: #2ecc71;                /* vert au survol */
+  background: rgba(255,255,255,0.06);
 }
 
-/* Contact section */
+/* Burger (mobile) */
+.burger {
+  display: none;
+  flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer;
+}
+.burger span { display: block; width: 25px; height: 3px; background: #fff; }
+
+/* ============ HERO (HEADER) ============ */
+.hero {
+  min-height: 80vh;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  /* léger contraste par rapport au fond général */
+  background: #1b1b1b;
+}
+.hero-content { max-width: 800px; margin-inline: auto; }
+
+/* Logo (image) AU-DESSUS du titre dans le header */
+.hero-logo {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.hero h1 { font-size: 2.5rem; margin-bottom: 12px; }
+.hero p  { font-size: 1.15rem; color: #d7d7d7; margin-bottom: 22px; }
+
+.btn {
+  display: inline-block; padding: 10px 20px;
+  background: #8e44ad; color: #fff; text-decoration: none;
+  border-radius: 8px; transition: background .2s, transform .15s;
+}
+.btn:hover { background: #2ecc71; transform: translateY(-2px); }
+
+/* ============ SECTIONS GÉNÉRIQUES ============ */
+.section { padding: 60px 20px; text-align: center; }
+.section h2 { font-size: 2rem; margin-bottom: 26px; }
+
+/* ============ CARTES FORMATIONS ============ */
+.cards {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.card {
+  background: #2c2c2c;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 22px;
+  text-align: left;
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+  cursor: pointer;
+}
+.card h3 { color: #2ecc71; margin-bottom: 8px; }
+.card p  { color: #cfcfcf; }
+
+/* Lueur violette au survol (encart) */
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(142,68,173,0.7);                 /* violet */
+  box-shadow: 0 0 0 2px rgba(142,68,173,0.35), 0 16px 36px rgba(0,0,0,0.35);
+}
+
+/* ============ CONTACT ============ */
+.contact { background: #141414; }
+
 .contact-container {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+  max-width: 900px; margin: 0 auto;
+  display: flex; align-items: center; gap: 20px;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
-.contact-info {
-  font-size: 1.1rem;
+.contact-info { font-size: 1.1rem; }
+.contact-info p { margin: 6px 0; }
+
+.socials {
+  margin-top: 12px;
+  display: flex; gap: 14px; align-items: center;
 }
 
+/* Icônes sociales SVG (hébergées via CDN) */
 .socials a img {
   width: 32px;
-  margin-right: 10px;
-  filter: invert(28%) sepia(92%) saturate(500%) hue-rotate(260deg); /* violet subtile */
-  transition: transform 0.2s;
+  margin-right: 0; /* déjà géré par gap */
+  filter: invert(28%) sepia(92%) saturate(500%) hue-rotate(260deg); /* violet subtil */
+  transition: transform 0.2s, filter 0.2s;
 }
 .socials a img:hover {
   transform: scale(1.2);
   filter: invert(44%) sepia(89%) saturate(450%) hue-rotate(100deg); /* vert au hover */
+}
+
+/* Portrait contact (photo ronde) */
+.portrait {
+  width: 150px; height: 150px; border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  border: 2px solid rgba(142,68,173,0.5);            /* léger rappel violet */
+}
+
+/* ============ PIED DE PAGE (optionnel) ============ */
+footer {
+  background: #0f0f0f;
+  text-align: center;
+  padding: 14px 10px;
+  font-size: 0.9rem; color: #bdbdbd;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+  /* Menu mobile */
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute; right: 20px; top: 60px;
+    background: #111; padding: 14px; border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .menu.active { display: flex; }
+  .burger { display: flex; }
+
+  /* Contact : pile verticale */
+  .contact-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .portrait { margin-right: 0; }
 }
