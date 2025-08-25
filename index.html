@@ -1,75 +1,64 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SA SYNERGY — Accueil</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SA Synergy</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <!-- NAV -->
-  <nav class="navbar" role="navigation" aria-label="Navigation principale">
-    <div class="nav-inner">
-      <a href="index.html" class="brand">
-        <span class="brand-mark"></span>
-        SA-Synergy
-      </a>
-
-      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
-        <span></span><span></span><span></span>
-      </button>
-
-      <ul id="menu" class="menu">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="formations.html">Formations</a></li>
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="assets/logo.png" alt="Logo SA Synergy">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#hero">Accueil</a></li>
+        <li><a href="#formations">Formations</a></li>
         <li><a href="about.html">À propos</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <header class="hero hero-anthracite">
-    <div class="hero-inner">
-      <img src="assets/logo.png" alt="Logo SA SYNERGY" class="hero-logo" />
-      <div class="hero-copy">
-        <h1>Apprenez. Progressez. Performez.</h1>
-        <p>Des parcours pour lycéens, étudiants et professionnels (finance, gestion et management).</p>
-        <a class="btn" href="formations.html">Découvrir les formations</a>
-      </div>
-    </div>
+    </nav>
   </header>
 
-  <!-- APERÇU FORMATIONS -->
-  <section class="section">
-    <h2>Des formations concrètes et actuelles</h2>
-    <p class="intro">
-      Je conçois des parcours clairs, efficaces et orientés résultats — avec une pédagogie moderne et des cas réels.
-    </p>
+  <!-- Hero -->
+  <section id="hero" class="hero">
+    <h1>SA Synergy</h1>
+    <p>Construisons ensemble vos compétences et votre réussite</p>
+    <a href="#formations" class="btn">Découvrir nos formations</a>
+  </section>
+
+  <!-- Formations -->
+  <section id="formations" class="formations">
+    <h2>Nos Formations</h2>
     <div class="cards">
-      <a class="card glow" href="formations.html#carte">
-        <h3>À la carte</h3>
-        <p>Comptabilité, analyse financière, gestion de budget et investissement financier.</p>
-      </a>
-      <a class="card glow" href="formations.html#longues">
-        <h3>Formations longues</h3>
-        <p>Bureautique, création & gestion d’entreprise, management & leadership.</p>
-      </a>
-      <a class="card glow" href="formations.html#modules">
-        <h3>Modules autonomes en ligne</h3>
-        <p>Audio, écrit, vidéo et études de cas — en cours de création.</p>
-      </a>
-      <a class="card glow" href="formations.html#business">
-        <h3>Développement commercial</h3>
-        <p>Création/refonte de site, stratégie business, analyses financière & économique.</p>
-      </a>
+      <div class="card">Formations à la carte</div>
+      <div class="card">Formations longues</div>
+      <div class="card">Modules en ligne</div>
+      <div class="card">Développement commercial</div>
     </div>
   </section>
 
-  <footer class="footer">
-    <p>© 2025 SA-Synergy</p>
-  </footer>
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <div class="contact-container">
+      <img src="assets/andy.jpg" alt="Portrait d'Andy Sari" class="avatar">
+      <div class="contact-info">
+        <p>Tél : <a href="tel:+33600000000">+33 6 00 00 00 00</a></p>
+        <p>Email : <a href="mailto:contact@sa-synergy.com">contact@sa-synergy.com</a></p>
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/tonprofil" target="_blank">LinkedIn</a>
+          <a href="https://www.instagram.com/tonprofil" target="_blank">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <script src="script.js" defer></script>
+  <footer>
+    <p>&copy; 2025 SA Synergy</p>
+  </footer>
 </body>
 </html>
