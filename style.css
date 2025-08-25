@@ -21,18 +21,15 @@ body {
   display: flex; align-items: center; justify-content: space-between;
 }
 
-/* Lien logo (texte + éventuelle icône dans la navbar) */
+/* Lien logo (texte + image éventuelle) */
 .logo {
   display: inline-flex; align-items: center; gap: 8px;
   color: #8e44ad;                /* violet */
   font-size: 1.5rem; font-weight: bold;
   text-decoration: none;
 }
-
-/* Logo (image) dans la NAVBAR */
 .logo-img {
   height: 40px;
-  margin-right: 8px;
   vertical-align: middle;
 }
 
@@ -53,21 +50,12 @@ body {
   background: rgba(255,255,255,0.06);
 }
 
-/* Burger (mobile) */
-.burger {
-  display: none;
-  flex-direction: column; gap: 5px;
-  background: none; border: none; cursor: pointer;
-}
-.burger span { display: block; width: 25px; height: 3px; background: #fff; }
-
 /* ============ HERO (HEADER) ============ */
 .hero {
   min-height: 80vh;
   display: flex; align-items: center; justify-content: center;
   text-align: center;
   padding: 60px 20px;
-  /* léger contraste par rapport au fond général */
   background: #1b1b1b;
 }
 .hero-content { max-width: 800px; margin-inline: auto; }
@@ -109,24 +97,20 @@ body {
 }
 .card h3 { color: #2ecc71; margin-bottom: 8px; }
 .card p  { color: #cfcfcf; }
-
-/* Lueur violette au survol (encart) */
 .card:hover {
   transform: translateY(-4px);
-  border-color: rgba(142,68,173,0.7);                 /* violet */
+  border-color: rgba(142,68,173,0.7);
   box-shadow: 0 0 0 2px rgba(142,68,173,0.35), 0 16px 36px rgba(0,0,0,0.35);
 }
 
 /* ============ CONTACT ============ */
 .contact { background: #141414; }
-
 .contact-container {
   max-width: 900px; margin: 0 auto;
   display: flex; align-items: center; gap: 20px;
   justify-content: center;
   flex-wrap: wrap;
 }
-
 .contact-info { font-size: 1.1rem; }
 .contact-info p { margin: 6px 0; }
 
@@ -134,29 +118,26 @@ body {
   margin-top: 12px;
   display: flex; gap: 14px; align-items: center;
 }
-
-/* Icônes sociales SVG (hébergées via CDN) */
 .socials a img {
   width: 32px;
-  margin-right: 0; /* déjà géré par gap */
-  filter: invert(28%) sepia(92%) saturate(500%) hue-rotate(260deg); /* violet subtil */
+  filter: invert(28%) sepia(92%) saturate(500%) hue-rotate(260deg);
   transition: transform 0.2s, filter 0.2s;
 }
 .socials a img:hover {
   transform: scale(1.2);
-  filter: invert(44%) sepia(89%) saturate(450%) hue-rotate(100deg); /* vert au hover */
+  filter: invert(44%) sepia(89%) saturate(450%) hue-rotate(100deg);
 }
 
-/* Portrait contact (photo ronde) */
+/* Portrait contact */
 .portrait {
   width: 150px; height: 150px; border-radius: 50%;
   object-fit: cover;
   margin-right: 20px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  border: 2px solid rgba(142,68,173,0.5);            /* léger rappel violet */
+  border: 2px solid rgba(142,68,173,0.5);
 }
 
-/* ============ PIED DE PAGE (optionnel) ============ */
+/* ============ FOOTER ============ */
 footer {
   background: #0f0f0f;
   text-align: center;
@@ -167,21 +148,8 @@ footer {
 
 /* ============ RESPONSIVE ============ */
 @media (max-width: 768px) {
-  /* Menu mobile */
-  .menu {
-    display: none;
-    flex-direction: column;
-    position: absolute; right: 20px; top: 60px;
-    background: #111; padding: 14px; border-radius: 8px;
-    border: 1px solid rgba(255,255,255,0.08);
-  }
-  .menu.active { display: flex; }
-  .burger { display: flex; }
-
-  /* Contact : pile verticale */
-  .contact-container {
-    flex-direction: column;
-    text-align: center;
-  }
+  .nav-inner { flex-direction: column; gap: 10px; }
+  .menu { flex-direction: column; gap: 12px; align-items: center; }
+  .contact-container { flex-direction: column; text-align: center; }
   .portrait { margin-right: 0; }
 }
