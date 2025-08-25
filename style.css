@@ -1,12 +1,157 @@
-/* Couleurs professionnelles */
-.text-accent {
-    color: #4ea0d9; /* bleu acier */
+/* Reset et style global */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #111;
+    color: #fff;
 }
 
-.hover\:text-accent:hover {
-    color: #4ea0d9;
+a { text-decoration: none; color: inherit; }
+
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #4ade80, #8b5cf6);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    z-index: 100;
 }
 
-body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    padding: 10px 20px;
+}
+
+header nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li a {
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+header nav ul li a:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* Accueil */
+.section-accueil {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #111;
+}
+
+.accueil-logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.section-accueil h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #d8b4fe;
+}
+
+.section-accueil p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: auto;
+    color: #aaa;
+}
+
+/* Formations */
+.section-formations {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #1a1a1a;
+}
+
+.section-formations h2 {
+    color: #d8b4fe;
+    margin-bottom: 40px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 12px;
+    width: 250px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.card h3 {
+    color: #4ade80;
+    margin-bottom: 15px;
+}
+
+/* À propos */
+.section-apropos {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #111;
+}
+
+.section-apropos h2 {
+    color: #d8b4fe;
+    margin-bottom: 20px;
+}
+
+/* Contact */
+.section-contact {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #1a1a1a;
+}
+
+.section-contact h2 {
+    color: #d8b4fe;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.socials a {
+    margin: 0 10px;
+    font-size: 1.5rem;
+    color: #4ade80;
+    transition: color 0.3s;
+}
+
+.socials a:hover {
+    color: #d8b4fe;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #111;
+    color: #888;
 }
