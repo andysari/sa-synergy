@@ -1,221 +1,108 @@
-/* =========================
-   Variables de couleurs
-   ========================= */
-:root {
-    --violet-principal: #8b5cf6;
-    --vert-principal: #10b981;
-    --gris-fonce: #111111;
-    --gris-clair: #aaa;
-    --blanc: #ffffff;
+:root{
+  --bg: #000;
+  --surface: #0b0b0c;
+  --text: #eaeaea;
+  --muted: #a7a7a7;
+  --accent1: #7ED957; /* vert pomme subtil */
+  --accent2: #00FF7F; /* vert secondaire */
+  --radius: 14px;
 }
 
-/* =========================
-   Reset de base
-   ========================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* ====== Base ====== */
+* { box-sizing: border-box; }
+html, body { scroll-behavior: smooth; }
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: var(--gris-fonce);
-    color: var(--blanc);
-    line-height: 1.6;
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
 }
 
-/* =========================
-   Header / Navigation
-   ========================= */
-header {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: linear-gradient(90deg, var(--vert-principal), var(--violet-principal));
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+/* ====== Navbar sticky avec dégradé gris→vert ====== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: linear-gradient(90deg, #2c2c2c 0%, var(--accent1) 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.nav-inner{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.logo{
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.1rem;
+  background: #111; /* fond sombre derrière logo */
+  padding: 4px 10px;
+  border-radius: 6px;
+  color: var(--accent1);
+}
+.menu{
+  list-style: none; margin: 0; padding: 0;
+  display: flex; gap: 18px;
+}
+.menu a{
+  color: var(--text);
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+.menu a:hover, .menu a.active{
+  background: rgba(126,217,87,0.15);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.burger{
+  display: none;
+  width: 40px; height: 40px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  background: transparent; cursor: pointer;
+}
+.burger span{
+  display: block; width: 60%; height: 2px; margin: 6px auto;
+  background: var(--text);
 }
 
-header nav {
-    display: flex;
-    justify-content: center;
-    padding: 16px 0;
+/* ====== Hero ====== */
+.hero{
+  min-height: 70vh;
+  display: grid; place-items: center;
+  text-align: center;
+  padding: 80px 16px 60px;
+  background: radial-gradient(1200px 600px at 50% -10%, rgba(126,217,87,0.25), transparent),
+              radial-gradient(1200px 600px at 50% 110%, rgba(0,255,127,0.15), transparent);
 }
-
-header nav ul {
-    list-style: none;
-    display: flex;
-    gap: 24px;
+.hero-content h1{
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  margin: 0 0 14px;
 }
-
-header nav ul li a {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: var(--blanc);
-    padding: 10px 16px;
-    border-radius: 8px;
-    transition: background 0.3s, color 0.3s;
+.hero-content p{
+  color: var(--muted);
+  max-width: 720px;
+  margin: 0 auto 24px;
 }
-
-header nav ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-    color: var(--violet-principal);
+.btn{
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #000;
+  background: var(--accent1);
+  transition: transform .18s ease, box-shadow .18s ease;
 }
+.btn:hover{ transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.35); }
 
-/* =========================
-   Section Accueil
-   ========================= */
-.section-accueil {
-    text-align: center;
-    padding: 120px 20px;
-    background-color: var(--gris-fonce);
-    position: relative;
+/* ====== Sections ====== */
+.section{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 70px 16px;
 }
-
-.logo-wrapper {
-    display: inline-block;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.5); /* fond subtil derrière le logo */
-    border-radius: 50%;
-    margin-bottom: 30px;
-}
-
-.accueil-logo {
-    max-width: 180px;
-    height: auto; /* ratio conservé */
-}
-
-.section-accueil h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    color: var(--violet-principal);
-}
-
-.section-accueil p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: auto;
-    color: var(--gris-clair);
-}
-
-/* =========================
-   Section Formations
-   ========================= */
-#formations {
-    padding: 100px 20px;
-    background-color: #1a1a1a;
-}
-
-#formations h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 50px;
-    color: var(--vert-principal);
-}
-
-#formations .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-#formations .grid div {
-    background-color: #222;
-    padding: 24px;
-    border-radius: 12px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-#formations .grid div:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-}
-
-#formations h3 {
-    font-size: 1.3rem;
-    margin-bottom: 12px;
-    color: var(--violet-principal);
-}
-
-#formations ul {
-    list-style: disc;
-    margin-left: 20px;
-    color: var(--gris-clair);
-}
-
-/* =========================
-   Section À propos
-   ========================= */
-#apropos {
-    padding: 100px 20px;
-    text-align: center;
-}
-
-#apropos h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: var(--vert-principal);
-}
-
-#apropos p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: auto;
-    color: var(--gris-clair);
-}
-
-/* =========================
-   Section Contact
-   ========================= */
-#contact {
-    padding: 100px 20px;
-    background-color: #1a1a1a;
-    text-align: center;
-}
-
-#contact h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: var(--violet-principal);
-}
-
-#contact p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    color: var(--gris-clair);
-}
-
-#contact a {
-    color: var(--vert-principal);
-    margin: 0 10px;
-    font-size: 1.8rem;
-    transition: color 0.3s;
-}
-
-#contact a:hover {
-    color: var(--violet-principal);
-}
-
-/* =========================
-   Footer
-   ========================= */
-footer {
-    background-color: #111;
-    padding: 40px 20px;
-    text-align: center;
-    font-size: 0.9rem;
-    color: var(--gris-clair);
-}
-
-/* =========================
-   Responsive
-   ========================= */
-@media (max-width: 768px) {
-    .section-accueil h1 {
-        font-size: 2rem;
-    }
-
-    #formations .grid {
-        grid-template-columns: 1fr;
-    }
-}
+.section h2{
+  text-align: center;
+  font-size: clamp(1.6rem, 
