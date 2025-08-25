@@ -113,4 +113,54 @@ nav ul {
 }
 
 .card:hover {
-    transform: translateY(-5p
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+    border-color: #6b46c1;
+}
+
+.card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #10b981;
+}
+
+.card ul {
+    list-style: disc;
+    margin-left: 1.2rem;
+}
+
+/* Contact */
+#contact {
+    padding: 6rem 2rem;
+    text-align: center;
+}
+
+#contact h2 {
+    color: #6b46c1;
+    margin-bottom: 2rem;
+}
+
+.contact-info div {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.social-links a {
+    margin: 0 0.5rem;
+    color: #e2e8f0;
+    font-size: 1.8rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #10b981;
+}
+
+/* Footer */
+footer {
+    background-color: #1a1a1a;
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #aaa;
+}
