@@ -1,44 +1,17 @@
-/* Reset et base */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Définition des couleurs personnalisées */
+:root {
+    --primary-color: #1a1a1a;
+    --accent-color: #6b46c1;
+    --secondary-color: #10b981;
+    --light-color: #f0fdf4;
 }
 
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: #2a2a2a; /* Gris anthracite */
-    color: #e2e8f0; /* Texte clair */
-    scroll-behavior: smooth;
-}
-
-/* Header */
-header {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background-color: #2a2a2a;
-    border-bottom: 1px solid #444;
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 1rem 0;
-    gap: 2rem;
-}
-
+/* Navigation */
 .nav-link {
     position: relative;
-    color: #e2e8f0;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.nav-link:hover {
-    color: #6b46c1; /* violet doux */
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .nav-link::after {
@@ -46,9 +19,9 @@ nav ul {
     position: absolute;
     width: 0;
     height: 2px;
-    bottom: -4px;
+    bottom: 0;
     left: 0;
-    background-color: #10b981; /* vert doux */
+    background-color: var(--secondary-color);
     transition: width 0.3s;
 }
 
@@ -56,111 +29,32 @@ nav ul {
     width: 100%;
 }
 
-/* Section accueil */
+/* Section Accueil */
 #accueil {
-    padding: 8rem 2rem;
-    text-align: center;
+    background-color: var(--primary-color);
+    color: white;
 }
 
-#accueil img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #6b46c1;
-    margin-bottom: 2rem;
-}
-
-#accueil h1 span {
-    display: block;
-    color: #10b981;
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
-
-#accueil p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: auto;
-}
-
-/* Section formations */
+/* Section Formations */
 #formations {
-    padding: 6rem 2rem;
-    background-color: #1f1f1f;
+    background-color: var(--primary-color);
+    color: white;
 }
 
-#formations h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 3rem;
-    color: #6b46c1;
+/* Section À propos */
+#apropos {
+    background-color: var(--primary-color);
+    color: white;
 }
 
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
-.card {
-    background-color: #2a2a2a;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: 1px solid transparent;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.5);
-    border-color: #6b46c1;
-}
-
-.card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-    color: #10b981;
-}
-
-.card ul {
-    list-style: disc;
-    margin-left: 1.2rem;
-}
-
-/* Contact */
+/* Section Contact */
 #contact {
-    padding: 6rem 2rem;
-    text-align: center;
-}
-
-#contact h2 {
-    color: #6b46c1;
-    margin-bottom: 2rem;
-}
-
-.contact-info div {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-}
-
-.social-links a {
-    margin: 0 0.5rem;
-    color: #e2e8f0;
-    font-size: 1.8rem;
-    transition: color 0.3s;
-}
-
-.social-links a:hover {
-    color: #10b981;
+    background-color: var(--primary-color);
+    color: white;
 }
 
 /* Footer */
 footer {
-    background-color: #1a1a1a;
-    padding: 2rem;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #aaa;
+    background-color: var(--primary-color);
+    color: white;
 }
