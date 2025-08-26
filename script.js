@@ -1,32 +1,63 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Burger menu
-  const burger = document.querySelector(".burger");
-  const nav = document.querySelector(".nav");
-  burger.addEventListener("click", () => {
-    nav.classList.toggle("active");
-    burger.classList.toggle("toggle");
-  });
+/* -----------------------------
+   Menu burger mobile
+----------------------------- */
+const burger = document.querySelector('.burger');
+const navLinks = document.querySelector('.nav-links');
 
-  // Fade-in au scroll
-  const faders = document.querySelectorAll(".fade-in");
-  const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
-  const appearOnScroll = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add("visible");
-      observer.unobserve(entry.target);
-    });
-  }, appearOptions);
-  faders.forEach(fader => appearOnScroll.observe(fader));
-
-  // Hover Hero lueur
-  const heroContent = document.querySelector(".hero-content");
-  heroContent.addEventListener("mouseenter", () => {
-    heroContent.querySelector(".slogan").style.textShadow =
-      "0 0 50px rgba(0,255,149,1)";
-  });
-  heroContent.addEventListener("mouseleave", () => {
-    heroContent.querySelector(".slogan").style.textShadow =
-      "0 0 20px rgba(0,255,149,0.7)";
-  });
+burger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
 });
+
+/* -----------------------------
+   Slider témoignages (apropos.html)
+----------------------------- */
+let currentIndex = 0;
+
+// Récupère tous les témoignages
+const testimonials = document.querySelectorAll('.testimonial-card');
+
+// Fonction pour afficher un seul témoignage
+function showTestimonial(index) {
+  testimonials.forEach((test, i) => {
+    test.style.display = (i === index) ? 'flex' : 'none';
+  });
+}
+
+// Initialisation
+if(testimonials.length > 0){
+  showTestimonial(currentIndex);
+
+  // Flèche droite
+  const nextBtn = document.querySelector('.testimonial-next');
+  const prevBtn = document.querySelector('.testimonial-prev');
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % testimonials.length;
+    showTestimonial(currentIndex);
+  });
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+    showTestimonial(currentIndex);
+  });
+}
+
+/* -----------------------------
+   Fonction pour ajouter facilement de nouveaux témoignages
+----------------------------- */
+function addTestimonial(nom, role, texte, imagePath) {
+  const container = document.querySelector('.testimonial-container');
+  const card = document.createElement('div');
+  card.classList.add('testimonial-card');
+  card.style.display = 'none'; // par défaut caché
+
+  card.innerHTML = `
+    <img src="${imagePath}" alt="Photo ${nom}" class="testimonial-img">
+    <div class="testimonial-text">
+      <p>"${texte}"</p>
+      <span>- ${nom}, ${role}</span>
+    </div>
+  `;
+
+  container.appendChild(card);
+}
