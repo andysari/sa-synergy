@@ -10,7 +10,11 @@ body {
 
 h1, h2, h3 {
   font-family: 'Playfair Display', serif;
-  margin: 0;
+  margin: 0 0 15px 0;
+}
+
+p {
+  line-height: 1.6;
 }
 
 a {
@@ -27,7 +31,7 @@ button, .btn-link, .btn-espace {
    Header / Navigation
 ----------------------------- */
 .header {
-  background-color: #2b2b2b; /* gris anthracite plus clair */
+  background-color: #2b2b2b;
   padding: 15px 0;
   position: sticky;
   top: 0;
@@ -79,8 +83,9 @@ button, .btn-link, .btn-espace {
 .hero {
   position: relative;
   text-align: center;
-  padding: 100px 20px 80px 20px;
+  padding: 80px 20px 60px 20px;
   overflow: hidden;
+  min-height: 400px;
 }
 
 .hero-background {
@@ -99,6 +104,8 @@ button, .btn-link, .btn-espace {
   margin-bottom: 20px;
   z-index: 1;
   position: relative;
+  border-radius: 50%;
+  box-shadow: 0 0 25px rgba(0, 255, 149, 0.6);
 }
 
 .hero-content {
@@ -131,18 +138,18 @@ button, .btn-link, .btn-espace {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
   justify-items: center;
 }
 
 .card {
   background-color: #1a1a1a;
-  padding: 25px;
+  padding: 30px;
   border-radius: 15px;
   text-align: center;
   width: 100%;
-  max-width: 300px;
+  max-width: 350px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -152,12 +159,12 @@ button, .btn-link, .btn-espace {
 }
 
 .card h3 {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   margin-bottom: 15px;
 }
 
 .card p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-bottom: 15px;
 }
 
@@ -199,6 +206,15 @@ button, .btn-link, .btn-espace {
   color: #f5f5f5;
 }
 
+.contact input:disabled, .contact textarea:disabled {
+  background-color: #1a1a1a;
+  cursor: not-allowed;
+}
+
+.contact input::placeholder, .contact textarea::placeholder {
+  color: #888;
+}
+
 .contact input:hover::placeholder,
 .contact textarea:hover::placeholder {
   color: #00ff95;
@@ -229,11 +245,77 @@ button, .btn-link, .btn-espace {
 }
 
 /* -----------------------------
+   Slider Témoignages
+----------------------------- */
+.testimonial-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.testimonial-card {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 400px;
+  box-shadow: 0 0 15px rgba(0, 255, 149, 0.3);
+}
+
+.testimonial-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 2px solid #00ff95;
+}
+
+.testimonial-text p {
+  font-size: 0.95rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.testimonial-text span {
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* Navigation slider */
+.testimonial-nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.testimonial-nav button {
+  background-color: #00ff95;
+  border: none;
+  color: #121212;
+  padding: 8px 14px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.testimonial-nav button:hover {
+  background-color: #00ff95cc;
+}
+
+/* -----------------------------
    Footer
 ----------------------------- */
 .footer {
   background-color: #2b2b2b;
-  padding: 15px 20px;
+  padding: 10px 20px;
   text-align: center;
   font-size: 0.9rem;
 }
@@ -251,6 +333,45 @@ button, .btn-link, .btn-espace {
 .signature {
   color: #00ff95;
   font-weight: bold;
+}
+
+/* -----------------------------
+   Portrait À propos
+----------------------------- */
+.portrait-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.portrait {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #00ff95;
+  box-shadow: 0 0 20px rgba(0, 255, 149, 0.5);
+}
+
+/* À propos texte */
+.apropos-text {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: justify;
+  padding: 0 20px;
+}
+
+/* Diplômes / certifications */
+.certifications {
+  max-width: 700px;
+  margin: 20px auto 40px auto;
+  padding-left: 20px;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.certifications li {
+  margin-bottom: 8px;
 }
 
 /* -----------------------------
@@ -279,5 +400,18 @@ button, .btn-link, .btn-espace {
 
   .burger {
     display: flex;
+  }
+
+  .apropos-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .portrait {
+    margin-bottom: 20px;
+  }
+
+  .testimonial-card {
+    max-width: 90%;
   }
 }
