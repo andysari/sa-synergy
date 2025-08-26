@@ -7,8 +7,7 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome (icônes) -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <link rel="stylesheet" href="style.css">
@@ -18,6 +17,7 @@
   <header class="header">
     <div class="nav-wrap">
       <div class="nav-logo">SA Synergy</div>
+
       <nav>
         <ul class="nav-links">
           <li><a href="#hero">Accueil</a></li>
@@ -36,11 +36,16 @@
 
   <!-- HERO -->
   <section id="hero" class="hero">
-    <div class="hero-stars" aria-hidden="true"></div><!-- poussière d'étoiles (CSS) -->
-    <img src="assets/logo.png" alt="Logo SA Synergy" class="hero-logo">
-    <div class="hero-content">
-      <h1>Découvrez votre potentiel avec <span>SA Synergy</span></h1>
-      <p class="slogan">Apprenez, Progressez, Performez</p>
+    <!-- canvas animé (poussière d'étoiles) -->
+    <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+
+    <!-- logo + contenu -->
+    <div class="hero-inner">
+      <img src="assets/logo.png" alt="Logo SA Synergy" class="hero-logo">
+      <div class="hero-content">
+        <h1>Découvrez votre potentiel avec <span>SA Synergy</span></h1>
+        <p class="slogan">Apprenez, Progressez, Performez</p>
+      </div>
     </div>
   </section>
 
