@@ -1,142 +1,99 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SA Synergy - Formations et Accompagnement</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SA-Synergy</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <!-- Header avec navigation -->
-  <header class="header">
-    <div class="logo">
-      <img src="assets/logo.png" alt="SA Synergy Logo">
-    </div>
-    <nav class="nav">
-      <ul>
-        <li><a href="#hero">Accueil</a></li>
+
+  <!-- NAVBAR STICKY -->
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="nav-inner">
+      <a href="#accueil" class="logo" aria-label="Retour à l'accueil">SA-Synergy</a>
+
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul id="menu" class="menu">
+        <li><a href="#accueil">Accueil</a></li>
         <li><a href="#formations">Formations</a></li>
         <li><a href="#apropos">À propos</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-    </nav>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="accueil" class="hero">
+    <div class="hero-content">
+      <h1>Apprenez. Progressez. Performez.</h1>
+      <p>Des parcours pour étudiants et professionnels (finance, gestion, créativité, tech).</p>
+      <a href="#formations" class="btn">Découvrir les cours</a>
+    </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="hero" class="hero">
-    <div class="hero-content">
-      <h1>Découvrez votre potentiel avec <span>SA Synergy</span></h1>
-      <p>Formations premium, accompagnement personnalisé et expertise reconnue.</p>
-      <div class="cta">
-        <a href="#formations" class="btn-primary">Découvrir les formations</a>
-        <a href="#contact" class="btn-secondary">Me contacter</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Formations -->
-  <section id="formations" class="formations">
-    <h2>Des formations adaptées à vos ambitions</h2>
+  <!-- FORMATIONS -->
+  <section id="formations" class="section">
+    <h2>Nos Formations</h2>
     <div class="cards">
-      <div class="card">
-        <h3>À la carte</h3>
-        <p>Comptabilité, analyse financière, gestion de budget et investissement financier.</p>
-        <a href="formations/ala_carte.html" class="btn-link">En savoir plus</a>
+      <article class="card">
+        <h3>Management & Leadership</h3>
+        <p>Organisation, RSE, stratégie, diagnostic, styles de management, culture d’entreprise, gestion de projet, communication.</p>
+      </article>
+      <article class="card">
+        <h3>Finance & Gestion</h3>
+        <p>Comptabilité, analyse financière, budget, pilotage, cas concrets pour étudiants & pros.</p>
+      </article>
+      <article class="card">
+        <h3>Créativité & Innovation</h3>
+        <p>Méthodes, ateliers pratiques, projets interdisciplinaires et pitch.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- À PROPOS -->
+  <section id="apropos" class="section narrow">
+    <h2>Pourquoi SA-Synergy ?</h2>
+    <p>
+      Nous créons des expériences d’apprentissage modernes et adaptées à chaque public,
+      du lycée au master, ainsi qu’aux entrepreneurs et cadres souhaitant se perfectionner.
+    </p>
+  </section>
+
+  <!-- CONTACT + RÉSEAUX -->
+  <section id="contact" class="section contact">
+    <h2>Contact</h2>
+    <div class="contact-grid">
+      <div class="contact-block">
+        <p>
+          <strong>Téléphone :</strong>
+          <a href="tel:+33623136265">+33 6 23 13 62 65</a>
+        </p>
+        <p>
+          <strong>Email :</strong>
+          <a href="mailto:contact.sa.synergy@gmail.com">contact.sa.synergy@gmail.com</a>
+        </p>
       </div>
-      <div class="card">
-        <h3>Formations longues</h3>
-        <p>Bureautique, création et gestion d'entreprise, management et leadership.</p>
-        <a href="formations/formations_longues.html" class="btn-link">En savoir plus</a>
-      </div>
-      <div class="card">
-        <h3>Modules autonomes en ligne</h3>
-        <p>Cours audio, écrits et vidéos, études de cas en cours de création.</p>
-        <a href="formations/modules_autonomes.html" class="btn-link">En savoir plus</a>
-      </div>
-      <div class="card">
-        <h3>Développement commercial</h3>
-        <p>Création/refonte de site internet, stratégie business et analyse financière & économique.</p>
-        <a href="formations/developpement_commercial.html" class="btn-link">En savoir plus</a>
+      <div class="social-block">
+        <a class="social" href="https://www.instagram.com/andy.sari13/?igshid=ZDc4ODBmNjlmNQ%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <!-- Instagram SVG -->
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.51 5.51 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zM18 6.2a1.2 1.2 0 1 1-1.2 1.2A1.2 1.2 0 0 1 18 6.2z"/></svg>
+        </a>
+        <a class="social" href="https://www.linkedin.com/in/andy-sari-39a935117/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <!-- LinkedIn SVG -->
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v15H0zM8 8h4.8v2h.07C13.6 8.67 15.27 8 17.2 8 22.1 8 23 11.2 23 15.7V23h-5v-6.3c0-1.5-.03-3.4-2.1-3.4-2.1 0-2.4 1.6-2.4 3.3V23H8z"/></svg>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- À propos -->
-  <section id="apropos" class="apropos">
-    <div class="apropos-content">
-      <div class="portrait">
-        <img src="assets/andy.jpg" alt="Portrait Andy Sari">
-      </div>
-      <div class="texte">
-        <h2>À propos</h2>
-        <p>Plongez dans un univers captivant où le savoir rencontre la passion.</p>
-        <p>Bienvenue sur SA Synergy, où l’excellence et la polyvalence ouvrent de nouvelles opportunités. Découvrez mon parcours, mes diplômes et mon engagement à accompagner votre réussite.</p>
-        <h3>Diplômes & Certifications</h3>
-        <ul>
-          <li>MBA Conseil, Audit, Contrôle de Gestion</li>
-          <li>Excel Avancé</li>
-          <li>Google Analytics Avancé</li>
-          <li>Certification AMF</li>
-          <li>Master Économie, Droit, Gestion spécialité PME</li>
-          <li>Licence AEI spécialité entrepreneuriat</li>
-          <li>Licence STAPS management du sport</li>
-          <li>BTS Management des Unités Commerciales</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Témoignages -->
-  <section id="temoignages" class="temoignages">
-    <h2>Ils ont choisi SA Synergy, voici leur expérience</h2>
-    <div class="temoignages-cards">
-      <div class="temoignage">
-        <img src="assets/temoin1.jpg" alt="Photo témoin 1">
-        <p>"Une formation claire, professionnelle et immédiatement applicable dans mon activité."</p>
-        <span>- Nathalie Martin, Consultante</span>
-      </div>
-      <div class="temoignage">
-        <img src="assets/temoin2.jpg" alt="Photo témoin 2">
-        <p>"Un accompagnement de qualité, qui m’a permis de franchir un cap dans mon projet."</p>
-        <span>- Jean Dupont, Entrepreneur</span>
-      </div>
-      <!-- Ajouter d'autres témoignages si besoin -->
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <h2>Travaillons ensemble</h2>
-    <form action="mailto:contact.sa.synergy@gmail.com" method="post" enctype="text/plain">
-      <input type="text" name="name" placeholder="Votre nom" required>
-      <input type="email" name="email" placeholder="Votre email" required>
-      <textarea name="message" placeholder="Votre message" required></textarea>
-      <button type="submit" class="btn-primary">Envoyer</button>
-    </form>
-    <div class="contact-infos">
-      <p>📞 +33 6 23 13 62 65</p>
-      <p>📧 contact.sa.synergy@gmail.com</p>
-      <div class="socials">
-        <a href="https://www.instagram.com/andy.sari13/" target="_blank">Instagram</a>
-        <a href="https://www.linkedin.com/in/andy-sari-39a935117/" target="_blank">LinkedIn</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
   <footer class="footer">
-    <div class="footer-links">
-      <a href="mentions_legales.html">Mentions légales</a> |
-      <a href="protection_donnees.html">Charte de protection des données</a> |
-      <a href="cookies.html">Gestion des cookies</a> |
-      <a href="cgv.html">Conditions Générales de Ventes</a>
-    </div>
-    <p class="signature">Andy Sari</p>
-    <p>© SA SYNERGY 2025 - Tous droits réservés</p>
+    <p>© 2025 SA-Synergy</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
