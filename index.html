@@ -7,19 +7,18 @@
   <link rel="stylesheet" href="style.css">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- FontAwesome pour icônes -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <!-- Header avec navigation -->
+  <!-- Header -->
   <header class="header">
-    <div class="logo">
-      <img src="assets/logo.png" alt="SA Synergy Logo">
-    </div>
-    <nav class="nav" id="nav-menu">
+    <nav class="nav">
       <ul>
         <li><a href="#hero">Accueil</a></li>
         <li><a href="#formations">Formations</a></li>
-        <li><a href="#apropos">À propos</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="espace_membres.html" class="btn-espace">Espace Membres</a></li>
       </ul>
     </nav>
   </header>
@@ -27,13 +26,15 @@
   <!-- Hero Section -->
   <section id="hero" class="hero fade-in">
     <div class="hero-content">
+      <img src="assets/logo.png" alt="SA Synergy Logo" class="hero-logo">
       <h1>Découvrez votre potentiel avec <span>SA Synergy</span></h1>
-      <p>Formations premium, accompagnement personnalisé et expertise reconnue.</p>
+      <p class="slogan">Apprenez, Progressez, Performez</p>
       <div class="cta">
         <a href="#formations" class="btn-primary">Découvrir les formations</a>
         <a href="#contact" class="btn-secondary">Me contacter</a>
       </div>
     </div>
+    <div class="hero-glow"></div>
   </section>
 
   <!-- Formations -->
@@ -63,75 +64,28 @@
     </div>
   </section>
 
-  <!-- À propos -->
-  <section id="apropos" class="apropos fade-in">
-    <div class="apropos-content">
-      <div class="portrait">
-        <img src="assets/andy.jpg" alt="Portrait Andy Sari">
-      </div>
-      <div class="texte">
-        <h2>À propos</h2>
-        <p>Plongez dans un univers captivant où le savoir rencontre la passion.</p>
-        <p>Bienvenue sur SA Synergy, où l’excellence et la polyvalence ouvrent de nouvelles opportunités. Découvrez mon parcours, mes diplômes et mon engagement à accompagner votre réussite.</p>
-        <h3>Diplômes & Certifications</h3>
-        <ul>
-          <li>MBA Conseil, Audit, Contrôle de Gestion</li>
-          <li>Excel Avancé</li>
-          <li>Google Analytics Avancé</li>
-          <li>Certification AMF</li>
-          <li>Master Économie, Droit, Gestion spécialité PME</li>
-          <li>Licence AEI spécialité entrepreneuriat</li>
-          <li>Licence STAPS management du sport</li>
-          <li>BTS Management des Unités Commerciales</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Témoignages -->
-  <section id="temoignages" class="temoignages fade-in">
-    <h2>Ils ont choisi SA Synergy, voici leur expérience</h2>
-    <div class="temoignages-cards">
-      <div class="temoignage">
-        <img src="assets/temoin1.jpg" alt="Photo témoin 1">
-        <p>"Une formation claire, professionnelle et immédiatement applicable dans mon activité."</p>
-        <span>- Nathalie Martin, Consultante</span>
-      </div>
-      <div class="temoignage">
-        <img src="assets/temoin2.jpg" alt="Photo témoin 2">
-        <p>"Un accompagnement de qualité, qui m’a permis de franchir un cap dans mon projet."</p>
-        <span>- Jean Dupont, Entrepreneur</span>
-      </div>
-    </div>
-  </section>
-
   <!-- Contact -->
   <section id="contact" class="contact fade-in">
     <h2>Travaillons ensemble</h2>
-    <form action="mailto:contact.sa.synergy@gmail.com" method="post" enctype="text/plain">
-      <input type="text" name="name" placeholder="Votre nom" required>
-      <input type="email" name="email" placeholder="Votre email" required>
-      <textarea name="message" placeholder="Votre message" required></textarea>
-      <button type="submit" class="btn-primary">Envoyer</button>
+    <p class="warning">Formulaire de contact non fonctionnel pour l'instant</p>
+    <form>
+      <input type="text" name="name" placeholder="Votre nom" disabled>
+      <input type="email" name="email" placeholder="Votre email" disabled>
+      <textarea name="message" placeholder="Votre message" disabled></textarea>
+      <button type="submit" class="btn-primary" disabled>Envoyer</button>
     </form>
     <div class="contact-infos">
-      <p>📞 +33 6 23 13 62 65</p>
-      <p>📧 contact.sa.synergy@gmail.com</p>
+      <p><i class="fas fa-phone-alt" style="color:#00ff95;"></i> +33 6 23 13 62 65</p>
+      <p><i class="fas fa-envelope" style="color:#00ff95;"></i> contact.sa.synergy@gmail.com</p>
       <div class="socials">
-        <a href="https://www.instagram.com/andy.sari13/" target="_blank">Instagram</a>
-        <a href="https://www.linkedin.com/in/andy-sari-39a935117/" target="_blank">LinkedIn</a>
+        <a href="https://www.instagram.com/andy.sari13/" target="_blank"><i class="fab fa-instagram" style="color:#00ff95;"></i></a>
+        <a href="https://www.linkedin.com/in/andy-sari-39a935117/" target="_blank"><i class="fab fa-linkedin" style="color:#00ff95;"></i></a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="footer-links">
-      <a href="mentions_legales.html">Mentions légales</a> |
-      <a href="protection_donnees.html">Charte de protection des données</a> |
-      <a href="cookies.html">Gestion des cookies</a> |
-      <a href="cgv.html">Conditions Générales de Ventes</a>
-    </div>
     <p class="signature">Andy Sari</p>
     <p>© SA SYNERGY 2025 - Tous droits réservés</p>
   </footer>
