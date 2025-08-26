@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>À propos - SA Synergy</title>
+  <title>SA Synergy - Formations et Accompagnement</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Header identique -->
+  <!-- Header -->
   <header class="header">
     <nav class="nav-container">
       <ul class="nav-links">
-        <li><a href="index.html">Accueil</a></li>
+        <li><a href="#hero">Accueil</a></li>
         <li><a href="#formations">Formations</a></li>
         <li><a href="apropos.html">À propos</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="espace-membres.html" class="btn-espace">Espace Membres</a></li>
+        <li><a href="#espace-membres" class="btn-espace">Espace Membres</a></li>
       </ul>
       <div class="burger">
         <div></div>
@@ -26,56 +26,73 @@
     </nav>
   </header>
 
-  <section class="apropos-page">
-    <div class="apropos-container">
-      <div class="portrait-section">
-        <img src="assets/andy.jpg" alt="Portrait Andy Sari" class="portrait-halo">
-      </div>
-      <div class="texte-apropos">
-        <h2>À propos de moi</h2>
-        <p>Plongez dans un univers captivant où le savoir rencontre la passion. Bienvenue sur SA Synergy, où l’excellence et la polyvalence ouvrent de nouvelles opportunités.</p>
-        <p>Je propose un accompagnement personnalisé et des formations adaptées pour permettre à chacun de progresser et performer dans ses projets professionnels.
-        La polyvalence et l'ouverture sur le monde créent des opportunités d'enrichissement personnel et professionnel. Elles offrent la possibilité d'explorer de nouveaux domaines, de développer de nouvelles passions et de se distinguer dans un marché du travail compétitif. Pour cette raison, j'ai pour ambition de proposer des formations en lien avec le monde des affaires de la plus haute qualité, mises à jour régulièrement. L'objectif est de permettre à des étudiants et à des adultes de continuer à se former tout au long de leur vie sur des thématiques managériales, économiques, financières, mais aussi sociales.</p>
-      </div>
+  <!-- Hero -->
+  <section id="hero" class="hero">
+    <div class="hero-background"></div>
+    <img src="assets/logo.png" alt="SA Synergy Logo" class="hero-logo">
+    <div class="hero-content">
+      <h1>Découvrez votre potentiel avec <span>SA Synergy</span></h1>
+      <p class="slogan">Apprenez, Progressez, Performez</p>
     </div>
-    <h3>Diplômes et certifications :</h3>
-    <ul class="diplomes">
-      <li>MBA Conseil, Audit, Contrôle de Gestion</li>
-      <li>Excel Avancé</li>
-      <li>Google Analytics Avancé</li>
-      <li>Certification AMF</li>
-      <li>Master Économie, Droit, Gestion spécialité PME</li>
-      <li>Licence AEI spécialité entrepreneuriat</li>
-      <li>Licence STAPS management du sport</li>
-      <li>BTS Management des Unités Commerciales</li>
-    </ul>
+  </section>
 
-    <div class="temoignages-section">
-      <h2>Témoignages</h2>
-      <div class="temoignages-cards">
-        <div class="temoignage">
-          <img src="assets/temoin1.jpg" alt="Photo témoin 1">
-          <p>"Une formation claire, professionnelle et immédiatement applicable dans mon activité."</p>
-          <span>- Nathalie Martin, Consultante</span>
-        </div>
-        <div class="temoignage">
-          <img src="assets/temoin2.jpg" alt="Photo témoin 2">
-          <p>"Un accompagnement de qualité, qui m’a permis de franchir un cap dans mon projet."</p>
-          <span>- Jean Dupont, Entrepreneur</span>
-        </div>
+  <!-- Formations -->
+  <section id="formations" class="formations">
+    <h2>Des formations adaptées à vos ambitions</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>À la carte</h3>
+        <p>Comptabilité, analyse financière, gestion de budget et investissement financier.</p>
+        <a href="formations/ala_carte.html" class="btn-link">En savoir plus</a>
+      </div>
+      <div class="card">
+        <h3>Formations longues</h3>
+        <p>Bureautique, création et gestion d'entreprise, management et leadership.</p>
+        <a href="formations/formations_longues.html" class="btn-link">En savoir plus</a>
+      </div>
+      <div class="card">
+        <h3>Modules autonomes en ligne</h3>
+        <p>Cours audio, écrits et vidéos, études de cas en cours de création.</p>
+        <a href="formations/modules_autonomes.html" class="btn-link">En savoir plus</a>
+      </div>
+      <div class="card">
+        <h3>Développement commercial</h3>
+        <p>Création/refonte de site internet, stratégie business et analyse financière & économique.</p>
+        <a href="formations/developpement_commercial.html" class="btn-link">En savoir plus</a>
       </div>
     </div>
   </section>
 
+  <!-- Travaillons ensemble -->
+  <section id="contact" class="contact">
+    <h2>Travaillons ensemble</h2>
+    <form>
+      <input type="text" name="name" placeholder="Votre nom" disabled>
+      <input type="email" name="email" placeholder="Votre email" disabled>
+      <textarea name="message" placeholder="Votre message" disabled></textarea>
+    </form>
+    <div class="contact-infos">
+      <p><i class="fa fa-phone"></i> +33 6 23 13 62 65</p>
+      <p><i class="fa fa-envelope"></i> contact.sa.synergy@gmail.com</p>
+      <div class="socials">
+        <a href="https://www.instagram.com/andy.sari13/?igshid=ZDc4ODBmNjlmNQ%3D%3D" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/andy-sari-39a935117/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="footer">
     <div class="footer-links">
       <a href="mentions_legales.html">Mentions légales</a> |
-      <a href="protection_donnees.html">Charte de protection des données</a> |
+      <a href="protection_donnees.html">Charte de protection des données personnelles</a> |
       <a href="cookies.html">Gestion des cookies</a> |
       <a href="cgv.html">Conditions Générales de Ventes</a>
     </div>
     <p class="signature">Andy Sari</p>
     <p>© SA SYNERGY 2021 - Tous droits réservés</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
