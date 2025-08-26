@@ -1,12 +1,13 @@
 /* =====================================================
    script.js
-   - gestion menu burger (index + apropos)
+   - menu burger
+   - hero canvas (poussière d'étoiles verte / galaxie)
    - slider témoignages 1 à 1 (A propos)
-   - fonction addTestimonial pour ajouter dynamiquement
+   - addTestimonial helper
    ===================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
-  /* ---------- NAV BURGER ---------- */
+  /* ------------ BURGER MENU ------------ */
   const burger = document.querySelector(".burger");
   const navLinks = document.querySelector(".nav-links");
   if (burger && navLinks) {
@@ -16,11 +17,93 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ---------- HOVER WARNINGS (contact) ---------- */
-  // Les .hover-warning s'affichent au hover des champs (CSS gère l'affichage)
-  // Aucun JS nécessaire sauf si tu veux repositionner/dynamiser.
+  /* ------------ HERO CANVAS (particles) ------------ */
+  (function heroParticles() {
+    const canvas = document.getElementById("hero-canvas");
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    let width = canvas.width = canvas.offsetWidth;
+    let height = canvas.height = canvas.offsetHeight;
+    const particles = [];
+    const PARTICLE_COUNT = Math.round((width * height) / 60000); // density
 
-  /* ---------- SLIDER TÉMOIGNAGES (A PROPOS) ---------- */
+    function rand(min, max) { return Math.random() * (max - min) + min; }
+
+    function resize() {
+      width = canvas.width = canvas.offsetWidth;
+      height = canvas.height = canvas.offsetHeight;
+      // adjust number of particles
+      while (particles.length > Math.max(6, Math.round((width * height) / 60000))) particles.pop();
+      while (particles.length < Math.max(6, Math.round((width * height) / 60000))) particles.push(new Particle());
+    }
+
+    class Particle {
+      constructor() {
+        this.reset();
+      }
+      reset() {
+        this.x = rand(0, width);
+        this.y = rand(0, height);
+        this.vx = rand(-0.05, 0.05);
+        this.vy = rand(-0.02, 0.02);
+        this.size = rand(0.6, 2.6);
+        this.alpha = rand(0.05, 0.6);
+        this.phase = rand(0, Math.PI * 2);
+        this.twinkleSpeed = rand(0.01, 0.05);
+      }
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        this.phase += this.twinkleSpeed;
+        this.alpha = 0.25 + 0.35 * Math.abs(Math.sin(this.phase));
+        // wrap
+        if (this.x < -10) this.x = width + 10;
+        if (this.x > width + 10) this.x = -10;
+        if (this.y < -10) this.y = height + 10;
+        if (this.y > height + 10) this.y = -10;
+      }
+      draw() {
+        const g = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size * 8);
+        g.addColorStop(0, `rgba(0,255,149,${this.alpha})`);
+        g.addColorStop(0.35, `rgba(0,255,149,${this.alpha * 0.35})`);
+        g.addColorStop(1, 'rgba(0,255,149,0)');
+        ctx.fillStyle = g;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size * 4, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    for (let i = 0; i < Math.max(6, Math.round((width * height) / 60000)); i++) particles.push(new Particle());
+
+    let raf;
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+      // subtle background vignette to give depth
+      const bg = ctx.createLinearGradient(0, 0, 0, height);
+      bg.addColorStop(0, 'rgba(0,0,0,0)');
+      bg.addColorStop(1, 'rgba(0,0,0,0.25)');
+      ctx.fillStyle = bg;
+      ctx.fillRect(0, 0, width, height);
+
+      // draw particles
+      for (let p of particles) {
+        p.update();
+        p.draw();
+      }
+      raf = requestAnimationFrame(animate);
+    }
+
+    // responsiveness
+    window.addEventListener('resize', () => {
+      resize();
+    });
+
+    resize();
+    animate();
+  })();
+
+  /* ------------ TESTIMONIALS SLIDER (apropos) ------------ */
   const testimonies = [
     {
       nom: "Tom",
@@ -37,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       nom: "Laura",
       role: "Responsable de magasin",
-      texte: "Un professeur passionné, avec un bagage de connaissances incroyables dans plusieurs domaines. Nous avons pu voir notamment les principales formes d'organisation qui existent ainsi que les stratégies, les styles de management... Il sait comment nous captiver et rendre les cours très intéressants et interactifs avec beaucoup d'exemples concrets pour mieux comprendre.",
+      texte: "Un professeur passionné, avec un bagage de connaissances incroyables dans plusieurs domaines. Nous avons pu voir notamment les principales formes d'organisation qui existent ainsi que les stratégies, les styles de management...Il sait comment nous captiver et rendre les cours très intéressants et interactifs avec beaucoup d'exemples concrets pour mieux comprendre.",
       image: "assets/laura.jpg"
     },
     {
@@ -61,51 +144,45 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       nom: "Nicolas",
       role: "Étudiant BTS Comptabilité et Gestion",
-      texte: "J’ai pu approfondir mes connaissances sur le bilan et le compte de résultat pour mon diplôme en comptabilité, pour ça je recommande vivement Andy.",
+      texte: "J’ai pu approfondir mes connaissances sur le bilan et le compte de résultat pour mon diplôme. Je recommande vivement Andy.",
       image: "assets/nicolas.jpg"
     }
   ];
 
-  // Only run testimonials logic if on the apropos page (temoignage container exists)
+  // only run if #temoignage-display exists (on apropos page)
   const display = document.getElementById("temoignage-display");
   const prevBtn = document.querySelector(".prev");
   const nextBtn = document.querySelector(".next");
-
   let curIndex = 0;
+
   function renderTestimony(i) {
     if (!display) return;
     const t = testimonies[i];
     display.innerHTML = `
       <img src="${t.image}" alt="${t.nom}" class="temoignage-img">
-      <h3>${t.nom}</h3>
-      <h4>${t.role}</h4>
-      <p>${t.texte}</p>
+      <p class="temoignage-text">${t.texte}</p>
+      <div class="temoignage-footer">${t.nom}, ${t.role}</div>
     `;
   }
 
   if (display) {
-    // render first
     renderTestimony(curIndex);
-    if (prevBtn) {
-      prevBtn.addEventListener("click", () => {
-        curIndex = (curIndex - 1 + testimonies.length) % testimonies.length;
-        renderTestimony(curIndex);
-      });
-    }
-    if (nextBtn) {
-      nextBtn.addEventListener("click", () => {
-        curIndex = (curIndex + 1) % testimonies.length;
-        renderTestimony(curIndex);
-      });
-    }
+    if (prevBtn) prevBtn.addEventListener("click", () => {
+      curIndex = (curIndex - 1 + testimonies.length) % testimonies.length;
+      renderTestimony(curIndex);
+    });
+    if (nextBtn) nextBtn.addEventListener("click", () => {
+      curIndex = (curIndex + 1) % testimonies.length;
+      renderTestimony(curIndex);
+    });
   }
 
-  // helper to add new testimonial dynamically
+  // helper to add testimonials later
   window.addTestimonial = function (nom, role, texte, imagePath) {
     testimonies.push({ nom, role, texte, image: imagePath });
   };
 
-  /* ---------- FADE-IN (optionnel) ---------- */
+  /* optional: fade-in for sections with class .fade-in */
   const faders = document.querySelectorAll('.fade-in');
   if ('IntersectionObserver' in window && faders.length) {
     const obs = new IntersectionObserver((entries, ob) => {
@@ -115,7 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
           ob.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.18 });
     faders.forEach(el => obs.observe(el));
   }
 });
