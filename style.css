@@ -26,54 +26,55 @@ a {
    Header & Navigation
 ------------------------------ */
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
   background-color: #1a1a1a;
+  padding: 1rem 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
   border-bottom: 1px solid #222;
-}
-
-.logo img {
-  height: 50px;
-  transition: transform 0.3s;
-}
-
-.logo img:hover {
-  transform: scale(1.05);
+  text-align: center;
 }
 
 .nav ul {
   list-style: none;
-  display: flex;
+  display: inline-flex;
   gap: 2rem;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 .nav ul li a {
   font-weight: 600;
   color: #f5f5f5;
+  padding: 0.5rem 1rem;
 }
 
-.nav ul li a:hover {
-  color: #00ff95;
+.nav ul li a:hover,
+.nav ul li .btn-espace:hover {
+  color: #121212;
+  background-color: #00ff95;
+  border-radius: 30px;
+  transition: all 0.3s ease;
 }
 
 /* ------------------------------
    Hero Section
 ------------------------------ */
 .hero {
+  position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 90vh;
   text-align: center;
   padding: 2rem;
-  background: linear-gradient(135deg, #121212, #1a1a1a);
+  overflow: hidden;
+}
+
+.hero-logo {
+  max-width: 180px;
+  margin-bottom: 1rem;
 }
 
 .hero-content h1 {
@@ -85,61 +86,17 @@ a {
   color: #00ff95;
 }
 
-.hero-content h1:hover {
-  transform: scale(1.05);
-}
-
-.hero-content p {
+.hero-content .slogan {
+  font-size: 1.5rem;
+  color: #00ff95;
+  text-shadow: 0 0 15px rgba(0, 255, 149, 0.7);
   margin: 1rem 0 2rem;
-  font-size: 1.2rem;
-  color: #ccc;
 }
 
 .cta {
   display: flex;
   justify-content: center;
   gap: 1rem;
-}
-
-.btn-primary {
-  background-color: #00ff95;
-  color: #121212;
-  padding: 0.75rem 1.5rem;
-  border-radius: 30px;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-  background-color: #00cc75;
-  transform: scale(1.05);
-}
-
-.btn-secondary {
-  border: 2px solid #00ff95;
-  color: #00ff95;
-  padding: 0.75rem 1.5rem;
-  border-radius: 30px;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-
-.btn-secondary:hover {
-  background-color: #00ff95;
-  color: #121212;
-  transform: scale(1.05);
-}
-
-.btn-link {
-  display: inline-block;
-  margin-top: 1rem;
-  color: #00ff95;
-  font-weight: 600;
-}
-
-.btn-link:hover {
-  text-decoration: underline;
-  transform: scale(1.05);
 }
 
 /* ------------------------------
@@ -150,13 +107,9 @@ a {
   text-align: center;
 }
 
-.formations h2 {
-  margin-bottom: 3rem;
-}
-
 .cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
 
@@ -170,7 +123,7 @@ a {
 }
 
 .card:hover {
-  transform: translateY(-8px) scale(1.02);
+  transform: translateY(-8px) scale(1.05);
   box-shadow: 0 0 30px rgba(0, 255, 149, 0.2);
 }
 
@@ -179,65 +132,108 @@ a {
 }
 
 /* ------------------------------
-   À propos
+   Contact
 ------------------------------ */
-.apropos {
+.contact {
   padding: 4rem 2rem;
+  text-align: center;
 }
 
-.apropos-content {
+.warning {
+  color: #ff5555;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.contact form {
   display: flex;
-  align-items: center;
-  gap: 2rem;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto 2rem;
 }
 
-.apropos-content .portrait img {
-  max-width: 300px;
-  border-radius: 50%;
-  border: 3px solid #00ff95;
-  transition: transform 0.3s, box-shadow 0.3s;
+.contact input, .contact textarea,
+.contact button {
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #1a1a1a;
+  color: #f5f5f5;
+  border: none;
 }
 
-.apropos-content .portrait img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(0, 255, 149, 0.4);
+.contact-infos p {
+  margin: 0.5rem 0;
 }
 
-.apropos-content ul {
-  list-style: none;
-  padding: 0;
+.socials {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
-.apropos-content ul li {
+.socials i {
+  font-size: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.socials i:hover {
+  transform: scale(1.2);
+  color: #00cc75;
+}
+
+/* ------------------------------
+   Footer
+------------------------------ */
+.footer {
+  padding: 2rem;
+  background-color: #1a1a1a;
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 1px solid #222;
+}
+
+.signature {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: #00ff95;
   margin: 0.5rem 0;
 }
 
 /* ------------------------------
-   Témoignages
+   Fade-in animation
 ------------------------------ */
-.temoignages {
-  padding: 4rem 2rem;
-  background: linear-gradient(135deg, #1a1a1a, #121212);
-  text-align: center;
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.temoignages-cards {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin-top: 2rem;
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.temoignage {
-  background-color: #1a1a1a;
-  padding: 2rem;
-  border-radius: 12px;
-  max-width: 300px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
+/* ------------------------------
+   Responsive Mobile
+------------------------------ */
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
 
-.temoignage:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 0 25px
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content .slogan {
+    font-size: 1.2rem;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
