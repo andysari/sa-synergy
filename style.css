@@ -76,7 +76,7 @@ a:hover {
 /* --- Hero Section --- */
 .hero {
   background-color: #121212;
-  padding: 5rem 2rem 3rem 2rem;
+  padding: 3rem 2rem 2rem 2rem; /* hauteur réduite */
   text-align: center;
   position: relative;
   display: flex;
@@ -87,14 +87,17 @@ a:hover {
 .hero-logo {
   width: 120px;
   margin-bottom: 0.8rem;
+  position: relative;
+  z-index: 1;
+  border-radius: 50%; /* pour le logo ovale si nécessaire */
 }
 
 .hero-glow {
   position: absolute;
-  top: 15%;
+  top: 50px; /* lueur au niveau du logo */
   left: 50%;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   background: radial-gradient(circle, rgba(0,255,149,0.3) 0%, transparent 70%);
   transform: translateX(-50%);
   border-radius: 50%;
@@ -103,7 +106,7 @@ a:hover {
 
 .hero-content h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   margin-bottom: 0.5rem;
 }
 
@@ -111,41 +114,6 @@ a:hover {
   font-size: 1.2rem;
   margin-bottom: 1rem;
   text-shadow: 0 0 20px rgba(0,255,149,0.7);
-}
-
-.cta {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.btn-primary, .btn-secondary, .btn-link {
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.btn-primary {
-  background-color: #00ff95;
-  color: #121212;
-  border: none;
-}
-
-.btn-primary:hover {
-  background-color: #0cffaa;
-}
-
-.btn-secondary {
-  border: 2px solid #00ff95;
-  color: #00ff95;
-  background: none;
-}
-
-.btn-secondary:hover {
-  background-color: #00ff95;
-  color: #121212;
 }
 
 /* --- Formations --- */
@@ -162,13 +130,13 @@ a:hover {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
 }
 
 .card {
   background-color: #121212;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(0,255,149,0.05);
   transition: 0.3s;
@@ -177,10 +145,12 @@ a:hover {
 .card h3 {
   margin-bottom: 0.5rem;
   font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
 }
 
 .card p {
   margin-bottom: 1rem;
+  font-size: 1rem;
 }
 
 .card:hover {
@@ -206,7 +176,6 @@ form {
   gap: 1rem;
   max-width: 500px;
   margin: 0 auto;
-  position: relative;
 }
 
 form input, form textarea {
@@ -216,26 +185,7 @@ form input, form textarea {
   background-color: #1a1a1a;
   color: #f5f5f5;
   font-size: 1rem;
-  transition: 0.3s;
-}
-
-form input:focus, form textarea:focus {
-  border-color: #00ff95;
-  outline: none;
-}
-
-.hover-warning {
-  color: #ff0000;
-  font-size: 0.9rem;
-  display: none;
-  position: absolute;
-  top: -1.5rem;
-  left: 0;
-}
-
-form input:hover + .hover-warning,
-form textarea:hover + .hover-warning {
-  display: block;
+  cursor: not-allowed; /* bloque l’écriture */
 }
 
 .contact-infos {
@@ -268,7 +218,7 @@ form textarea:hover + .hover-warning {
 /* --- Footer --- */
 .footer {
   background-color: #2b2b2b;
-  padding: 2rem;
+  padding: 1.5rem;
   text-align: center;
   font-size: 0.9rem;
 }
@@ -302,8 +252,8 @@ form textarea:hover + .hover-warning {
 
 .portrait-halo {
   width: 100%;
-  max-width: 250px;
-  border-radius: 50%;
+  max-width: 220px;
+  border-radius: 50% / 50%;
   box-shadow: 0 0 30px rgba(0,255,149,0.3);
   margin-bottom: 1rem;
 }
