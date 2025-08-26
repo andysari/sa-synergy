@@ -19,7 +19,7 @@ h1, h2, h3 {
 a {
   text-decoration: none;
   color: inherit;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 /* ------------------------------
@@ -47,13 +47,13 @@ a {
   font-weight: 600;
   color: #f5f5f5;
   padding: 0.5rem 1rem;
+  border-radius: 30px;
 }
 
 .nav ul li a:hover,
 .nav ul li .btn-espace:hover {
   color: #121212;
   background-color: #00ff95;
-  border-radius: 30px;
   transition: all 0.3s ease;
 }
 
@@ -69,17 +69,21 @@ a {
   min-height: 90vh;
   text-align: center;
   padding: 2rem;
+  background-color: #121212;
   overflow: hidden;
 }
 
 .hero-logo {
   max-width: 180px;
   margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-content h1 {
   font-size: 2.5rem;
-  transition: transform 0.3s;
+  margin: 0.5rem 0;
+  transition: all 0.3s ease;
 }
 
 .hero-content h1 span {
@@ -89,14 +93,63 @@ a {
 .hero-content .slogan {
   font-size: 1.5rem;
   color: #00ff95;
-  text-shadow: 0 0 15px rgba(0, 255, 149, 0.7);
+  text-shadow: 0 0 20px rgba(0, 255, 149, 0.7);
   margin: 1rem 0 2rem;
+  transition: all 0.3s ease;
 }
 
+.hero-content:hover .slogan {
+  text-shadow: 0 0 35px rgba(0, 255, 149, 1);
+  transform: scale(1.05);
+}
+
+/* Lueur autour du Hero */
+.hero-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0,255,149,0.2) 0%, rgba(0,255,149,0) 70%);
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  border-radius: 50%;
+}
+
+/* CTA buttons */
 .cta {
   display: flex;
   justify-content: center;
   gap: 1rem;
+}
+
+.btn-primary {
+  background-color: #00ff95;
+  color: #121212;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #00cc75;
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  border: 2px solid #00ff95;
+  color: #00ff95;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #00ff95;
+  color: #121212;
+  transform: scale(1.05);
 }
 
 /* ------------------------------
@@ -111,11 +164,13 @@ a {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .card {
   background-color: #1a1a1a;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(0, 255, 149, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -123,12 +178,18 @@ a {
 }
 
 .card:hover {
-  transform: translateY(-8px) scale(1.05);
+  transform: translateY(-6px) scale(1.03);
   box-shadow: 0 0 30px rgba(0, 255, 149, 0.2);
 }
 
 .card h3 {
   color: #00ff95;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  font-size: 1.1rem;
 }
 
 /* ------------------------------
@@ -165,6 +226,7 @@ a {
 
 .contact-infos p {
   margin: 0.5rem 0;
+  font-size: 1rem;
 }
 
 .socials {
@@ -176,6 +238,7 @@ a {
 
 .socials i {
   font-size: 1.5rem;
+  color: #00ff95;
   transition: transform 0.3s;
 }
 
@@ -193,6 +256,17 @@ a {
   text-align: center;
   font-size: 0.9rem;
   border-top: 1px solid #222;
+}
+
+.footer-links a {
+  color: #f5f5f5;
+  margin: 0 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #00ff95;
+  text-decoration: underline;
 }
 
 .signature {
