@@ -20,11 +20,17 @@ document.addEventListener("DOMContentLoaded", () => {
   faders.forEach(fader => {
     appearOnScroll.observe(fader);
   });
+
+  // Burger menu
+  const burger = document.querySelector(".burger");
+  const nav = document.querySelector(".nav");
+  burger.addEventListener("click", () => {
+    nav.classList.toggle("active");
+    burger.classList.toggle("toggle");
+  });
 });
 
-// ------------------------------
-// Optional: ajouter hover dynamique supplémentaire
-// ------------------------------
+// Hover Hero
 const heroContent = document.querySelector(".hero-content");
 if (heroContent) {
   heroContent.addEventListener("mouseenter", () => {
@@ -38,9 +44,7 @@ if (heroContent) {
   });
 }
 
-// ------------------------------
-// Formations hover (optionnel si tu veux un effet supplémentaire)
-// ------------------------------
+// Hover formations
 const cards = document.querySelectorAll(".card");
 cards.forEach(card => {
   card.addEventListener("mouseenter", () => {
