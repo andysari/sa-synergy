@@ -5,15 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SA-Synergy</title>
   <link rel="stylesheet" href="style.css"/>
-  <script src="script.js" defer></script>
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
+  <!-- NAVBAR STICKY -->
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
     <div class="nav-inner">
-      <a href="#accueil" class="nav-logo">SA-Synergy</a>
-      <ul class="menu">
+      <a href="#accueil" class="logo" aria-label="Retour à l'accueil">
+        <img src="assets/logo.png" alt="Logo SA-Synergy" class="logo-img"/>
+        SA-Synergy
+      </a>
+
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul id="menu" class="menu">
         <li><a href="#accueil">Accueil</a></li>
         <li><a href="#formations">Formations</a></li>
         <li><a href="#apropos">À propos</a></li>
@@ -24,10 +31,9 @@
 
   <!-- HERO -->
   <header id="accueil" class="hero">
-    <img src="assets/logo.png" alt="Logo SA-Synergy" class="logo-img"/>
     <div class="hero-content">
       <h1>Apprenez. Progressez. Performez.</h1>
-      <p>Des parcours pour étudiants et professionnels (finance, gestion et management).</p>
+      <p>Des parcours pour lycéens, étudiants et professionnels (finance, gestion et management).</p>
       <a href="#formations" class="btn">Découvrir nos cours</a>
     </div>
   </header>
@@ -46,46 +52,35 @@
       </article>
       <article class="card">
         <h3>Modules autonomes en ligne</h3>
-        <p>Accès à de nombreux cours en format audio, écrit et vidéo ainsi que des études de cas (en cours de création).</p>
+        <p>Accès à de nombreux cours (audio, écrit et vidéo) ainsi que des études de cas, en cours de création.</p>
       </article>
       <article class="card">
         <h3>Développement commercial</h3>
-        <p>Création/refonte de site internet, conseil en stratégie business et analyse financière & économique.</p>
+        <p>Création/refonte de site internet, stratégie business et analyse financière & économique.</p>
       </article>
     </div>
   </section>
 
-  <!-- A PROPOS -->
-  <section id="apropos" class="section">
-    <h2>À propos</h2>
-    <p>
-      Je suis Andy Sari et j’ai fondé SA-Synergy pour partager une conviction simple : 
-      maîtriser plusieurs compétences permet d’avancer plus vite et plus loin.  
-      Mon objectif : vous proposer des formations pratiques et modernes qui vous aident à progresser dans votre parcours académique ou professionnel.
-    </p>
-  </section>
-
   <!-- CONTACT -->
-  <section id="contact" class="section contact-container">
-    <img src="assets/andy.jpg" alt="Portrait Andy Sari" class="portrait"/>
-    <div class="contact-info">
-      <h2>Contact</h2>
-      <p>📞 +33 6 23 13 62 65</p>
-      <p>✉️ contact.sa.synergy@gmail.com</p>
-      <div class="socials">
-        <a href="https://www.instagram.com/andy.sari13/?igshid=ZDc4ODBmNjlmNQ%3D%3D" target="_blank" aria-label="Instagram">
-          <img src="assets/instagram.svg" alt="Instagram"/>
-        </a>
-        <a href="https://www.linkedin.com/in/andy-sari-39a935117/" target="_blank" aria-label="LinkedIn">
-          <img src="assets/linkedin.svg" alt="LinkedIn"/>
-        </a>
+  <section id="contact" class="section contact">
+    <h2>Contact</h2>
+    <div class="contact-container">
+      <img src="assets/portrait.jpg" alt="Photo de Andy Sari" class="portrait"/>
+      <div class="contact-info">
+        <p>☎️ +33 6 23 13 62 65</p>
+        <p>✉️ contact.sa.synergy@gmail.com</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/andy.sari13/?igshid=ZDc4ODBmNjlmNQ%3D%3D" target="_blank" aria-label="Instagram">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram"/>
+          </a>
+          <a href="https://www.linkedin.com/in/andy-sari-39a935117/" target="_blank" aria-label="LinkedIn">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn"/>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <footer class="footer">
-    <p>© 2025 SA-Synergy. Tous droits réservés.</p>
-  </footer>
-
+  <script src="script.js"></script>
 </body>
 </html>
