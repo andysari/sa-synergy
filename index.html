@@ -5,84 +5,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SA Synergy - Formations et Accompagnement</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
-  <!-- Header -->
+  <!-- Header avec navigation -->
   <header class="header">
-    <div class="nav-container">
-      <nav class="nav">
-        <ul class="nav-links">
-          <li><a href="#hero">Accueil</a></li>
-          <li><a href="#formations">Formations</a></li>
-          <li><a href="apropos.html">À propos</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="espace_membres.html" class="btn-espace">Espace Membres</a></li>
-        </ul>
-        <div class="burger">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
-        </div>
-      </nav>
-    </div>
+    <nav class="nav-container">
+      <ul class="nav-links">
+        <li><a href="#hero">Accueil</a></li>
+        <li><a href="#formations">Formations</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="espace-membres.html" class="btn-espace">Espace Membres</a></li>
+      </ul>
+      <div class="burger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </nav>
   </header>
 
   <!-- Hero Section -->
-  <section id="hero" class="hero fade-in">
+  <section id="hero" class="hero">
+    <div class="hero-glow"></div>
+    <img src="assets/logo.png" alt="SA Synergy Logo" class="hero-logo">
     <div class="hero-content">
-      <img src="assets/logo.png" alt="SA Synergy Logo" class="hero-logo">
       <h1>Découvrez votre potentiel avec <span>SA Synergy</span></h1>
       <p class="slogan">Apprenez, Progressez, Performez</p>
-      <div class="cta">
-        <a href="#formations" class="btn-primary">Découvrir les formations</a>
-        <a href="#contact" class="btn-secondary">Me contacter</a>
-      </div>
     </div>
-    <div class="hero-glow"></div>
   </section>
 
   <!-- Formations -->
-  <section id="formations" class="formations fade-in">
+  <section id="formations" class="formations">
     <h2>Des formations adaptées à vos ambitions</h2>
     <div class="cards">
       <div class="card">
         <h3>À la carte</h3>
         <p>Comptabilité, analyse financière, gestion de budget et investissement financier.</p>
-        <a href="formations/ala_carte.html" class="btn-link">En savoir plus</a>
       </div>
       <div class="card">
         <h3>Formations longues</h3>
         <p>Bureautique, création et gestion d'entreprise, management et leadership.</p>
-        <a href="formations/formations_longues.html" class="btn-link">En savoir plus</a>
       </div>
       <div class="card">
         <h3>Modules autonomes en ligne</h3>
         <p>Cours audio, écrits et vidéos, études de cas en cours de création.</p>
-        <a href="formations/modules_autonomes.html" class="btn-link">En savoir plus</a>
       </div>
       <div class="card">
         <h3>Développement commercial</h3>
         <p>Création/refonte de site internet, stratégie business et analyse financière & économique.</p>
-        <a href="formations/developpement_commercial.html" class="btn-link">En savoir plus</a>
       </div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="contact fade-in">
+  <section id="contact" class="contact">
     <h2>Travaillons ensemble</h2>
     <form>
-      <input type="text" name="name" placeholder="Votre nom">
-      <input type="email" name="email" placeholder="Votre email">
-      <textarea name="message" placeholder="Votre message"></textarea>
-      <button type="submit" class="btn-primary">Envoyer</button>
-      <p class="hover-warning">Formulaire de contact non fonctionnel pour l'instant</p>
+      <input type="text" name="name" placeholder="Votre nom" disabled>
+      <input type="email" name="email" placeholder="Votre email" disabled>
+      <textarea name="message" placeholder="Votre message" disabled></textarea>
     </form>
     <div class="contact-infos">
-      <p><i class="fas fa-phone-alt"></i> +33 6 23 13 62 65</p>
+      <p><i class="fas fa-phone"></i> +33 6 23 13 62 65</p>
       <p><i class="fas fa-envelope"></i> contact.sa.synergy@gmail.com</p>
       <div class="socials">
         <a href="https://www.instagram.com/andy.sari13/?igshid=ZDc4ODBmNjlmNQ%3D%3D" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -95,12 +83,12 @@
   <footer class="footer">
     <div class="footer-links">
       <a href="mentions_legales.html">Mentions légales</a> |
-      <a href="protection_donnees.html">Charte de protection des données personnelles</a> |
+      <a href="protection_donnees.html">Charte de protection des données</a> |
       <a href="cookies.html">Gestion des cookies</a> |
       <a href="cgv.html">Conditions Générales de Ventes</a>
     </div>
     <p class="signature">Andy Sari</p>
-    <p>© SA SYNERGY 2025 - Tous droits réservés</p>
+    <p>© SA SYNERGY 2021 - Tous droits réservés</p>
   </footer>
 
   <script src="script.js"></script>
