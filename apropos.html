@@ -3,44 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>À propos - SA Synergy</title>
+  <title>SA Synergy - À propos</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
+  <!-- Header identique à la page principale -->
   <header class="header">
-    <div class="logo-header">
-      <span class="logo-text">SA Synergy</span>
-    </div>
-    <nav class="nav">
+    <div class="logo-text">SA Synergy</div>
+    <nav class="nav-links">
       <ul>
-        <li><a href="index.html" class="nav-link">Accueil</a></li>
-        <li><a href="index.html#formations" class="nav-link">Formations</a></li>
-        <li><a href="apropos.html" class="nav-link">À propos</a></li>
-        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
-        <li><a href="index.html#espace-membres" class="nav-link espace-membres">Espace Membres</a></li>
+        <li><a href="index.html#hero">Accueil</a></li>
+        <li><a href="index.html#formations">Formations</a></li>
+        <li><a href="apropos.html" class="active">À propos</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="#membres" class="btn-members">Espace Membres</a></li>
       </ul>
     </nav>
+    <div class="burger"><span></span><span></span><span></span></div>
   </header>
 
-  <main class="apropos-main">
-    <div class="apropos-top">
+  <!-- Section à propos -->
+  <section id="apropos" class="apropos">
+    <div class="apropos-container">
+      <!-- Portrait à gauche -->
       <div class="portrait-container">
-        <img src="assets/andy.jpg" alt="Andy Sari" class="portrait-oval">
+        <img src="assets/andy.jpg" alt="Portrait Andy Sari" class="portrait">
       </div>
-      <div class="apropos-text">
+
+      <!-- Texte descriptif à droite -->
+      <div class="texte-apropos">
         <h2>À propos de moi</h2>
         <p>Plongez dans un univers captivant où le savoir rencontre la passion. Bienvenue sur SA Synergy, où l’excellence et la polyvalence ouvrent de nouvelles opportunités.</p>
-        <p>Je propose un accompagnement personnalisé et des formations adaptées pour permettre à chacun de progresser et performer dans ses projets professionnels.</p>
-        <p>La polyvalence et l'ouverture sur le monde créent des opportunités d'enrichissement personnel et professionnel. Elles offrent la possibilité d'explorer de nouveaux domaines, de développer de nouvelles passions et de se distinguer dans un marché du travail compétitif.</p>
-        <p>Pour cette raison, j'ai pour ambition de proposer des formations en lien avec le monde des affaires de la plus haute qualité, mises à jour régulièrement. L'objectif est de permettre à des étudiants et à des adultes de continuer à se former tout au long de leur vie sur des thématiques managériales, économiques, financières, mais aussi sociales.</p>
-      </div>
-    </div>
+        <p>Je propose un accompagnement personnalisé et des formations adaptées pour permettre à chacun de progresser et performer dans ses projets professionnels. La polyvalence et l'ouverture sur le monde créent des opportunités d'enrichissement personnel et professionnel. Elles offrent la possibilité d'explorer de nouveaux domaines, de développer de nouvelles passions et de se distinguer dans un marché du travail compétitif. Pour cette raison, j'ai pour ambition de proposer des formations en lien avec le monde des affaires de la plus haute qualité, mises à jour régulièrement. L'objectif est de permettre à des étudiants et à des adultes de continuer à se former tout au long de leur vie sur des thématiques managériales, économiques, financières, mais aussi sociales.</p>
 
-    <div class="apropos-bottom">
-      <div class="diplomes">
-        <h2>Diplômes et certifications</h2>
+        <h3>Diplômes et certifications</h3>
         <ul>
           <li>MBA Conseil, Audit, Contrôle de Gestion</li>
           <li>Excel Avancé</li>
@@ -52,21 +50,24 @@
           <li>BTS Management des Unités Commerciales</li>
         </ul>
       </div>
-      <div class="temoignages-container">
-        <h2 class="temoignages-title">Témoignages</h2>
-        <div id="temoignage-display" class="temoignage-display"></div>
-        <div class="temoignage-buttons">
-          <button class="prev">◀</button>
-          <button class="next">▶</button>
-        </div>
+    </div>
+
+    <!-- Slider témoignages à droite -->
+    <div class="temoignages-section">
+      <h2>Témoignages</h2>
+      <div id="temoignage-display"></div>
+      <div class="temoignages-controls">
+        <button class="prev">&#8592;</button>
+        <button class="next">&#8594;</button>
       </div>
     </div>
-  </main>
+  </section>
 
+  <!-- Footer identique à la page principale -->
   <footer class="footer">
     <div class="footer-links">
       <a href="mentions_legales.html">Mentions légales</a> |
-      <a href="protection_donnees.html">Charte de protection des données personnelles</a> |
+      <a href="protection_donnees.html">Charte de protection des données</a> |
       <a href="cookies.html">Gestion des cookies</a> |
       <a href="cgv.html">Conditions Générales de Ventes</a>
     </div>
