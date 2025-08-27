@@ -1,8 +1,9 @@
 /* =====================================================
    script.js
    - menu burger
-   - hero matrix text
+   - hero canvas (poussière d'étoiles verte / galaxie)
    - slider témoignages 1 à 1 (A propos)
+   - addTestimonial helper
    ===================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -16,60 +17,93 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ------------ HERO MATRIX TEXT ------------ */
-  const matrixContainer = document.querySelector(".hero-matrix");
-  if (matrixContainer) {
-    const phrases = [
-      "Bonjour et bienvenue sur mon site, je suis Andy Sari",
-      "Je vous accompagne avec des formations et un suivi personnalisés",
-      "Mon objectif est de vous aider à progresser et atteindre vos projets",
-      "N’hésitez pas à me contacter pour échanger dès maintenant"
-    ];
-    let index = 0;
-    let charIndex = 0;
-    let currentText = '';
-    let forward = true;
+  /* ------------ HERO CANVAS (particles) ------------ */
+  (function heroParticles() {
+    const canvas = document.getElementById("hero-canvas");
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    let width = canvas.width = canvas.offsetWidth;
+    let height = canvas.height = canvas.offsetHeight;
+    const particles = [];
+    const PARTICLE_COUNT = Math.round((width * height) / 60000); // density
 
-    function typeMatrix() {
-      if (forward) {
-        if (charIndex < phrases[index].length) {
-          currentText += phrases[index].charAt(charIndex);
-          charIndex++;
-          matrixContainer.textContent = currentText;
-          setTimeout(typeMatrix, 50);
-        } else {
-          forward = false;
-          setTimeout(typeMatrix, 5000); // stay full 5s
-        }
-      } else {
-        currentText = '';
-        charIndex = 0;
-        forward = true;
-        index = (index + 1) % phrases.length;
-        setTimeout(typeMatrix, 200);
+    function rand(min, max) { return Math.random() * (max - min) + min; }
+
+    function resize() {
+      width = canvas.width = canvas.offsetWidth;
+      height = canvas.height = canvas.offsetHeight;
+      // adjust number of particles
+      while (particles.length > Math.max(6, Math.round((width * height) / 60000))) particles.pop();
+      while (particles.length < Math.max(6, Math.round((width * height) / 60000))) particles.push(new Particle());
+    }
+
+    class Particle {
+      constructor() {
+        this.reset();
+      }
+      reset() {
+        this.x = rand(0, width);
+        this.y = rand(0, height);
+        this.vx = rand(-0.05, 0.05);
+        this.vy = rand(-0.02, 0.02);
+        this.size = rand(0.6, 2.6);
+        this.alpha = rand(0.05, 0.6);
+        this.phase = rand(0, Math.PI * 2);
+        this.twinkleSpeed = rand(0.01, 0.05);
+      }
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        this.phase += this.twinkleSpeed;
+        this.alpha = 0.25 + 0.35 * Math.abs(Math.sin(this.phase));
+        // wrap
+        if (this.x < -10) this.x = width + 10;
+        if (this.x > width + 10) this.x = -10;
+        if (this.y < -10) this.y = height + 10;
+        if (this.y > height + 10) this.y = -10;
+      }
+      draw() {
+        const g = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size * 8);
+        g.addColorStop(0, `rgba(0,255,149,${this.alpha})`);
+        g.addColorStop(0.35, `rgba(0,255,149,${this.alpha * 0.35})`);
+        g.addColorStop(1, 'rgba(0,255,149,0)');
+        ctx.fillStyle = g;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size * 4, 0, Math.PI * 2);
+        ctx.fill();
       }
     }
 
-    typeMatrix();
-  }
+    for (let i = 0; i < Math.max(6, Math.round((width * height) / 60000)); i++) particles.push(new Particle());
 
-  /* ------------ SMOOTH SCROLL FIX ------------ */
-  const headerLinks = document.querySelectorAll(".nav-links a");
-  headerLinks.forEach(link => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute("href").substring(1);
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 0, // ajuster si header sticky
-          behavior: "smooth"
-        });
+    let raf;
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+      // subtle background vignette to give depth
+      const bg = ctx.createLinearGradient(0, 0, 0, height);
+      bg.addColorStop(0, 'rgba(0,0,0,0)');
+      bg.addColorStop(1, 'rgba(0,0,0,0.25)');
+      ctx.fillStyle = bg;
+      ctx.fillRect(0, 0, width, height);
+
+      // draw particles
+      for (let p of particles) {
+        p.update();
+        p.draw();
       }
-    });
-  });
+      raf = requestAnimationFrame(animate);
+    }
 
-  /* ------------ TESTIMONIALS SLIDER (A PROPOS) ------------ */
+    // responsiveness
+    window.addEventListener('resize', () => {
+      resize();
+    });
+
+    resize();
+    animate();
+  })();
+
+  /* ------------ TESTIMONIALS SLIDER (apropos) ------------ */
   const testimonies = [
     {
       nom: "Tom",
@@ -115,6 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   ];
 
+  // only run if #temoignage-display exists (on apropos page)
   const display = document.getElementById("temoignage-display");
   const prevBtn = document.querySelector(".prev");
   const nextBtn = document.querySelector(".next");
@@ -146,4 +181,18 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addTestimonial = function (nom, role, texte, imagePath) {
     testimonies.push({ nom, role, texte, image: imagePath });
   };
+
+  /* optional: fade-in for sections with class .fade-in */
+  const faders = document.querySelectorAll('.fade-in');
+  if ('IntersectionObserver' in window && faders.length) {
+    const obs = new IntersectionObserver((entries, ob) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          ob.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.18 });
+    faders.forEach(el => obs.observe(el));
+  }
 });
