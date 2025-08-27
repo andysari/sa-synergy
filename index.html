@@ -1,67 +1,138 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SA Synergy</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SA Synergy - Formations & Accompagnement</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
 </head>
 <body>
-  <!-- Bandeau supérieur -->
-  <header class="navbar">
-    <div class="logo">SA Synergy</div>
-    <nav>
-      <ul>
-        <li><a href="#hero">Accueil</a></li>
-        <li><a href="#formations">Formations</a></li>
-        <li><a href="apropos.html">À propos</a></li>
-        <li><a href="#contact" class="highlight">Espace Membres</a></li>
-      </ul>
-    </nav>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="nav-wrap">
+      <div class="nav-logo">SA Synergy</div>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#hero">Accueil</a></li>
+          <li><a href="#formations">Formations</a></li>
+          <li><a href="apropos.html">À propos</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="espace-membres.html" class="btn-espace">Espace Membres</a></li>
+        </ul>
+      </nav>
+
+      <button class="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </header>
 
-  <!-- Section Hero -->
-  <section id="hero">
-    <div class="hero-content">
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <!-- canvas animé (poussière d'étoiles) -->
+    <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+
+    <!-- logo + contenu -->
+    <div class="hero-inner">
       <img src="assets/logo.png" alt="Logo SA Synergy" class="hero-logo">
-      <h1>Bienvenue sur SA Synergy</h1>
-      <p>Votre partenaire en formation et accompagnement</p>
-    </div>
-    <div id="stars"></div>
-  </section>
-
-  <!-- Section Formations -->
-  <section id="formations">
-    <h2>Nos Formations</h2>
-    <div class="formations-grid">
-      <div class="formation-card">Formations longues</div>
-      <div class="formation-card">Formations courtes</div>
-      <div class="formation-card">Coaching individuel</div>
-      <div class="formation-card">Séminaires</div>
+      <div class="hero-content">
+        <h1>Découvrez votre potentiel avec <span>SA Synergy</span></h1>
+        <p class="slogan">Apprenez, Progressez, Performez</p>
+      </div>
     </div>
   </section>
 
-  <!-- Section Contact -->
-  <section id="contact">
+  <!-- FORMATIONS -->
+  <section id="formations" class="formations">
+    <h2>Des formations adaptées à vos ambitions</h2>
+
+    <div class="cards">
+      <article class="card">
+        <h3>À la carte</h3>
+        <p>Comptabilité, analyse financière, gestion de budget et investissement financier.</p>
+      </article>
+
+      <article class="card">
+        <h3>Formations longues</h3>
+        <p>Bureautique, création et gestion d'entreprise, management et leadership.</p>
+      </article>
+
+      <article class="card">
+        <h3>Modules autonomes en ligne</h3>
+        <p>Cours audio, écrits et vidéos, études de cas en cours de création.</p>
+      </article>
+
+      <article class="card">
+        <h3>Développement commercial</h3>
+        <p>Création/refonte de site internet, stratégie business et analyse financière & économique.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
     <h2>Travaillons ensemble</h2>
-    <div class="contact-info">
-      <p>Téléphone : <a href="tel:+33000000000">+33 0 00 00 00 00</a></p>
-      <p>Email : <a href="mailto:contact@sasynergy.com">contact@sasynergy.com</a></p>
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/andy-sari-39a935117/" target="_blank">
-          <img src="assets/linkedin.png" alt="LinkedIn">
+
+    <form class="contact-form" aria-disabled="true">
+      <div class="field">
+        <input type="text" placeholder="Votre nom" disabled>
+        <span class="hover-warning">Formulaire de contact non fonctionnel pour l'instant</span>
+      </div>
+
+      <div class="field">
+        <input type="email" placeholder="Votre email" disabled>
+        <span class="hover-warning">Formulaire de contact non fonctionnel pour l'instant</span>
+      </div>
+
+      <div class="field">
+        <textarea rows="5" placeholder="Votre message" disabled></textarea>
+        <span class="hover-warning">Formulaire de contact non fonctionnel pour l'instant</span>
+      </div>
+
+      <button class="btn-primary" disabled>Envoyer</button>
+    </form>
+
+    <div class="contact-infos">
+      <div class="contact-lines">
+        <p class="tel"><i class="fa-solid fa-phone"></i> <a href="tel:+33623136265">+33 6 23 13 62 65</a></p>
+        <p class="mail"><i class="fa-solid fa-envelope"></i> <a href="mailto:contact.sa.synergy@gmail.com">contact.sa.synergy@gmail.com</a></p>
+      </div>
+
+      <div class="socials">
+        <a href="https://www.instagram.com/andy.sari13/?igshid=ZDc4ODBmNjlmNQ%3D%3D" target="_blank" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
         </a>
-        <a href="https://www.instagram.com/andy.sari13/?igshid=ZDc4ODBmNjlmNQ%3D%3D" target="_blank">
-          <img src="assets/instagram.png" alt="Instagram">
+        <a href="https://www.linkedin.com/in/andy-sari-39a935117/" target="_blank" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>© SA SYNERGY 2021 - Tous droits réservés</p>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="mentions_legales.html">Mentions légales</a>
+      <span> - </span>
+      <a href="protection_donnees.html">Charte de protection des données</a>
+      <span> - </span>
+      <a href="cookies.html">Gestion des cookies</a>
+      <span> - </span>
+      <a href="cgv.html">CGV</a>
+    </div>
+    <div class="footer-bottom">
+      <p class="signature">Andy Sari</p>
+      <p class="copyright">© SA SYNERGY 2021 - Tous droits réservés</p>
+    </div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
