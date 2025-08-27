@@ -6,94 +6,80 @@ body {
   color: #fff;
 }
 
-header {
-  background: #111;
-  padding: 10px 20px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-nav {
+/* Navbar */
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 15px 50px;
+  background: #111;
+  position: sticky;
+  top: 0;
 }
 
 .logo {
-  color: #00cc66;
+  font-size: 1.5rem;
   font-weight: bold;
-  font-size: 1.5em;
+  color: #0f0;
 }
 
-nav ul {
-  list-style: none;
+.navbar ul {
   display: flex;
-  gap: 20px;
+  list-style: none;
   margin: 0;
   padding: 0;
 }
 
-nav ul li a {
-  color: white;
+.navbar li {
+  margin-left: 20px;
+}
+
+.navbar a {
+  color: #fff;
   text-decoration: none;
+  padding: 5px 10px;
   transition: all 0.3s;
 }
 
-nav ul li a:hover {
-  background: rgba(0, 204, 102, 0.2);
-  padding: 5px 10px;
+.navbar a:hover {
+  background: #0f0;
+  color: #000;
   border-radius: 5px;
 }
 
-.btn-membre {
-  border: 2px solid #00cc66;
-  padding: 5px 10px;
-  border-radius: 5px;
+.navbar .highlight {
+  border: 2px solid #0f0;
+  padding: 5px 15px;
+  border-radius: 20px;
 }
 
-/* Section Hero */
+/* Hero */
 #hero {
   position: relative;
-  height: 90vh;
+  height: 80vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  overflow: hidden;
-}
-
-#matrix-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
-
-.hero-container {
-  display: flex;
-  z-index: 1;
   align-items: center;
-  gap: 50px;
+  text-align: center;
+  background: radial-gradient(circle, rgba(0,255,0,0.15), transparent);
 }
 
 .hero-logo {
-  max-width: 300px;
-  border-radius: 50%;
+  max-width: 250px;
+  margin-bottom: 20px;
 }
 
-.matrix-text {
-  font-family: monospace;
-  font-size: 1.2em;
-  color: #00ff66;
-  white-space: pre-line;
-  min-width: 300px;
+#stars {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: transparent;
+  pointer-events: none;
 }
 
 /* Formations */
 #formations {
-  padding: 50px;
+  padding: 60px 20px;
   text-align: center;
 }
 
@@ -101,95 +87,101 @@ nav ul li a:hover {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-  max-width: 800px;
-  margin: auto;
+  margin-top: 30px;
 }
 
 .formation-card {
   background: #111;
-  padding: 30px;
-  border-radius: 10px;
-  border: 1px solid #00cc66;
-  font-size: 1.1em;
+  padding: 40px;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+.formation-card:hover {
+  transform: scale(1.05);
+  background: #0f0;
+  color: #000;
 }
 
 /* Contact */
 #contact {
-  padding: 40px;
+  padding: 60px 20px;
   text-align: center;
+}
+
+.contact-info {
+  margin-top: 20px;
 }
 
 .social-links img {
   width: 40px;
-  margin: 10px;
-  transition: transform 0.3s;
-}
-
-.social-links img:hover {
-  transform: scale(1.2);
+  margin: 0 10px;
 }
 
 /* Footer */
 footer {
   background: #111;
-  padding: 10px;
+  padding: 15px;
   text-align: center;
+  font-size: 0.9rem;
 }
 
-/* Page À propos */
-.apropos-container {
-  display: flex;
-  justify-content: space-between;
-  padding: 50px;
-  gap: 50px;
+/* À propos */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 60px;
 }
 
-.apropos-left, .apropos-right {
-  flex: 1;
-}
-
-.portrait {
-  width: 100%;
-  max-width: 300px;
+.portrait img {
+  max-width: 100%;
   border-radius: 50%;
-  box-shadow: 0 0 20px #00cc66;
+  box-shadow: 0 0 20px #0f0;
 }
 
-.diplomes-list {
-  margin-top: 20px;
-}
-
-.temoignages-title {
+.testimonials {
   text-align: center;
-  margin-top: 30px;
 }
 
-.temoignages-container {
-  display: flex;
+.testimonial-slider {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+}
+
+.testimonial {
+  display: none;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-
-.temoignage {
-  max-width: 300px;
-  background: #111;
+  text-align: justify;
   padding: 20px;
   border-radius: 10px;
-  border: 1px solid #00cc66;
-  text-align: justify;
-  transition: all 0.3s;
+  background: #111;
+  height: 100%;
 }
 
-.temoignage img {
-  width: 60px;
+.testimonial.active {
+  display: flex;
+}
+
+.testimonial img {
+  width: 80px;
   border-radius: 50%;
   margin-bottom: 10px;
 }
 
-.temoignage span {
-  display: block;
+.testimonial-controls {
   margin-top: 10px;
-  font-style: italic;
-  font-size: 0.9em;
+}
+
+.testimonial-controls button {
+  background: #0f0;
+  border: none;
+  padding: 5px 15px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 5px;
 }
