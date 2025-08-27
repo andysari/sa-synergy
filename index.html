@@ -5,43 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SA Synergy</title>
   <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <!-- Bandeau -->
-  <header>
+  <!-- Bandeau supérieur -->
+  <header class="navbar">
+    <div class="logo">SA Synergy</div>
     <nav>
-      <div class="logo">SA Synergy</div>
       <ul>
         <li><a href="#hero">Accueil</a></li>
         <li><a href="#formations">Formations</a></li>
-        <li><a href="#contact">Travaillons ensemble</a></li>
         <li><a href="apropos.html">À propos</a></li>
-        <li><a href="#" class="btn-membre">Espace Membres</a></li>
+        <li><a href="#contact" class="highlight">Espace Membres</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- Section Hero -->
   <section id="hero">
-    <canvas id="matrix-bg"></canvas>
-    <div class="hero-container">
-      <div class="hero-left">
-        <img src="assets/logo.png" alt="Logo SA Synergy" class="hero-logo">
-      </div>
-      <div class="hero-right">
-        <div class="matrix-text"></div>
-      </div>
+    <div class="hero-content">
+      <img src="assets/logo.png" alt="Logo SA Synergy" class="hero-logo">
+      <h1>Bienvenue sur SA Synergy</h1>
+      <p>Votre partenaire en formation et accompagnement</p>
     </div>
+    <div id="stars"></div>
   </section>
 
   <!-- Section Formations -->
   <section id="formations">
-    <h2>Formations</h2>
+    <h2>Nos Formations</h2>
     <div class="formations-grid">
       <div class="formation-card">Formations longues</div>
       <div class="formation-card">Formations courtes</div>
-      <div class="formation-card">Modules spécialisés</div>
       <div class="formation-card">Coaching individuel</div>
+      <div class="formation-card">Séminaires</div>
     </div>
   </section>
 
@@ -49,8 +46,8 @@
   <section id="contact">
     <h2>Travaillons ensemble</h2>
     <div class="contact-info">
-      <p><strong>Téléphone :</strong> +33 6 12 34 56 78</p>
-      <p><strong>Email :</strong> contact@sasynergy.com</p>
+      <p>Téléphone : <a href="tel:+33000000000">+33 0 00 00 00 00</a></p>
+      <p>Email : <a href="mailto:contact@sasynergy.com">contact@sasynergy.com</a></p>
       <div class="social-links">
         <a href="https://www.linkedin.com/in/andy-sari-39a935117/" target="_blank">
           <img src="assets/linkedin.png" alt="LinkedIn">
@@ -66,7 +63,5 @@
   <footer>
     <p>© SA SYNERGY 2021 - Tous droits réservés</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
