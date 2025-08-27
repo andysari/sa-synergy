@@ -5,57 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>À propos - SA Synergy</title>
   <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <header>
+  <header class="navbar">
+    <div class="logo">SA Synergy</div>
     <nav>
-      <div class="logo">SA Synergy</div>
       <ul>
         <li><a href="index.html#hero">Accueil</a></li>
         <li><a href="index.html#formations">Formations</a></li>
-        <li><a href="index.html#contact">Travaillons ensemble</a></li>
-        <li><a href="apropos.html">À propos</a></li>
-        <li><a href="#" class="btn-membre">Espace Membres</a></li>
+        <li><a href="apropos.html" class="active">À propos</a></li>
+        <li><a href="index.html#contact" class="highlight">Espace Membres</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="apropos-container">
-    <div class="apropos-left">
-      <img src="assets/portrait.jpg" alt="Portrait" class="portrait">
-      <h2>Diplômes et certifications</h2>
-      <ul class="diplomes-list">
-        <li>Certification en Management</li>
-        <li>Master en Finance</li>
-        <li>Diplôme en Économie</li>
-        <li>Autres certifications professionnelles</li>
-      </ul>
-    </div>
-    <div class="apropos-right">
-      <h2>À propos de moi</h2>
-      <p>
-        Plongez dans un univers captivant où le savoir rencontre la passion. Bienvenue sur SA Synergy, où l’excellence et la polyvalence ouvrent de nouvelles opportunités.  
-        Je propose un accompagnement personnalisé et des formations adaptées pour permettre à chacun de progresser et performer dans ses projets professionnels.  
-        La polyvalence et l'ouverture sur le monde créent des opportunités d'enrichissement personnel et professionnel. Elles offrent la possibilité d'explorer de nouveaux domaines, de développer de nouvelles passions et de se distinguer dans un marché du travail compétitif. Pour cette raison, j'ai pour ambition de proposer des formations en lien avec le monde des affaires de la plus haute qualité, mises à jour régulièrement.  
-        L'objectif est de permettre à des étudiants et à des adultes de continuer à se former tout au long de leur vie sur des thématiques managériales, économiques, financières, mais aussi sociales.
-      </p>
-      <h2 class="temoignages-title">Témoignages</h2>
-      <div class="temoignages-container">
-        <button class="prev">❮</button>
-        <div class="temoignage">
-          <img src="assets/tom.jpg" alt="Tom">
-          <p>Andy est exceptionnel. Sa passion et son dévouement sont inspirants. [...]</p>
-          <span>Tom, Entrepreneur</span>
+  <section id="about">
+    <div class="about-grid">
+      <div class="portrait">
+        <img src="assets/portrait.jpg" alt="Portrait Andy">
+      </div>
+      <div class="about-text">
+        <h2>À propos de moi</h2>
+        <p>
+          Plongez dans un univers captivant où le savoir rencontre la passion. Bienvenue sur SA Synergy, où l’excellence et la polyvalence ouvrent de nouvelles opportunités.
+          Je propose un accompagnement personnalisé et des formations adaptées pour permettre à chacun de progresser et performer dans ses projets professionnels. [...]
+        </p>
+      </div>
+      <div class="certifications">
+        <h2>Diplômes et certifications</h2>
+        <ul>
+          <li>Certification 1</li>
+          <li>Certification 2</li>
+          <li>Certification 3</li>
+        </ul>
+      </div>
+      <div class="testimonials">
+        <h2>Témoignages</h2>
+        <div class="testimonial-slider">
+          <div class="testimonial">
+            <img src="assets/tom.jpg" alt="Tom">
+            <p>Andy est exceptionnel. Sa passion et son dévouement sont inspirants...</p>
+            <span>Tom, Entrepreneur</span>
+          </div>
+          <div class="testimonial">
+            <img src="assets/marina.jpg" alt="Marina">
+            <p>Andy and I collaborated in the development of my business in Athens...</p>
+            <span>Marina, Entrepreneur</span>
+          </div>
         </div>
-        <button class="next">❯</button>
+        <div class="testimonial-controls">
+          <button id="prev">←</button>
+          <button id="next">→</button>
+        </div>
       </div>
     </div>
-  </main>
-
-  <footer>
-    <p>© SA SYNERGY 2021 - Tous droits réservés</p>
-  </footer>
-
-  <script src="script.js"></script>
+  </section>
 </body>
 </html>
