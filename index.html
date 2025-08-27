@@ -5,50 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SA Synergy - Formations et Accompagnement</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  <!-- Header avec navigation -->
+  <!-- Header -->
   <header class="header">
-    <div class="logo-header">
-      <span class="logo-text">SA Synergy</span>
-    </div>
+    <div class="logo-text">SA Synergy</div>
     <nav class="nav">
       <ul>
-        <li><a href="#hero" class="nav-link">Accueil</a></li>
-        <li><a href="#formations" class="nav-link">Formations</a></li>
-        <li><a href="apropos.html" class="nav-link">À propos</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-        <li><a href="#espace-membres" class="nav-link espace-membres">Espace Membres</a></li>
+        <li><a href="#hero">Accueil</a></li>
+        <li><a href="#formations">Formations</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#espace-membres" class="btn-membres">Espace Membres</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- Hero Section -->
   <section id="hero" class="hero">
-    <div class="hero-content">
-      <div class="hero-left">
-        <img src="assets/logo.png" alt="Logo SA Synergy" class="hero-logo">
-      </div>
-      <div class="hero-right">
-        <h1>Apprenez, Progressez, Performez</h1>
-        <p>Formations premium, accompagnement personnalisé et expertise reconnue.</p>
-        <div class="matrix-text">
-          <span class="matrix-line">Bonjour et bienvenue sur mon site, je suis Andy Sari</span>
-          <span class="matrix-line">Je vous accompagne avec des formations et un suivi personnalisés</span>
-          <span class="matrix-line">Mon objectif est de vous aider à progresser et atteindre vos projets</span>
-          <span class="matrix-line">N’hésitez pas à me contacter pour échanger dès maintenant</span>
-        </div>
+    <div class="hero-left">
+      <img src="assets/logo.png" alt="SA Synergy Logo" class="hero-logo">
+      <h1>Apprenez, progressez, performez</h1>
+      <p>Formations premium et accompagnement personnalisé</p>
+    </div>
+    <div class="hero-right">
+      <div class="matrix-text">
+        <p>Bonjour et bienvenue sur mon site, je suis Andy Sari</p>
+        <p>Je vous accompagne avec des formations et un suivi personnalisés</p>
+        <p>Mon objectif est de vous aider à progresser et atteindre vos projets</p>
+        <p>N’hésitez pas à me contacter pour échanger dès maintenant</p>
       </div>
     </div>
   </section>
 
-  <!-- Formations Section -->
+  <!-- Formations -->
   <section id="formations" class="formations">
     <h2>Des formations adaptées à vos ambitions</h2>
-    <div class="cards-grid">
+    <div class="cards">
       <div class="card">
         <h3>À la carte</h3>
         <p>Comptabilité, analyse financière, gestion de budget et investissement financier.</p>
@@ -72,18 +66,18 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Contact -->
   <section id="contact" class="contact">
     <h2>Travaillons ensemble</h2>
-    <form class="contact-form">
+    <form>
       <input type="text" name="name" placeholder="Votre nom" disabled>
       <input type="email" name="email" placeholder="Votre email" disabled>
       <textarea name="message" placeholder="Votre message" disabled></textarea>
-      <p class="disabled-text">Formulaire de contact non fonctionnel pour l'instant</p>
+      <button type="submit" disabled>Envoyer</button>
     </form>
     <div class="contact-infos">
-      <p>📞 +33 6 23 13 62 65</p>
-      <p>📧 contact.sa.synergy@gmail.com</p>
+      <p><span class="icon">📞</span> +33 6 23 13 62 65</p>
+      <p><span class="icon">✉️</span> contact.sa.synergy@gmail.com</p>
       <div class="socials">
         <a href="https://www.instagram.com/andy.sari13/" target="_blank"><img src="assets/instagram.png" alt="Instagram"></a>
         <a href="https://www.linkedin.com/in/andy-sari-39a935117/" target="_blank"><img src="assets/linkedin.png" alt="LinkedIn"></a>
