@@ -37,25 +37,15 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 1px 0 rgba(255,255,255,0.02);
 }
 .nav-wrap{
-  max-width:1200px; margin:0 auto; padding:12px 20px; display:flex; align-items:center; gap:20px; justify-content:center; position:relative;
+  max-width:1200px; margin:0 auto; padding:12px 20px; display:flex; align-items:center; gap:12px; justify-content:center; position:relative;
 }
-
-/* Logo dans le header */
-.nav-logo {
-  display: flex;
-  align-items: center;
-  font-weight: 700;
-  color: #fff;
-  font-family: 'Playfair Display', serif;
-  gap: 6px; /* espace entre logo et texte */
+.header-logo{
+  width:40px;
+  height:40px;
+  object-fit: contain;
+  margin-right: 12px;
 }
-.nav-logo img.header-logo {
-  width: 36px;
-  height: 36px;
-  vertical-align: middle;
-}
-
-/* navigation */
+.nav-logo{ font-weight:700; color:#fff; font-family:'Playfair Display', serif; }
 nav{ display:block; }
 .nav-links{ display:flex; gap:18px; list-style:none; align-items:center; justify-content:center; }
 .nav-links a{ padding:8px 12px; border-radius:6px; color:#f5f5f5; font-weight:600; }
@@ -71,12 +61,9 @@ nav{ display:block; }
 
 /* ---------- HERO ---------- */
 .hero{ position:relative; overflow:hidden; text-align:center; padding:70px 20px 40px 20px; min-height:460px; }
-/* canvas retiré */
-
-/* logo + contenu */
 .hero-inner{ position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; gap:12px; max-width:1100px; margin:0 auto; }
 .hero-logo{
-  width: 200px;       /* réduit pour rentrer dans le cadre ovale */
+  width: 200px;
   max-width: 45%; 
   border-radius:50%;
   background:transparent;
@@ -108,7 +95,6 @@ nav{ display:block; }
 .contact-lines p{ margin:0; color:#ddd; font-size:0.96rem; }
 .contact-lines a{ color:#ddd; text-decoration:none; }
 
-/* socials white square icons */
 .socials{ display:flex; gap:10px; margin-top:8px; }
 .socials a{ display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:8px; background:#fff; color:#000; transition:all .25s; }
 .socials a:hover{ background:var(--accent); color:#0b0b0b; transform:translateY(-3px); }
@@ -125,36 +111,53 @@ nav{ display:block; }
    ============================================================ */
 .apropos-grid{ display:grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; grid-template-areas:"portrait description" "diplomes temoignages"; gap:28px; padding:48px; max-width:1180px; margin:0 auto; }
 
-/* portrait */
 .portrait{ grid-area:portrait; display:flex; align-items:center; justify-content:center; }
-.portrait-img{ width:100%; max-width:460px; height:auto; aspect-ratio:1/1; border-radius:50%; object-fit:cover; border:4px solid var(--accent); box-shadow:0 10px 40px rgba(0,255,149,0.18); }
+.portrait-img{ width:100%; max-width:420px; height:auto; aspect-ratio:1/1; border-radius:50%; object-fit:cover; border:4px solid var(--accent); box-shadow:0 10px 40px rgba(0,255,149,0.18); }
 
-/* description */
 .description{ grid-area:description; padding:6px 10px; }
 .description h2{ color:var(--accent); font-size:1.6rem; margin-bottom:12px; }
 .description p{ color:#ddd; text-align:justify; margin-bottom:10px; line-height:1.6; }
 
-/* diplomes */
 .diplomes{ grid-area:diplomes; padding:8px 10px; }
 .diplomes h2{ color:var(--accent); font-size:1.6rem; margin-bottom:12px; text-align:left; }
 .diplomes ul{ list-style:none; padding-left:0; color:#ddd; }
 .diplomes li{ position:relative; padding-left:20px; margin-bottom:8px; }
 .diplomes li::before{ content:"✔"; position:absolute; left:0; color:var(--accent); }
 
-/* temoignages (bottom-right) */
 .temoignages{ grid-area:temoignages; padding:8px 10px; display:flex; flex-direction:column; gap:10px; }
 .temoignages-title{ text-align:center; color:var(--accent); font-size:1.6rem; margin-bottom:6px; }
 
-/* wrapper */
 .temoignage-wrapper{ display:flex; align-items:center; gap:10px; justify-content:center; }
-.temoignage{ width:100%; max-width:460px; min-height:360px; background:#171717; border-radius:12px; padding:18px; box-shadow:0 6px 24px rgba(0,0,0,0.6); overflow:hidden; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; }
-.temoignage-img{ width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:12px; border:3px solid var(--accent); }
+.temoignage{
+  width:100%;
+  max-width:420px;
+  min-height:380px;
+  background:#171717;
+  border-radius:12px;
+  padding:20px;
+  box-shadow:0 6px 24px rgba(0,0,0,0.6);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+}
+
+.temoignage-img{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:12px;
+  border:3px solid var(--accent);
+}
+
 .temoignage-text{ font-size:0.98rem; color:#ddd; text-align:justify; line-height:1.5; margin-bottom:18px; }
+
 .temoignage-footer{ margin-top:auto; width:100%; text-align:center; font-weight:600; color:#eee; border-top:1px dashed rgba(255,255,255,0.03); padding-top:8px; font-size:0.95rem; }
 
-/* nav buttons */
 .prev, .next{ background:transparent; border:2px solid var(--accent); color:var(--accent); padding:8px 12px; border-radius:8px; cursor:pointer; font-size:1.2rem; }
-.prev:hover, .next:hover{ background:var(--accent); color:#0b0b0b; transform:translateY(-3px); }
+.prev:hover, .next:hover{ background:var(--accent); color:#000; transform:translateY(-3px); }
 
 /* ============================================================
    RESPONSIVE
@@ -163,13 +166,14 @@ nav{ display:block; }
 @media (max-width: 900px){
   .nav-links{ display:none; position:absolute; left:0; right:0; top:62px; background:var(--anthracite); flex-direction:column; padding:12px 20px; gap:8px; }
   .burger{ display:block; }
+  .nav-links.show{ display:flex; }
 
   .cards{ grid-template-columns: 1fr; gap:16px; max-width:720px; }
   .hero{ padding:56px 18px 36px 18px; min-height:380px; }
   .hero-logo{ width:160px; }
 
   .apropos-grid{ grid-template-columns: 1fr; grid-template-areas: "portrait" "description" "diplomes" "temoignages"; gap:20px; padding:28px; }
-  .temoignage{ max-width:100%; min-height:260px; }
+  .temoignage{ max-width:100%; min-height:300px; }
   .temoignage-img{ width:100px; height:100px; }
   .temoignage-footer{ font-size:0.92rem; }
 }
