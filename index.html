@@ -3,25 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SA Synergy - Formations et accompagnement</title>
+  <title>SA Synergy - Formations & Accompagnement</title>
 
-  <!-- Google Fonts + Font Awesome -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- ===== HEADER ===== -->
+  <!-- HEADER -->
   <header class="header">
     <div class="nav-wrap">
-      <div class="nav-logo">
-        <img src="assets/logo.png" alt="Logo SA Synergy" class="nav-logo-img">
-        <span class="nav-logo-text">SA Synergy</span>
-      </div>
+      <div class="nav-logo">SA Synergy</div>
+
       <nav>
         <ul class="nav-links">
-          <li><a href="index.html">Accueil</a></li>
+          <li><a href="#hero">Accueil</a></li>
           <li><a href="#formations">Formations</a></li>
           <li><a href="apropos.html">À propos</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -35,51 +34,84 @@
     </div>
   </header>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Développez vos compétences avec SA Synergy</h1>
-      <p>Formations professionnelles en management, finance et entrepreneuriat.</p>
-      <a href="#formations" class="btn-primary">Découvrir les formations</a>
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="hero-inner">
+      <img src="assets/logo.png" alt="Logo SA Synergy" class="hero-logo">
+      <div class="hero-content">
+        <h1>Découvrez votre potentiel avec <span>SA Synergy</span></h1>
+        <p class="slogan">Apprenez, Progressez, Performez</p>
+      </div>
     </div>
   </section>
 
-  <!-- ===== FORMATIONS ===== -->
+  <!-- FORMATIONS -->
   <section id="formations" class="formations">
-    <h2>Nos Formations</h2>
-    <div class="formations-grid">
-      <article class="formation-card">
-        <i class="fa-solid fa-chart-line formation-icon"></i>
-        <h3>Management</h3>
-        <p>Développez vos compétences en gestion d’équipe et en stratégie organisationnelle.</p>
+    <h2>Des formations adaptées à vos ambitions</h2>
+    <div class="cards">
+      <article class="card">
+        <h3>À la carte</h3>
+        <p>Comptabilité, analyse financière, gestion de budget et investissement financier.</p>
       </article>
 
-      <article class="formation-card">
-        <i class="fa-solid fa-coins formation-icon"></i>
-        <h3>Finance</h3>
-        <p>Maîtrisez l’analyse financière, la gestion budgétaire et la performance économique.</p>
+      <article class="card">
+        <h3>Formations longues</h3>
+        <p>Bureautique, création et gestion d'entreprise, management et leadership.</p>
       </article>
 
-      <article class="formation-card">
-        <i class="fa-solid fa-lightbulb formation-icon"></i>
-        <h3>Entrepreneuriat</h3>
-        <p>Apprenez à lancer, gérer et développer un projet entrepreneurial innovant.</p>
+      <article class="card">
+        <h3>Modules autonomes en ligne</h3>
+        <p>Cours audio, écrits et vidéos, études de cas en cours de création.</p>
+      </article>
+
+      <article class="card">
+        <h3>Développement commercial</h3>
+        <p>Création/refonte de site internet, stratégie business et analyse financière & économique.</p>
       </article>
     </div>
   </section>
 
-  <!-- ===== CONTACT ===== -->
+  <!-- CONTACT -->
   <section id="contact" class="contact">
-    <h2>Contactez-moi</h2>
-    <form class="contact-form">
-      <input type="text" name="nom" placeholder="Votre nom" required>
-      <input type="email" name="email" placeholder="Votre email" required>
-      <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
-      <button type="submit" class="btn-primary">Envoyer</button>
+    <h2>Travaillons ensemble</h2>
+
+    <form class="contact-form" aria-disabled="true">
+      <div class="field">
+        <input type="text" placeholder="Votre nom" disabled>
+        <span class="hover-warning">Formulaire de contact non fonctionnel pour l'instant</span>
+      </div>
+
+      <div class="field">
+        <input type="email" placeholder="Votre email" disabled>
+        <span class="hover-warning">Formulaire de contact non fonctionnel pour l'instant</span>
+      </div>
+
+      <div class="field">
+        <textarea rows="5" placeholder="Votre message" disabled></textarea>
+        <span class="hover-warning">Formulaire de contact non fonctionnel pour l'instant</span>
+      </div>
+
+      <button class="btn-primary" disabled>Envoyer</button>
     </form>
+
+    <div class="contact-infos">
+      <div class="contact-lines">
+        <p class="tel"><i class="fa-solid fa-phone"></i> <a href="tel:+33623136265">+33 6 23 13 62 65</a></p>
+        <p class="mail"><i class="fa-solid fa-envelope"></i> <a href="mailto:contact.sa.synergy@gmail.com">contact.sa.synergy@gmail.com</a></p>
+      </div>
+
+      <div class="socials">
+        <a href="https://www.instagram.com/andy.sari13/?igshid=ZDc4ODBmNjlmNQ%3D%3D" target="_blank" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/andy-sari-39a935117/" target="_blank" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-links">
       <a href="mentions_legales.html">Mentions légales</a>
@@ -90,7 +122,6 @@
       <span> - </span>
       <a href="cgv.html">CGV</a>
     </div>
-
     <div class="footer-bottom">
       <p class="signature">Andy Sari</p>
       <p class="copyright">© SA SYNERGY 2021 - Tous droits réservés</p>
