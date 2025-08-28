@@ -1,164 +1,217 @@
-/* ============================================================
-   STYLE GLOBAL
-   palette : anthracite / blanc cassé / vert fluo (#00ff95)
-   ============================================================ */
-
-/* Reset basique */
-* { box-sizing: border-box; margin: 0; padding: 0; }
+/* =========================
+   Variables et reset
+========================= */
 :root{
-  --bg:#121212;
-  --panel:#1a1a1a;
-  --anthracite:#2b2b2b;
-  --muted:#cfcfcf;
+  --bg:#0c0c0c;
   --accent:#00ff95;
-  --accent-soft: rgba(0,255,149,0.15);
-  --accent-strong: rgba(0,255,149,0.9);
+  --accent-dark:#009a5a;
+  --text:#f5f5f5;
+  --font:'Segoe UI', Tahoma, sans-serif;
 }
-
-/* body */
+*{margin:0;padding:0;box-sizing:border-box}
 body{
-  font-family: 'Inter', sans-serif;
-  background: var(--bg);
-  color: #f5f5f5;
+  font-family:var(--font);
+  background:var(--bg);
+  color:var(--text);
   line-height:1.6;
+  overflow-x:hidden;
 }
 
-/* links & common */
-a { color: inherit; text-decoration: none; }
-.btn-espace { border: 2px solid var(--accent); padding: 6px 10px; border-radius: 8px; color: #fff; display:inline-block; }
-.btn-espace:hover { background: var(--accent); color:#0b0b0b; }
-
-/* ---------- HEADER ---------- */
-.header{
-  background: var(--anthracite);
-  position: sticky;
-  top:0;
+/* =========================
+   Header
+========================= */
+header{
+  position:fixed;
+  top:0;left:0;width:100%;
+  display:flex;align-items:center;justify-content:space-between;
+  background:#111;
+  padding:14px 6%;
   z-index:1000;
-  box-shadow: 0 1px 0 rgba(255,255,255,0.02);
 }
-.nav-wrap{
-  max-width:1200px; margin:0 auto; padding:12px 20px; display:flex; align-items:center; gap:20px; justify-content:center; position:relative;
+header .logo-container{
+  display:flex;align-items:center;gap:8px;
 }
-.nav-logo{ font-weight:700; color:#fff; font-family:'Playfair Display', serif; }
-nav{ display:block; }
-.nav-links{ display:flex; gap:18px; list-style:none; align-items:center; justify-content:center; }
-.nav-links a{ padding:8px 12px; border-radius:6px; color:#f5f5f5; font-weight:600; }
-.nav-links a:hover{
-  background: linear-gradient(180deg, rgba(0,255,149,0.25), rgba(0,255,149,0.12));
-  color:#0b0b0b;
-  box-shadow:0 10px 30px rgba(0,255,149,0.06);
+header .logo{
+  height:40px;width:auto;display:block;
+}
+header h1{
+  font-size:1.4rem;font-weight:700;
+  color:var(--accent-dark);
+}
+.nav-links{
+  display:flex;gap:20px;list-style:none;
+}
+.nav-links li a{
+  text-decoration:none;
+  color:var(--text);
+  font-weight:500;
+  transition:color .3s;
+}
+.nav-links li a:hover{color:var(--accent)}
+.burger{display:none;cursor:pointer;flex-direction:column;gap:5px;}
+.burger span{display:block;width:25px;height:3px;background:#fff;transition:.3s;}
+
+/* =========================
+   Hero
+========================= */
+.hero{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:0 20px;
+}
+.hero h2{font-size:2.6rem;margin-bottom:12px}
+.hero p{font-size:1.2rem;max-width:700px;margin:0 auto 25px}
+
+/* =========================
+   Sections génériques
+========================= */
+section{
+  padding:100px 6%;
+}
+section h2{
+  font-size:2rem;
+  margin-bottom:40px;
+  text-align:center;
+  color:var(--accent);
 }
 
-/* burger */
-.burger{ position:absolute; right:18px; display:none; background:none; border:none; padding:6px; }
-.burger span{ display:block; width:22px; height:3px; background:#fff; margin:4px 0; border-radius:3px; }
-
-/* ---------- HERO ---------- */
-.hero{ position:relative; overflow:hidden; text-align:center; padding:70px 20px 40px 20px; min-height:460px; }
-/* canvas retiré */
-
-/* logo + contenu */
-.hero-inner{ position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; gap:12px; max-width:1100px; margin:0 auto; }
-.hero-logo{
-  width: 200px;       /* réduit pour rentrer dans le cadre ovale */
-  max-width: 45%; 
+/* =========================
+   A propos / Témoignages
+========================= */
+.temoignages-container{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.temoignage-wrapper{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  justify-content:center;
+}
+.temoignage{
+  width:100%;
+  max-width:460px;
+  min-height:380px;
+  background:#171717;
+  border-radius:12px;
+  padding:22px;
+  box-shadow:0 6px 24px rgba(0,0,0,0.6);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+}
+.temoignage-img{
+  width:140px;
+  height:140px;
   border-radius:50%;
-  background:transparent;
-  box-shadow: 0 0 50px rgba(0,255,149,0.35);
+  object-fit:cover;
+  margin-bottom:14px;
+  border:4px solid var(--accent);
+  box-shadow:0 10px 30px rgba(0,255,149,0.14);
 }
-.hero h1{ font-family:'Playfair Display', serif; font-size:2.8rem; margin-bottom:2px; }
-.hero .slogan{ font-size:1.35rem; font-weight:600; color:var(--muted); }
+.temoignage-name{
+  font-size:1.05rem;
+  margin:6px 0 2px;
+  text-align:center;
+  color:#fff;
+}
+.temoignage-role{
+  font-size:0.95rem;
+  color:#aaa;
+  margin-bottom:10px;
+  text-align:center;
+}
+.temoignage-text{
+  font-size:0.98rem;
+  color:#ddd;
+  text-align:justify;
+  line-height:1.6;
+  margin-bottom:18px;
+  min-height:120px;
+}
+.temoignage-footer{
+  margin-top:auto;
+  width:100%;
+  text-align:center;
+  font-weight:600;
+  color:#eee;
+  border-top:1px dashed rgba(255,255,255,0.03);
+  padding-top:8px;
+  font-size:0.95rem;
+}
+.slider-controls{
+  display:flex;gap:18px;margin-top:20px;
+}
+.slider-controls button{
+  background:var(--accent);
+  color:#000;
+  border:none;
+  padding:8px 16px;
+  border-radius:6px;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+}
+.slider-controls button:hover{background:var(--accent-dark);color:#fff}
 
-/* ---------- FORMATIONS ---------- */
-.formations{ background:var(--anthracite); padding:48px 20px; }
-.formations h2{ text-align:center; margin-bottom:28px; font-size:1.8rem; color:#fff; }
-.cards{ max-width:1100px; margin:0 auto; display:grid; grid-template-columns: repeat(2, minmax(260px, 1fr)); gap:14px; align-items:stretch; }
-.card{ background:var(--panel); padding:28px; border-radius:12px; box-shadow: 0 6px 20px rgba(0,0,0,0.5); transition: transform .28s ease, box-shadow .28s ease; display:flex; flex-direction:column; }
-.card h3{ font-size:1.5rem; color:var(--accent); margin-bottom:10px; }
-.card p{ font-size:1.06rem; color:#ddd; line-height:1.5; margin-bottom:10px; }
-.card:hover{ transform:translateY(-6px); box-shadow: 0 18px 40px rgba(0,255,149,0.08); }
+/* =========================
+   Contact form
+========================= */
+.contact form{
+  display:flex;
+  flex-direction:column;
+  max-width:500px;
+  margin:auto;
+  gap:14px;
+}
+.contact input,.contact textarea{
+  padding:12px;
+  border:none;
+  border-radius:6px;
+}
+.contact button{
+  padding:12px;
+  border:none;
+  border-radius:6px;
+  background:var(--accent);
+  font-weight:700;
+  cursor:pointer;
+  transition:.3s;
+}
+.contact button:hover{background:var(--accent-dark);color:#fff}
 
-/* ---------- CONTACT ---------- */
-.contact{ padding:36px 20px; text-align:center; }
-.contact h2{ margin-bottom:18px; font-size:1.6rem; }
-.contact-form{ max-width:520px; margin:0 auto 12px; }
-.field{ position:relative; margin-bottom:10px; }
-.field input, .field textarea{ width:100%; padding:12px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:#0f0f0f; color:#fff; resize:vertical; cursor:not-allowed; }
-.hover-warning{ display:none; position:absolute; right:8px; top:50%; transform:translateY(-50%); color:#ff6666; font-size:0.85rem; white-space:nowrap; }
-.field:hover .hover-warning{ display:inline-block; }
+/* =========================
+   Footer
+========================= */
+footer{
+  background:#111;
+  padding:30px 6%;
+  text-align:center;
+  color:#777;
+  font-size:.9rem;
+}
 
-.contact-infos{ display:flex; flex-direction:column; align-items:center; gap:6px; margin-top:8px; }
-.contact-lines{ display:flex; gap:12px; align-items:center; justify-content:center; flex-wrap:wrap; }
-.contact-lines p{ margin:0; color:#ddd; font-size:0.96rem; }
-.contact-lines a{ color:#ddd; text-decoration:none; }
-
-/* socials white square icons */
-.socials{ display:flex; gap:10px; margin-top:8px; }
-.socials a{ display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:8px; background:#fff; color:#000; transition:all .25s; }
-.socials a:hover{ background:var(--accent); color:#0b0b0b; transform:translateY(-3px); }
-
-/* ---------- FOOTER ---------- */
-.footer{ background:var(--anthracite); padding:10px 18px; text-align:center; font-size:0.92rem; }
-.footer .footer-links a{ color:#ddd; margin:0 6px; }
-.footer .signature{ color:var(--accent); font-family:'Playfair Display', serif; font-weight:700; }
-
-/* ============================================================
-   A PROPOS GRID 2x2
-   portrait | description
-   diplômes | témoignages
-   ============================================================ */
-.apropos-grid{ display:grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; grid-template-areas:"portrait description" "diplomes temoignages"; gap:28px; padding:48px; max-width:1180px; margin:0 auto; }
-
-/* portrait */
-.portrait{ grid-area:portrait; display:flex; align-items:center; justify-content:center; }
-.portrait-img{ width:100%; max-width:420px; height:auto; aspect-ratio:1/1; border-radius:50%; object-fit:cover; border:4px solid var(--accent); box-shadow:0 10px 40px rgba(0,255,149,0.18); }
-
-/* description */
-.description{ grid-area:description; padding:6px 10px; }
-.description h2{ color:var(--accent); font-size:1.6rem; margin-bottom:12px; }
-.description p{ color:#ddd; text-align:justify; margin-bottom:10px; line-height:1.6; }
-
-/* diplomes */
-.diplomes{ grid-area:diplomes; padding:8px 10px; }
-.diplomes h2{ color:var(--accent); font-size:1.6rem; margin-bottom:12px; text-align:left; }
-.diplomes ul{ list-style:none; padding-left:0; color:#ddd; }
-.diplomes li{ position:relative; padding-left:20px; margin-bottom:8px; }
-.diplomes li::before{ content:"✔"; position:absolute; left:0; color:var(--accent); }
-
-/* temoignages (bottom-right) */
-.temoignages{ grid-area:temoignages; padding:8px 10px; display:flex; flex-direction:column; gap:10px; }
-.temoignages-title{ text-align:center; color:var(--accent); font-size:1.6rem; margin-bottom:6px; }
-
-/* wrapper */
-.temoignage-wrapper{ display:flex; align-items:center; gap:10px; justify-content:center; }
-.temoignage{ width:100%; max-width:420px; min-height:360px; background:#171717; border-radius:12px; padding:18px; box-shadow:0 6px 24px rgba(0,0,0,0.6); overflow:hidden; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; }
-.temoignage-img{ width:110px; height:110px; border-radius:50%; object-fit:cover; margin-bottom:12px; border:3px solid var(--accent); }
-.temoignage h3{ font-size:1.05rem; margin:6px 0 2px; text-align:center; }
-.temoignage h4{ font-size:0.95rem; color:#aaa; margin-bottom:10px; text-align:center; }
-.temoignage p{ font-size:0.98rem; color:#ddd; text-align:justify; line-height:1.5; margin-bottom:18px; }
-
-/* name & role bottom single line */
-.temoignage-footer{ margin-top:auto; width:100%; text-align:center; font-weight:600; color:#eee; border-top:1px dashed rgba(255,255,255,0.03); padding-top:8px; font-size:0.95rem; }
-
-/* nav buttons */
-.prev, .next{ background:transparent; border:2px solid var(--accent); color:var(--accent); padding:8px 12px; border-radius:8px; cursor:pointer; font-size:1.2rem; }
-.prev:hover, .next:hover{ background:var(--accent); color:#000; transform:translateY(-3px); }
-
-/* ============================================================
-   RESPONSIVE
-   small screens stack the grid
-   ============================================================ */
-@media (max-width: 900px){
-  .nav-links{ display:none; position:absolute; left:0; right:0; top:62px; background:var(--anthracite); flex-direction:column; padding:12px 20px; gap:8px; }
-  .burger{ display:block; }
-  .nav-links.show{ display:flex; }
-
-  .cards{ grid-template-columns: 1fr; gap:16px; max-width:720px; }
-  .hero{ padding:56px 18px 36px 18px; min-height:380px; }
-  .hero-logo{ width:160px; } /* responsive ajusté */
-
-  .apropos-grid{ grid-template-columns: 1fr; grid-template-areas: "portrait" "description" "diplomes" "temoignages"; gap:20px; padding:28px; }
-  .temoignage{ max-width:100%; min-height:260px; }
-  .temoignage-img{ width:90px; height:90px; }
-  .temoignage-footer{ font-size:0.92rem; }
+/* =========================
+   Responsive
+========================= */
+@media(max-width:768px){
+  .nav-links{
+    position:absolute;
+    top:60px;
+    right:-100%;
+    background:#111;
+    flex-direction:column;
+    gap:14px;
+    padding:20px;
+    transition:right .3s;
+  }
+  .nav-links.show{right:0}
+  .burger{display:flex}
 }
