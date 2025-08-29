@@ -62,52 +62,39 @@ nav { display: block; }
 /* ---------- HERO ---------- */
 .hero {
   position: relative;
-  width: 100%;
-  min-height: 60vh;
+  overflow: hidden;
+  text-align: center;
+  padding: 70px 20px 40px 20px;
+  min-height: 460px;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* texte en bas */
   align-items: center;
-  overflow: hidden;
+  gap: 12px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-.hero-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* couvre toute la section */
-  z-index: 1;
-  border-radius: 0; /* suppression de l'ovale */
-}
-
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(18,18,18,0.3) 0%, rgba(18,18,18,0.85) 100%);
-  z-index: 2;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 3;
-  text-align: center;
-  padding: 20px;
-  color: #fff;
+.hero-logo {
+  width: 200px;
+  max-width: 45%;
+  border-radius: 50%; /* forme ovale */
+  background: transparent;
+  box-shadow: 0 0 50px rgba(0,255,149,0.35); /* halo lumineux */
 }
 
 .hero h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  margin-bottom: 8px;
+  font-size: 2.8rem;
+  margin-bottom: 2px;
 }
 
 .hero .slogan {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 600;
   color: #cfcfcf;
 }
@@ -150,7 +137,8 @@ nav { display: block; }
   .burger { display: block; }
 
   .cards { grid-template-columns: 1fr; gap: 16px; max-width: 720px; }
-  .hero { min-height: 45vh; }
+  .hero { padding: 56px 18px 36px 18px; min-height: 380px; }
+  .hero-logo { width: 160px; }
   .hero h1 { font-size: 2rem; }
   .hero .slogan { font-size: 1.1rem; }
 }
