@@ -1,4 +1,4 @@
-/* -------------------- RESET -------------------- */
+/* -------------------- RESET & BASE -------------------- */
 * {
   margin: 0;
   padding: 0;
@@ -8,242 +8,323 @@
 body {
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
-  color: #fff;
-  background: #000;
+  color: #333;
+  background-color: #fff;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  color: #222;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* -------------------- HEADER -------------------- */
 .header {
-  width: 100%;
-  background: #000;
-  padding: 15px 30px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-.header-logo {
-  height: 50px;
-  width: auto;
-}
-
 .nav-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.8rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+.header-logo {
+  height: 50px;
+  margin-right: 10px;
+}
+
 .nav-logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #39ff14;
-  margin-left: 10px;
+  font-size: 1.3rem;
+  font-weight: 600;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 25px;
+  gap: 1rem;
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: 600;
-  transition: color 0.3s;
+.nav-links li a {
+  padding: 0.5rem 0.8rem;
+  transition: color 0.3s, background 0.3s;
+  border-radius: 5px;
 }
 
-.nav-links a:hover {
-  color: #39ff14;
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: #0077cc;
+  background: rgba(0, 119, 204, 0.1);
 }
 
 .btn-espace {
-  padding: 8px 14px;
-  background: #39ff14;
-  border-radius: 5px;
-  color: #000 !important;
-  font-weight: bold;
+  background: #0077cc;
+  color: #fff !important;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  transition: background 0.3s;
 }
 
+.btn-espace:hover {
+  background: #005fa3;
+}
+
+/* Burger */
 .burger {
   display: none;
   flex-direction: column;
   gap: 5px;
-  cursor: pointer;
   background: none;
   border: none;
+  cursor: pointer;
 }
 
 .burger span {
+  display: block;
   width: 25px;
   height: 3px;
-  background: #fff;
+  background: #333;
+  border-radius: 2px;
+  transition: all 0.3s;
 }
 
 /* -------------------- HERO -------------------- */
 .hero {
   position: relative;
   width: 100%;
-  min-height: 90vh; /* section un peu plus grande */
+  height: 85vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  color: #fff;
   overflow: hidden;
 }
 
-.hero-image {
+.hero img {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* garde les proportions */
-  z-index: -1; /* passe derrière le texte */
-  filter: brightness(0.5); /* rend l’image sombre */
+  object-fit: cover;
+  z-index: -1;
 }
 
 .hero-content {
-  position: relative;
-  z-index: 1;
-  color: #fff;
-  padding: 20px;
+  text-align: center;
+  max-width: 800px;
+  padding: 1rem;
+  background: rgba(0,0,0,0.4);
+  border-radius: 15px;
 }
 
-.hero-content h1 {
+.hero h1 {
   font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
 }
 
-.hero-content span {
-  color: #39ff14;
-}
-
-.hero-content .slogan {
+.hero p {
   font-size: 1.2rem;
-  margin-top: 10px;
-  font-style: italic;
+  margin-bottom: 1.5rem;
+  color: #f5f5f5;
 }
 
-/* -------------------- SECTIONS -------------------- */
-section {
-  padding: 60px 20px;
+.hero .btn {
+  display: inline-block;
+  background: #0077cc;
+  color: #fff;
+  padding: 0.7rem 1.4rem;
+  border-radius: 30px;
+  transition: background 0.3s;
 }
 
-h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  color: #39ff14;
-  margin-bottom: 20px;
+.hero .btn:hover {
+  background: #005fa3;
 }
 
 /* -------------------- APROPOS GRID -------------------- */
 .apropos-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 40px;
-  padding: 60px 20px;
+  grid-template-areas:
+    "portrait description"
+    "diplomes temoignages";
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+.portrait {
+  grid-area: portrait;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .portrait-img {
   max-width: 100%;
-  border-radius: 12px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.description {
+  grid-area: description;
+}
+
+.description h2 {
+  margin-bottom: 1rem;
+}
+
+.diplomes {
+  grid-area: diplomes;
+}
+
+.diplomes h2 {
+  margin-bottom: 1rem;
 }
 
 .diplomes ul {
   list-style: disc;
-  padding-left: 20px;
+  padding-left: 1.5rem;
+}
+
+.temoignages {
+  grid-area: temoignages;
+}
+
+.temoignages-title {
+  margin-bottom: 1rem;
 }
 
 .temoignage-wrapper {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 15px;
+  gap: 1rem;
 }
 
 .temoignage {
-  max-width: 500px;
-  background: #111;
-  padding: 20px;
-  border-radius: 12px;
-  text-align: center;
+  flex: 1;
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 10px;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .temoignage-img {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
   border-radius: 50%;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
 }
 
 .temoignage-text {
   font-style: italic;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
 .temoignage-footer {
-  font-weight: bold;
-  color: #39ff14;
+  font-weight: 600;
+  color: #0077cc;
 }
 
-.prev, .next {
+.temoignage-wrapper button {
   background: none;
   border: none;
   font-size: 2rem;
-  color: #39ff14;
   cursor: pointer;
+  color: #0077cc;
+  transition: color 0.3s;
+}
+
+.temoignage-wrapper button:hover {
+  color: #005fa3;
 }
 
 /* -------------------- FOOTER -------------------- */
 .footer {
-  background: #000;
-  text-align: center;
-  padding: 30px 20px;
-  font-size: 0.9rem;
-  border-top: 1px solid #333;
+  background: #111;
+  color: #ccc;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
 }
 
 .footer-links {
-  margin-bottom: 10px;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 .footer-links a {
-  color: #fff;
-  text-decoration: none;
+  color: #ccc;
+  margin: 0 0.5rem;
+  transition: color 0.3s;
 }
 
 .footer-links a:hover {
-  color: #39ff14;
+  color: #fff;
+}
+
+.footer-bottom {
+  text-align: center;
 }
 
 .signature {
   font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
-  margin-bottom: 5px;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.copyright {
+  font-size: 0.9rem;
 }
 
 /* -------------------- RESPONSIVE -------------------- */
-@media(max-width: 768px) {
+@media (max-width: 900px) {
+  .apropos-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "portrait"
+      "description"
+      "diplomes"
+      "temoignages";
+  }
+}
+
+@media (max-width: 768px) {
   .nav-links {
     display: none;
     flex-direction: column;
-    background: #000;
+    background: #fff;
     position: absolute;
-    right: 0;
-    top: 60px;
-    padding: 20px;
-    width: 200px;
+    top: 70px;
+    right: 10px;
+    padding: 1rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border-radius: 10px;
   }
+
   .nav-links.show {
     display: flex;
   }
+
   .burger {
     display: flex;
-  }
-  .apropos-grid {
-    grid-template-columns: 1fr;
   }
 }
