@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <header class="header">
     <div class="nav-wrap">
       <a href="index.html" class="nav-logo">
@@ -19,77 +18,63 @@
           <li><a href="index.html">Accueil</a></li>
           <li><a href="apropos.html">À propos</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="mention-legales/mentions-legales.html">Mentions légales</a></li>
+          <li><a href="mentions-legales/mentions-legales.html">Mentions légales</a></li>
         </ul>
       </nav>
-      <button class="burger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <button class="burger"><span></span><span></span><span></span></button>
     </div>
   </header>
 
-  <main>
+  <main class="content">
     <section class="apropos-grid">
-      
       <!-- PORTRAIT -->
       <div class="portrait">
-        <img src="assets/andy.jpg" alt="Andy Sari" class="portrait-img">
+        <img src="assets/portrait.jpg" alt="Andy Sari" class="portrait-img">
       </div>
 
       <!-- DESCRIPTION -->
       <div class="description">
-        <h2>À propos d'Andy Sari</h2>
-        <p>Andy Sari est un formateur passionné et polyvalent avec un parcours riche dans plusieurs domaines professionnels. Il met son expertise au service des personnes souhaitant développer leurs compétences et atteindre leurs objectifs.</p>
-        <p>Son approche pédagogique repose sur l’écoute active, l’adaptation aux besoins et la transmission d’exemples concrets. Grâce à son accompagnement, de nombreux étudiants et professionnels ont pu progresser et se dépasser.</p>
+        <h2>À propos de SA Synergy</h2>
+        <p>SA Synergy accompagne les professionnels et étudiants dans leur montée en compétences. Grâce à des formations personnalisées et des conseils stratégiques, nous vous aidons à découvrir votre potentiel et à atteindre vos objectifs.</p>
+        <p>Andy Sari, fondateur et formateur principal, apporte son expertise dans divers domaines et assure un suivi attentif pour chaque participant.</p>
       </div>
 
-      <!-- DIPLÔMES & FORMATIONS -->
+      <!-- DIPLÔMES -->
       <div class="diplomes">
-        <h2>Diplômes et certifications</h2>
+        <h2>Diplômes & Certifications</h2>
         <ul>
-          <li>Master en Finance et Gestion</li>
-          <li>BTS Comptabilité et Gestion</li>
-          <li>Certifications en management et stratégie</li>
-          <li>Formations professionnelles multiples</li>
+          <li>Master en Management</li>
+          <li>Certification en Finance</li>
+          <li>Formation en Coaching professionnel</li>
         </ul>
       </div>
 
-      <!-- TEMOIGNAGES -->
+      <!-- TÉMOIGNAGES -->
       <div class="temoignages">
-        <div class="temoignages-title">Témoignages</div>
+        <h2 class="temoignages-title">Témoignages</h2>
         <div class="temoignage-wrapper">
-          <div class="temoignage">
-            <img src="assets/tom.jpg" alt="Tom" class="temoignage-img">
-            <h3>Tom</h3>
-            <h4>Entrepreneur</h4>
-            <p>Andy est exceptionnel. Sa passion et son dévouement sont inspirants. Grâce à lui, j'ai atteint mes objectifs et découvert mon potentiel.</p>
-            <div class="temoignage-footer">Tom, Entrepreneur</div>
-          </div>
-
-          <div class="temoignage">
-            <img src="assets/marina.jpg" alt="Marina" class="temoignage-img">
-            <h3>Marina</h3>
-            <h4>Entrepreneur</h4>
-            <p>Andy m’a aidé dans le développement de mon business. Ses conseils sont toujours pertinents et précieux. Très professionnel et humain.</p>
-            <div class="temoignage-footer">Marina, Entrepreneur</div>
+          <div id="temoignage-display" class="temoignage">
+            <!-- Témoignages générés via JS -->
           </div>
         </div>
+        <div style="margin-top:12px; display:flex; justify-content:center; gap:8px;">
+          <button class="prev">&larr;</button>
+          <button class="next">&rarr;</button>
+        </div>
       </div>
-
     </section>
   </main>
 
   <footer class="footer">
     <div class="footer-links">
+      <a href="index.html">Accueil</a> |
       <a href="apropos.html">À propos</a> |
       <a href="contact.html">Contact</a> |
-      <a href="mention-legales/mentions-legales.html">Mentions légales</a>
+      <a href="mentions-legales/mentions-legales.html">Mentions légales</a>
     </div>
     <p>&copy; 2025 SA Synergy. Tous droits réservés.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
