@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
       image: "assets/melanie.jpg"
     },
     {
-      nom: "Léontin",
+      nom: "Leontin",
       role: "Étudiant BTS MCO",
       texte: "Je tiens à exprimer ma profonde gratitude envers mon formateur pour son soutien inestimable dans la matière « gestion opérationnelle ». Grâce à ses enseignements attentifs et à sa disponibilité exemplaire, j'ai pu valider mon BTS avec une note exceptionnelle de 18 en gestion opérationnelle. Son approche sympathique et sa capacité à expliquer clairement les concepts ont grandement contribué à ma réussite. Je le recommande vivement à quiconque cherche à progresser dans ce domaine, ainsi que les nombreux domaines qu’il couvre…",
       image: "assets/leontin.jpg"
