@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       nom: "Laura",
       role: "Responsable de magasin",
-      texte: "Un professeur passionné, avec un bagage de connaissances incroyables ...",
+      texte: "Un professeur passionné, avec un bagage de connaissances incroyables dans plusieurs domaines. Nous avons pu voir notamment les principales formes d'organisation qui existent ainsi que les stratégies, les styles de management...Il sait comment nous captiver et rendre les cours très intéressants et interactifs avec beaucoup d'exemples concrets pour mieux comprendre.",
       image: "assets/laura.jpg"
     },
     {
