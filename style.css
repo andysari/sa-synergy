@@ -1,147 +1,125 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SA Synergy - Formations & Accompagnement</title>
+/* ============================================================
+   STYLE GLOBAL
+   palette : anthracite / blanc cassé / vert fluo (#00ff95)
+   ============================================================ */
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- HEADER -->
-  <header class="header">
-    <div class="nav-wrap">
-      <img src="assets/logo.png" alt="Logo SA Synergy" class="header-logo">
-      <div class="nav-logo">SA Synergy</div>
+/* Reset basique */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #121212;
+  --panel: #1a1a1a;
+  --anthracite: #2b2b2b;
+  --muted: #cfcfcf;
+  --accent: #00ff95;
+  --accent-soft: rgba(0,255,149,0.15);
+  --accent-strong: rgba(0,255,149,0.9);
+}
 
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#hero">Accueil</a></li>
-          <li><a href="#formations">Formations</a></li>
-          <li><a href="apropos.html">À propos</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="espace-membres.html" class="btn-espace">Espace Membres</a></li>
-        </ul>
-      </nav>
+/* BODY */
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: #f5f5f5;
+  line-height: 1.6;
+}
 
-      <button class="burger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
+/* LINKS & COMMON */
+a { color: inherit; text-decoration: none; }
+.btn-espace { border: 2px solid var(--accent); padding: 6px 10px; border-radius: 8px; color: #fff; display: inline-block; }
+.btn-espace:hover {
+  background: rgba(0,255,149,0.5); /* survol plus clair pour que le texte ressorte */
+  color:#0b0b0b;
+}
 
-  <!-- HERO -->
-  <section id="hero" class="hero">
-    <div class="hero-inner">
-      <div class="hero-animation">
-        <!-- SVG pour animation progressive -->
-        <svg id="hero-svg" width="400" height="300" viewBox="0 0 400 300">
-          <!-- Étape 1: idée -->
-          <path id="idea" d="M50,150 Q100,50 150,150" stroke="#00ff95" stroke-width="3" fill="none"/>
-          <!-- Étape 2: questionnement -->
-          <path id="question" d="M160,150 Q200,30 250,150" stroke="#00ff95" stroke-width="3" fill="none"/>
-          <!-- Étape 3: contact -->
-          <path id="contact" d="M260,150 Q300,70 350,150" stroke="#00ff95" stroke-width="3" fill="none"/>
-          <!-- Étape 4: histogramme -->
-          <rect id="bar1" x="80" y="200" width="20" height="0" fill="#00ff95"/>
-          <rect id="bar2" x="120" y="200" width="20" height="0" fill="#00ff95"/>
-          <rect id="bar3" x="160" y="200" width="20" height="0" fill="#00ff95"/>
-          <!-- Étape 5: triangle delta -->
-          <polygon id="delta" points="75,205 175,205 125,130" stroke="#00ff95" stroke-width="3" fill="none"/>
-        </svg>
-        <div class="hero-message" id="hero-message">Bienvenue sur SA Synergy</div>
-      </div>
-    </div>
-  </section>
+/* ---------- HEADER ---------- */
+.header {
+  background: var(--anthracite);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.02);
+}
+.nav-wrap {
+  max-width: 1200px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; gap: 20px; justify-content: center; position: relative;
+}
+.header-logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  margin-right: 8px;
+}
+.nav-logo { font-weight: 700; color: #fff; font-family: 'Playfair Display', serif; }
+nav { display: block; }
+.nav-links { display: flex; gap: 18px; list-style: none; align-items: center; justify-content: center; }
+.nav-links a { padding: 8px 12px; border-radius: 6px; color: #f5f5f5; font-weight: 600; }
+.nav-links a:hover {
+  background: rgba(0,255,149,0.5);
+  color: #0b0b0b;
+  box-shadow: 0 10px 30px rgba(0,255,149,0.06);
+}
 
-  <!-- FORMATIONS -->
-  <section id="formations" class="formations">
-    <h2>Des formations adaptées à vos ambitions</h2>
-    <div class="cards">
-      <article class="card">
-        <h3>À la carte</h3>
-        <p>Comptabilité, analyse financière, gestion de budget et investissement financier.</p>
-      </article>
+/* BURGER */
+.burger { position: absolute; right: 18px; display: none; background: none; border: none; padding: 6px; }
+.burger span { display: block; width: 22px; height: 3px; background: #fff; margin: 4px 0; border-radius: 3px; }
 
-      <article class="card">
-        <h3>Formations longues</h3>
-        <p>Bureautique, création et gestion d'entreprise, management et leadership.</p>
-      </article>
+/* ---------- HERO ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 70px 20px 40px 20px;
+  min-height: 460px;
+  background: #000;
+}
+.hero-canvas {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.hero-inner { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 12px; max-width: 1100px; margin: 0 auto; }
+.hero h1 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 2px; }
+.hero .slogan { font-size: 1.35rem; font-weight: 600; color: var(--muted); }
 
-      <article class="card">
-        <h3>Modules autonomes en ligne</h3>
-        <p>Cours audio, écrits et vidéos, études de cas en cours de création.</p>
-      </article>
+/* ---------- FORMATIONS ---------- */
+.formations { background: var(--anthracite); padding: 48px 20px; }
+.formations h2 { text-align: center; margin-bottom: 28px; font-size: 1.8rem; color: #fff; }
+.cards { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, minmax(260px, 1fr)); gap: 14px; align-items: stretch; }
+.card { background: var(--panel); padding: 28px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.5); transition: transform .28s ease, box-shadow .28s ease; display: flex; flex-direction: column; }
+.card h3 { font-size: 1.5rem; color: var(--accent); margin-bottom: 10px; }
+.card p { font-size: 1.06rem; color: #ddd; line-height: 1.5; margin-bottom: 10px; }
+.card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(0,255,149,0.08); }
 
-      <article class="card">
-        <h3>Développement commercial</h3>
-        <p>Création/refonte de site internet, stratégie business et analyse financière & économique.</p>
-      </article>
-    </div>
-  </section>
+/* ---------- CONTACT ---------- */
+.contact { padding: 36px 20px; text-align: center; }
+.contact h2 { margin-bottom: 18px; font-size: 1.6rem; }
+.contact-form { max-width: 520px; margin: 0 auto 12px; }
+.field { position: relative; margin-bottom: 10px; }
+.field input, .field textarea { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.06); background: #0f0f0f; color: #fff; resize: vertical; cursor: not-allowed; }
+.hover-warning { display: none; position: absolute; right: 8px; top: 50%; transform: translateY(-50%); color: #ff6666; font-size: 0.85rem; white-space: nowrap; }
+.field:hover .hover-warning { display: inline-block; }
+.contact-infos { display: flex; flex-direction: column; align-items: center; gap: 6px; margin-top: 8px; }
+.contact-lines { display: flex; gap: 12px; align-items: center; justify-content: center; flex-wrap: wrap; }
+.contact-lines p { margin: 0; color: #ddd; font-size: 0.96rem; }
+.contact-lines a { color: #ddd; text-decoration: none; }
+.socials { display: flex; gap: 10px; margin-top: 8px; }
+.socials a { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 8px; background: #fff; color: #000; transition: all .25s; }
+.socials a:hover { background: var(--accent); color: #0b0b0b; transform: translateY(-3px); }
 
-  <!-- CONTACT -->
-  <section id="contact" class="contact">
-    <h2>Travaillons ensemble</h2>
+/* ---------- FOOTER ---------- */
+.footer { background: var(--anthracite); padding: 10px 18px; text-align: center; font-size: 0.92rem; }
+.footer .footer-links a { color: #ddd; margin: 0 6px; }
+.footer .signature { color: var(--accent); font-family: 'Playfair Display', serif; font-weight: 700; }
 
-    <form class="contact-form" aria-disabled="true">
-      <div class="field">
-        <input type="text" placeholder="Votre nom" disabled>
-        <span class="hover-warning">Formulaire de contact non fonctionnel pour l'instant</span>
-      </div>
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .nav-links { display: none; position: absolute; left: 0; right: 0; top: 62px; background: var(--anthracite); flex-direction: column; padding: 12px 20px; gap: 8px; }
+  .burger { display: block; }
 
-      <div class="field">
-        <input type="email" placeholder="Votre email" disabled>
-        <span class="hover-warning">Formulaire de contact non fonctionnel pour l'instant</span>
-      </div>
-
-      <div class="field">
-        <textarea rows="5" placeholder="Votre message" disabled></textarea>
-        <span class="hover-warning">Formulaire de contact non fonctionnel pour l'instant</span>
-      </div>
-
-      <button class="btn-primary" disabled>Envoyer</button>
-    </form>
-
-    <div class="contact-infos">
-      <div class="contact-lines">
-        <p class="tel"><i class="fa-solid fa-phone"></i> <a href="tel:+33623136265">+33 6 23 13 62 65</a></p>
-        <p class="mail"><i class="fa-solid fa-envelope"></i> <a href="mailto:contact.sa.synergy@gmail.com">contact.sa.synergy@gmail.com</a></p>
-      </div>
-
-      <div class="socials">
-        <a href="https://www.instagram.com/andy.sari13/" target="_blank" aria-label="Instagram">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/andy-sari-39a935117/" target="_blank" aria-label="LinkedIn">
-          <i class="fa-brands fa-linkedin-in"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-links">
-      <a href="mentions_legales.html">Mentions légales</a>
-      <span> - </span>
-      <a href="protection_donnees.html">Charte de protection des données</a>
-      <span> - </span>
-      <a href="cookies.html">Gestion des cookies</a>
-      <span> - </span>
-      <a href="cgv.html">CGV</a>
-    </div>
-    <div class="footer-bottom">
-      <p class="signature">Andy Sari</p>
-      <p class="copyright">© SA SYNERGY 2021 - Tous droits réservés</p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-  <script src="hero-animation.js"></script>
-</body>
-</html>
+  .cards { grid-template-columns: 1fr; gap: 16px; max-width: 720px; }
+  .hero { padding: 56px 18px 36px 18px; min-height: 380px; }
+  .apropos-grid { grid-template-columns: 1fr; grid-template-areas: "portrait" "description" "diplomes" "temoignages"; gap: 20px; padding: 28px; }
+}
