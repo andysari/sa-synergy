@@ -1,90 +1,61 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="À propos de SA Synergy, formations et accompagnement personnalisé.">
   <title>À propos - SA Synergy</title>
-
-  <!-- Google Fonts + Font Awesome -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 </head>
 <body>
   <header class="header">
     <div class="nav-wrap">
-      <img src="assets/logo.png" alt="Logo SA Synergy" class="header-logo">
-      <div class="nav-logo">SA Synergy</div>
+      <a href="/" class="nav-logo">
+        <img src="assets/logo.svg" alt="Logo SA Synergy" class="header-logo">
+        SA Synergy
+      </a>
       <nav>
         <ul class="nav-links">
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="index.html#formations">Formations</a></li>
-          <li><a href="apropos.html">À propos</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-          <li><a href="espace-membres.html" class="btn-espace">Espace Membres</a></li>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/formations.html">Formations</a></li>
+          <li><a href="/apropos.html" class="active">À propos</a></li>
+          <li><a href="/contact.html">Contact</a></li>
         </ul>
       </nav>
-      <button class="burger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </header>
 
-  <main class="apropos-grid">
-    <section class="portrait">
-      <img src="assets/andy.jpg" alt="Andy Sari" class="portrait-img">
+  <main>
+    <section class="about">
+      <div class="about-content">
+        <h1>À propos de moi</h1>
+        <p>Bienvenue sur SA Synergy, où l’excellence et la polyvalence ouvrent de nouvelles opportunités.</p>
+        <p>Je propose un accompagnement personnalisé et des formations adaptées pour permettre à chacun de progresser et performer dans ses projets professionnels.</p>
+        <p>La polyvalence et l'ouverture sur le monde créent des opportunités d'enrichissement personnel et professionnel. Elles offrent la possibilité d'explorer de nouveaux domaines, de développer de nouvelles passions et de se distinguer dans un marché du travail compétitif.</p>
+        <p>Pour cette raison, j'ai pour ambition de proposer des formations en lien avec le monde des affaires de la plus haute qualité, mises à jour régulièrement. L'objectif est de permettre à des étudiants et à des adultes de continuer à se former tout au long de leur vie sur des thématiques managériales, économiques, financières, mais aussi sociales.</p>
+      </div>
+      <div class="about-image">
+        <img src="assets/andy-sari.jpg" alt="Andy Sari">
+      </div>
     </section>
 
-    <section class="description">
-      <h2>À propos de moi</h2>
-      <p>Plongez dans un univers captivant où le savoir rencontre la passion. Bienvenue sur SA Synergy, où l’excellence et la polyvalence ouvrent de nouvelles opportunités.</p>
-      <p>Je propose un accompagnement personnalisé et des formations adaptées pour permettre à chacun de progresser et performer dans ses projets professionnels.</p>
-      <p>La polyvalence et l'ouverture sur le monde créent des opportunités d'enrichissement personnel et professionnel. Elles offrent la possibilité d'explorer de nouveaux domaines, de développer de nouvelles passions et de se distinguer dans un marché du travail compétitif.</p>
-      <p>Pour cette raison, j'ai pour ambition de proposer des formations en lien avec le monde des affaires de la plus haute qualité, mises à jour régulièrement. L'objectif est de permettre à des étudiants et à des adultes de continuer à se former tout au long de leur vie sur des thématiques managériales, économiques, financières, mais aussi sociales.</p>
-    </section>
-
-    <section class="diplomes">
-      <h2>Diplômes et certifications</h2>
-      <ul>
-        <li>MBA Conseil, Audit, Contrôle de Gestion</li>
-        <li>Excel Avancé</li>
-        <li>Google Analytics Avancé</li>
-        <li>Certification AMF</li>
-        <li>Master Métiers de l'Enseignement, de l'Éducation et de la Formation</li>
-        <li>Master Économie, Droit, Gestion spécialité PME</li>
-        <li>Licence AEI spécialité entrepreneuriat</li>
-        <li>Licence STAPS management du sport</li>
-        <li>BTS Management des Unités Commerciales</li>
-      </ul>
-    </section>
-
-    <section class="temoignages">
-      <h2 class="temoignages-title">Témoignages</h2>
-      <div class="temoignage-wrapper">
-        <button class="prev" aria-label="Précédent">❮</button>
-        <div class="temoignage" id="temoignage-display" role="region" aria-live="polite"></div>
-        <button class="next" aria-label="Suivant">❯</button>
+    <section class="testimonials">
+      <h2>Témoignages</h2>
+      <div id="temoignage-display" class="temoignage-display">
+        <!-- Témoignages seront injectés ici par JavaScript -->
+      </div>
+      <div class="testimonial-controls">
+        <button class="prev">Précédent</button>
+        <button class="next">Suivant</button>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="footer-links">
-      <a href="mentions_legales.html">Mentions légales</a>
-      <span> - </span>
-      <a href="protection_donnees.html">Charte de protection des données</a>
-      <span> - </span>
-      <a href="cookies.html">Gestion des cookies</a>
-      <span> - </span>
-      <a href="cgv.html">CGV</a>
-    </div>
-
-    <div class="footer-bottom">
-      <p class="signature">Andy Sari</p>
-      <p class="copyright">© SA SYNERGY 2021 - Tous droits réservés</p>
-    </div>
+    <p>&copy; 2025 SA Synergy. Tous droits réservés.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="assets/script.js"></script>
 </body>
 </html>
