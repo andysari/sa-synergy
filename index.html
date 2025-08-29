@@ -37,10 +37,23 @@
   <!-- HERO -->
   <section id="hero" class="hero">
     <div class="hero-inner">
-      <img src="assets/logo.png" alt="Logo SA Synergy" class="hero-logo">
-      <div class="hero-content">
-        <h1>Découvrez votre potentiel avec <span>SA Synergy</span></h1>
-        <p class="slogan">Apprenez, Progressez, Performez</p>
+      <div class="hero-animation">
+        <!-- SVG pour animation progressive -->
+        <svg id="hero-svg" width="400" height="300" viewBox="0 0 400 300">
+          <!-- Étape 1: idée -->
+          <path id="idea" d="M50,150 Q100,50 150,150" stroke="#00ff95" stroke-width="3" fill="none"/>
+          <!-- Étape 2: questionnement -->
+          <path id="question" d="M160,150 Q200,30 250,150" stroke="#00ff95" stroke-width="3" fill="none"/>
+          <!-- Étape 3: contact -->
+          <path id="contact" d="M260,150 Q300,70 350,150" stroke="#00ff95" stroke-width="3" fill="none"/>
+          <!-- Étape 4: histogramme -->
+          <rect id="bar1" x="80" y="200" width="20" height="0" fill="#00ff95"/>
+          <rect id="bar2" x="120" y="200" width="20" height="0" fill="#00ff95"/>
+          <rect id="bar3" x="160" y="200" width="20" height="0" fill="#00ff95"/>
+          <!-- Étape 5: triangle delta -->
+          <polygon id="delta" points="75,205 175,205 125,130" stroke="#00ff95" stroke-width="3" fill="none"/>
+        </svg>
+        <div class="hero-message" id="hero-message">Bienvenue sur SA Synergy</div>
       </div>
     </div>
   </section>
@@ -129,5 +142,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="hero-animation.js"></script>
 </body>
 </html>
