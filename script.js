@@ -82,12 +82,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // helper pour ajouter un témoignage dynamiquement
+  // helper to add testimonials dynamically
   window.addTestimonial = function (nom, role, texte, imagePath) {
     testimonies.push({ nom, role, texte, image: imagePath });
   };
 
-  /* ------------ FADE-IN SECTIONS ------------ */
+  /* optional: fade-in for sections with class .fade-in */
   const faders = document.querySelectorAll('.fade-in');
   if ('IntersectionObserver' in window && faders.length) {
     const obs = new IntersectionObserver((entries, ob) => {
