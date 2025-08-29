@@ -1,125 +1,166 @@
-/* ============================================================
-   STYLE GLOBAL
-   palette : anthracite / blanc cassé / vert fluo (#00ff95)
-   ============================================================ */
+document.addEventListener("DOMContentLoaded", () => {
+  /* ------------ BURGER MENU ------------ */
+  const burger = document.querySelector(".burger");
+  const navLinks = document.querySelector(".nav-links");
+  if (burger && navLinks) {
+    burger.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+      burger.classList.toggle("open");
+    });
+  }
 
-/* Reset basique */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --bg: #121212;
-  --panel: #1a1a1a;
-  --anthracite: #2b2b2b;
-  --muted: #cfcfcf;
-  --accent: #00ff95;
-  --accent-soft: rgba(0,255,149,0.15);
-  --accent-strong: rgba(0,255,149,0.9);
-}
+  /* ------------ TESTIMONIALS SLIDER (apropos) ------------ */
+  const testimonies = [
+    { nom: "Tom", role: "Entrepreneur", texte: "Andy est exceptionnel. Sa passion et son dévouement sont inspirants. Il comprend nos défis et offre des conseils pertinents. Il écoute attentivement, pose des questions perspicaces et crée un environnement sûr. Grâce à lui, j'ai acquis une meilleure connaissance de mon potentiel et atteint mes objectifs. Sa connexion authentique et son énergie positive sont motivantes. Je le recommande vivement à tous ceux qui cherchent à toujours s’améliorer et qui souhaitent avoir des conseils dans beaucoup de domaines.", image: "assets/tom.jpg" },
+    { nom: "Marina", role: "Entrepreneur", texte: "Andy and I collaborated in the development of my business in Athens. He really helped me and I always consider his advices. 8 years later I still ask him for his opinion :) Much recommended professional and a very positive human being.", image: "assets/marina.jpg" },
+    { nom: "Laura", role: "Responsable de magasin", texte: "Un professeur passionné, avec un bagage de connaissances incroyables dans plusieurs domaines. Nous avons pu voir notamment les principales formes d'organisation qui existent ainsi que les stratégies, les styles de management...Il sait comment nous captiver et rendre les cours très intéressants et interactifs avec beaucoup d'exemples concrets pour mieux comprendre.", image: "assets/laura.jpg" },
+    { nom: "Alexandre", role: "Assistant comptable", texte: "Très pédagogue et sérieux. C'est un professeur très polyvalent qui s'intéresse à énormément de domaines tout en en étant passionné. Très curieux et se posant beaucoup de question, il a un sens critique affûté. Pour finir, il possède beaucoup de compétences et de connaissance à transmettre, cela est symbolisé par son nombre de certifications et de formations passées.", image: "assets/alexandre.jpg" },
+    { nom: "Mélanie", role: "Étudiante en Master Finance", texte: "Andy est très professionnel et réactif. Il a su m’accompagner tout au long de mon parcours scolaire post bac+4. Je le recommande également pour son implication dans les projets de secteur financier.", image: "assets/melanie.jpg" },
+    { nom: "Léontin", role: "Étudiant BTS MCO", texte: "Je tiens à exprimer ma profonde gratitude envers mon formateur pour son soutien inestimable dans la matière « gestion opérationnelle ». Grâce à ses enseignements attentifs et à sa disponibilité exemplaire, j'ai pu valider mon BTS avec une note exceptionnelle de 18 en gestion opérationnelle. Son approche sympathique et sa capacité à expliquer clairement les concepts ont grandement contribué à ma réussite. Je le recommande vivement à quiconque cherche à progresser dans ce domaine, ainsi que les nombreux domaines qu’il couvre…", image: "assets/leontin.jpg" },
+    { nom: "Nicolas", role: "Étudiant BTS Comptabilité et Gestion", texte: "J’ai pu approfondir mes connaissances sur le bilan et le compte de résultat pour mon diplôme en comptabilité, pour ça je recommande vivement Andy.", image: "assets/nicolas.jpg" }
+  ];
 
-/* BODY */
-body {
-  font-family: 'Inter', sans-serif;
-  background: var(--bg);
-  color: #f5f5f5;
-  line-height: 1.6;
-}
+  const display = document.getElementById("temoignage-display");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+  let curIndex = 0;
 
-/* LINKS & COMMON */
-a { color: inherit; text-decoration: none; }
-.btn-espace { border: 2px solid var(--accent); padding: 6px 10px; border-radius: 8px; color: #fff; display: inline-block; }
-.btn-espace:hover {
-  background: rgba(0,255,149,0.5); /* survol plus clair pour que le texte ressorte */
-  color:#0b0b0b;
-}
+  function renderTestimony(i) {
+    if (!display) return;
+    const t = testimonies[i];
+    display.innerHTML = `
+      <img src="${t.image}" alt="${t.nom}" class="temoignage-img">
+      <p class="temoignage-text">${t.texte}</p>
+      <div class="temoignage-footer">${t.nom}, ${t.role}</div>
+    `;
+  }
 
-/* ---------- HEADER ---------- */
-.header {
-  background: var(--anthracite);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 1px 0 rgba(255,255,255,0.02);
-}
-.nav-wrap {
-  max-width: 1200px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; gap: 20px; justify-content: center; position: relative;
-}
-.header-logo {
-  width: 42px;
-  height: 42px;
-  object-fit: contain;
-  margin-right: 8px;
-}
-.nav-logo { font-weight: 700; color: #fff; font-family: 'Playfair Display', serif; }
-nav { display: block; }
-.nav-links { display: flex; gap: 18px; list-style: none; align-items: center; justify-content: center; }
-.nav-links a { padding: 8px 12px; border-radius: 6px; color: #f5f5f5; font-weight: 600; }
-.nav-links a:hover {
-  background: rgba(0,255,149,0.5);
-  color: #0b0b0b;
-  box-shadow: 0 10px 30px rgba(0,255,149,0.06);
-}
+  if (display) {
+    renderTestimony(curIndex);
+    if (prevBtn) prevBtn.addEventListener("click", () => {
+      curIndex = (curIndex - 1 + testimonies.length) % testimonies.length;
+      renderTestimony(curIndex);
+    });
+    if (nextBtn) nextBtn.addEventListener("click", () => {
+      curIndex = (curIndex + 1) % testimonies.length;
+      renderTestimony(curIndex);
+    });
+  }
 
-/* BURGER */
-.burger { position: absolute; right: 18px; display: none; background: none; border: none; padding: 6px; }
-.burger span { display: block; width: 22px; height: 3px; background: #fff; margin: 4px 0; border-radius: 3px; }
+  window.addTestimonial = function(nom, role, texte, imagePath) {
+    testimonies.push({ nom, role, texte, image: imagePath });
+  };
 
-/* ---------- HERO ---------- */
-.hero {
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-  padding: 70px 20px 40px 20px;
-  min-height: 460px;
-  background: #000;
-}
-.hero-canvas {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-.hero-inner { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 12px; max-width: 1100px; margin: 0 auto; }
-.hero h1 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 2px; }
-.hero .slogan { font-size: 1.35rem; font-weight: 600; color: var(--muted); }
+  /* ------------ HERO ANIMATION 6 ETAPES ------------ */
+  const canvas = document.querySelector(".hero-canvas");
+  if (canvas && canvas.getContext) {
+    const ctx = canvas.getContext("2d");
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
 
-/* ---------- FORMATIONS ---------- */
-.formations { background: var(--anthracite); padding: 48px 20px; }
-.formations h2 { text-align: center; margin-bottom: 28px; font-size: 1.8rem; color: #fff; }
-.cards { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, minmax(260px, 1fr)); gap: 14px; align-items: stretch; }
-.card { background: var(--panel); padding: 28px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.5); transition: transform .28s ease, box-shadow .28s ease; display: flex; flex-direction: column; }
-.card h3 { font-size: 1.5rem; color: var(--accent); margin-bottom: 10px; }
-.card p { font-size: 1.06rem; color: #ddd; line-height: 1.5; margin-bottom: 10px; }
-.card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(0,255,149,0.08); }
+    const steps = [
+      drawIdea,
+      drawQuestion,
+      drawContact,
+      drawHistogram,
+      drawDelta,
+      drawWelcome
+    ];
 
-/* ---------- CONTACT ---------- */
-.contact { padding: 36px 20px; text-align: center; }
-.contact h2 { margin-bottom: 18px; font-size: 1.6rem; }
-.contact-form { max-width: 520px; margin: 0 auto 12px; }
-.field { position: relative; margin-bottom: 10px; }
-.field input, .field textarea { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.06); background: #0f0f0f; color: #fff; resize: vertical; cursor: not-allowed; }
-.hover-warning { display: none; position: absolute; right: 8px; top: 50%; transform: translateY(-50%); color: #ff6666; font-size: 0.85rem; white-space: nowrap; }
-.field:hover .hover-warning { display: inline-block; }
-.contact-infos { display: flex; flex-direction: column; align-items: center; gap: 6px; margin-top: 8px; }
-.contact-lines { display: flex; gap: 12px; align-items: center; justify-content: center; flex-wrap: wrap; }
-.contact-lines p { margin: 0; color: #ddd; font-size: 0.96rem; }
-.contact-lines a { color: #ddd; text-decoration: none; }
-.socials { display: flex; gap: 10px; margin-top: 8px; }
-.socials a { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 8px; background: #fff; color: #000; transition: all .25s; }
-.socials a:hover { background: var(--accent); color: #0b0b0b; transform: translateY(-3px); }
+    let stepIndex = 0;
 
-/* ---------- FOOTER ---------- */
-.footer { background: var(--anthracite); padding: 10px 18px; text-align: center; font-size: 0.92rem; }
-.footer .footer-links a { color: #ddd; margin: 0 6px; }
-.footer .signature { color: var(--accent); font-family: 'Playfair Display', serif; font-weight: 700; }
+    function clearCanvas() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
 
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
-@media (max-width: 900px) {
-  .nav-links { display: none; position: absolute; left: 0; right: 0; top: 62px; background: var(--anthracite); flex-direction: column; padding: 12px 20px; gap: 8px; }
-  .burger { display: block; }
+    function nextStep() {
+      if (stepIndex >= steps.length) {
+        setTimeout(() => {
+          stepIndex = 0;
+          clearCanvas();
+          runAnimation();
+        }, 5000); // pause 5s avant reset
+        return;
+      }
+      steps[stepIndex]();
+      stepIndex++;
+      setTimeout(nextStep, 1000);
+    }
 
-  .cards { grid-template-columns: 1fr; gap: 16px; max-width: 720px; }
-  .hero { padding: 56px 18px 36px 18px; min-height: 380px; }
-  .apropos-grid { grid-template-columns: 1fr; grid-template-areas: "portrait" "description" "diplomes" "temoignages"; gap: 20px; padding: 28px; }
-}
+    function runAnimation() {
+      clearCanvas();
+      stepIndex = 0;
+      nextStep();
+    }
+
+    function drawIdea() {
+      ctx.strokeStyle = "#00ff95";
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.arc(150, 100, 40, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.fillStyle = "#00ff95";
+      ctx.font = "20px Arial";
+      ctx.fillText("💡", 140, 105);
+    }
+
+    function drawQuestion() {
+      ctx.strokeStyle = "#00ff95";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(250, 100);
+      ctx.lineTo(300, 150);
+      ctx.stroke();
+      ctx.fillText("?", 295, 145);
+    }
+
+    function drawContact() {
+      ctx.fillStyle = "#00ff95";
+      ctx.font = "18px Arial";
+      ctx.fillText("Contact SA Synergy", 350, 120);
+    }
+
+    function drawHistogram() {
+      ctx.fillStyle = "#00ff95";
+      const baseX = 400;
+      const baseY = 200;
+      const heights = [50, 80, 60];
+      for (let i = 0; i < heights.length; i++) {
+        ctx.fillRect(baseX + i * 30, baseY - heights[i], 20, heights[i]);
+      }
+    }
+
+    function drawDelta() {
+      ctx.strokeStyle = "#00ff95";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(395, 110);
+      ctx.lineTo(495, 110);
+      ctx.lineTo(445, 210);
+      ctx.closePath();
+      ctx.stroke();
+    }
+
+    function drawWelcome() {
+      ctx.fillStyle = "#00ff95";
+      ctx.font = "24px 'Playfair Display', serif";
+      ctx.fillText("Bienvenue sur SA Synergy", 200, 300);
+    }
+
+    runAnimation();
+  }
+
+  /* ------------ FADE-IN SECTIONS ------------ */
+  const faders = document.querySelectorAll('.fade-in');
+  if ('IntersectionObserver' in window && faders.length) {
+    const obs = new IntersectionObserver((entries, ob) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          ob.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.18 });
+    faders.forEach(el => obs.observe(el));
+  }
+});
