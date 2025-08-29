@@ -1,1 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentions Légales</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="nav-wrap">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/logo.svg" alt="SA Synergy Logo" class="header-logo">
+        SA Synergy
+      </a>
+    </div>
+  </header>
+
+  <main class="content">
+    <section class="mentions-legales">
+      <h1>Mentions Légales</h1>
+
+      <p>En vertu de l'article 6-III de la loi pour la Confiance dans l'Économie Numérique (LCEN) et afin d'assurer la transparence et la protection des utilisateurs, cette page vous permet de consulter plusieurs types d'informations légales.</p>
+
+      <p>Merci de prendre quelques instants pour lire attentivement les présentes mentions légales qui régissent l'utilisation de mon site web. En accédant à ce site et en l'utilisant, vous acceptez d'être lié par ces dispositions légales.</p>
+
+      <h2>1. Identification du propriétaire du site web</h2>
+      <p>L'entreprise SA SYNERGY est située au 5 rue du Panorama, à Châtillon (92320) en France. Le propriétaire de celle-ci est Andy Sari, entrepreneur individuel. Le créateur du site est Andy Sari, et il est également responsable de toutes les publications de ce site. Pour me contacter par mail : <a href="mailto:contact.sa.synergy@gmail.com">contact.sa.synergy@gmail.com</a> et par téléphone : <a href="tel:+33623136265">06 23 13 62 65</a>.</p>
+
+      <h2>2. Statut juridique</h2>
+      <p>La forme juridique retenue pour SA SYNERGY est le statut d'entrepreneur individuel. SA SYNERGY est enregistrée à l'INSEE depuis le 06-12-2021, son numéro SIRET est : 90502132500014 et son numéro de TVA Intracommunautaire est : FR37905021325.</p>
+      <p>Représentant légal : L'entrepreneur individuel est considéré comme la personne responsable de l'entreprise.</p>
+
+      <h2>3. Informations sur l'hébergeur</h2>
+      <p>L'hébergeur du site est GitHub, Inc., situé au 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis. GitHub Pages est un service d'hébergement de sites statiques fourni par GitHub à partir de dépôts GitHub. Pour plus d'informations, vous pouvez consulter la documentation officielle de GitHub Pages : <a href="https://docs.github.com/fr/pages/getting-started-with-github-pages/what-is-github-pages" target="_blank">https://docs.github.com/fr/pages/getting-started-with-github-pages/what-is-github-pages</a>.</p>
+
+      <h2>4. Finalité du site web</h2>
+      <p>Ce site a pour objectif de permettre à des personnes souhaitant se former d'entrer en contact avec moi. Il est possible de me contacter pour me demander un devis ou bien simplement me demander un renseignement. Il est également possible de souscrire directement à l'achat d'une prestation de service. Le site <a href="https://www.sa-synergy.com" target="_blank">www.sa-synergy.com</a> est par principe accessible aux utilisateurs 24/24h, 7/7j, sauf interruption, programmée ou non, pour les besoins de sa maintenance ou en cas de force majeure. En cas d’impossibilité d’accès au service, je ferai mon maximum afin de rétablir l’accès au service et je m'efforcerai alors de communiquer préalablement aux utilisateurs les dates et heures de l’intervention. N’étant soumis qu’à une obligation de moyen, je ne saurais être tenu pour responsable de tout dommage, quelle qu’en soit la nature, résultant d’une indisponibilité du service.</p>
+
+      <h2>5. Propriété intellectuelle</h2>
+      <p>Andy Sari est le propriétaire exclusif de tous les droits de propriété intellectuelle et détient les droits d’usage sur tous les éléments accessibles sur le site, tant sur la structure que sur les textes, images, graphismes, logo, icônes, sons, vidéos, logiciels… Par conséquent, toute reproduction totale ou partielle, représentation, modification, publication, adaptation totale ou partielle de l'un quelconque de ces éléments de ce site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable d'Andy Sari, propriétaire du site. À défaut, elle sera considérée comme constitutive d’une contrefaçon et passible de poursuite conformément aux dispositions des articles L.335-2 et suivants du Code de Propriété Intellectuelle.</p>
+
+      <h2>6. Collecte de données personnelles</h2>
+      <p>Nous attachons une grande importance à la protection de vos données personnelles. Les informations collectées sur ce site sont traitées conformément à notre <a href="charte-protection-donnees.html">Charte de protection des données personnelles</a>.</p>
+
+      <h2>7. Cookies</h2>
+      <p>Ce site web utilise des cookies pour améliorer votre expérience de navigation. Vous pouvez consulter la politique en matière de cookies pour obtenir plus d'informations sur l'utilisation des cookies et sur la manière de les gérer, grâce à ce lien : <a href="gestion-cookies.html">Gestion des cookies</a>.</p>
+
+      <h2>8. Liens externes</h2>
+      <p>Ce site web peut contenir des liens vers des sites web externes sur lesquels je n'ai aucun contrôle. Je décline toute responsabilité quant au contenu de ces sites externes et je vous recommande de consulter les politiques de confidentialité et les mentions légales de ces sites.</p>
+
+      <h2>9. Limitation de responsabilité</h2>
+      <p>Je m'efforce de maintenir les informations présentes sur ce site web aussi précises et à jour que possible. Cependant, je ne peux garantir l'exactitude, l'exhaustivité ou la pertinence de ces informations. Par conséquent, l'utilisation que vous faites des informations présentes sur ce site se fait à vos propres risques. En aucun cas, je ne serai tenu responsable des dommages directs, indirects, accessoires, spéciaux, consécutifs ou punitifs, y compris, sans s'y limiter, les pertes de profits, de revenus, de données ou les pertes financières, résultant de l'utilisation de ce site web, de son contenu ou des services qui y sont proposés.</p>
+
+      <h2>10. Conditions Générales de Vente</h2>
+      <p>Vous pouvez également consulter les <a href="conditions-generales-vente.html">Conditions Générales de Vente</a>.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="../index.html">Accueil</a> |
+      <a href="../apropos.html">À propos</a> |
+      <a href="../contact.html">Contact</a> |
+      <a href="mentions-legales.html">Mentions Légales</a>
+    </div>
+    <p>&copy; 2021 SA Synergy. Tous droits réservés.</p>
+  </footer>
+</body>
+</html>
 
