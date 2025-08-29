@@ -84,25 +84,16 @@ nav { display: block; }
   margin: 0 auto;
 }
 
-.hero-image {
+.hero-logo {
   width: 100%;
-  max-width: 500px; /* ajustable selon la taille de l’image */
+  max-width: 500px; /* Ajustable selon la taille de l’image */
   height: auto;
-  border-radius: 0; /* plus d’ovale */
-  box-shadow: 0 0 50px rgba(0,255,149,0.35); /* halo lumineux conservé */
+  border-radius: 50%; /* cercle avec halo lumineux */
+  box-shadow: 0 0 50px rgba(0,255,149,0.35);
 }
 
-.hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.8rem;
-  margin-top: 20px; /* espace entre image et texte */
-}
-
-.hero .slogan {
-  font-size: 1.35rem;
-  font-weight: 600;
-  color: var(--muted);
-}
+.hero h1 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 2px; }
+.hero .slogan { font-size: 1.35rem; font-weight: 600; color: var(--muted); }
 
 /* ---------- FORMATIONS ---------- */
 .formations { background: var(--anthracite); padding: 48px 20px; }
@@ -144,5 +135,5 @@ nav { display: block; }
 
   .cards { grid-template-columns: 1fr; gap: 16px; max-width: 720px; }
   .hero { padding: 56px 18px 36px 18px; min-height: 380px; }
-  .hero-image { max-width: 90%; }
+  .hero-logo { max-width: 90%; }
 }
