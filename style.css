@@ -222,5 +222,5 @@ nav { display: block; }
 .header .nav-logo {
   display: flex;
   align-items: center; /* centre verticalement le logo + texte */
-  gap: 8px;            /* petit espace entre logo et texte */
+  gap: 0;              /* mettre 0 pour que la distance soit la même que sur la page principale */
 }
