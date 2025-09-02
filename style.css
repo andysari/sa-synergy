@@ -45,9 +45,10 @@ a { color: inherit; text-decoration: none; }
   display: flex; 
   align-items: center; 
   gap: 20px; 
-  justify-content: center; 
+  justify-content: space-between; /* <-- ici */
   position: relative;
 }
+
 
 /* Logo + texte centré verticalement et espacé */
 .nav-logo {
