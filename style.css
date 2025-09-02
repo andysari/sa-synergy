@@ -218,9 +218,3 @@ nav { display: block; }
   line-height: 1.6;    /* lisibilité */
 }
 
-/* Correction alignement du logo/texte dans le header */
-.header .nav-logo {
-  display: flex;
-  align-items: center; /* centre verticalement le logo + texte */
-  /* ne pas toucher le margin-right de .header-logo, donc garder l’espace identique à la page principale */
-}
