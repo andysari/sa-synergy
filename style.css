@@ -194,7 +194,7 @@ nav { display: block; }
 }
 /* --- PAGE MENTIONS LEGALES --- */
 .mentions-legales {
-  background-color: #ffffff;   /* fond blanc */
+  background-color: #f2f2f2; /* gris clair */
   color: #000000;              /* texte noir */
   padding: 40px 20px;          /* espace intérieur */
   max-width: 900px;            /* largeur confortable */
