@@ -192,3 +192,35 @@ nav { display: block; }
   .temoignage-img { width: 90px; height: 90px; }
   .temoignage-footer { font-size: 0.92rem; }
 }
+/* --- PAGE MENTIONS LEGALES --- */
+.mentions-legales {
+  background-color: #ffffff;   /* fond blanc */
+  color: #000000;              /* texte noir */
+  padding: 40px 20px;          /* espace intérieur */
+  max-width: 900px;            /* largeur confortable */
+  margin: 0 auto;              /* centrer */
+}
+
+.mentions-legales h1 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.mentions-legales h2 {
+  font-size: 1.5rem;
+  margin-top: 40px;   /* espace avant chaque bloc */
+  margin-bottom: 15px;
+}
+
+.mentions-legales p {
+  margin-bottom: 20px; /* espace entre paragraphes */
+  line-height: 1.6;    /* lisibilité */
+}
+
+/* Correction alignement du logo/texte dans le header */
+.header .nav-logo {
+  display: flex;
+  align-items: center; /* centre verticalement le logo + texte */
+  gap: 8px;            /* petit espace entre logo et texte */
+}
