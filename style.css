@@ -54,7 +54,6 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   align-items: center;
   gap: 8px; /* distance exacte logo / texte */
-  margin-left: 12px; /* ajuster jusqu’à ce que le logo soit aligné comme sur la page principale */
   font-weight: 700;
   color: #fff;
   font-family: 'Playfair Display', serif;
