@@ -326,3 +326,10 @@ nav { display: block; }
   align-items: center; 
   gap: 8px; 
 }
+
+/* Bouton Espace Membres désactivé */
+.btn-espace.disabled {
+  pointer-events: none;  /* empêche tout clic */
+  opacity: 0.6;          /* effet visuel grisé */
+  cursor: not-allowed;   /* curseur interdit */
+}
