@@ -113,7 +113,7 @@ nav { display: block; }
 .hero .slogan { font-size: 1.35rem; font-weight: 600; color: var(--muted); }
 
 /* ---------- FORMATIONS ---------- */
-.formations { background: var(--anthracite); padding: 48px 20px; }
+.formations { background: var(--anthracite); padding: 48px 20px; scroll-margin-top: 100px;}
 .formations h2 { text-align: center; margin-bottom: 28px; font-size: 1.8rem; color: #fff; }
 .cards { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, minmax(260px, 1fr)); gap: 14px; align-items: stretch; }
 .card { background: var(--panel); padding: 28px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.5); transition: transform .28s ease, box-shadow .28s ease; display: flex; flex-direction: column; }
