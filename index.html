@@ -70,20 +70,21 @@
     <!-- CONTACT -->
     <section class="contact" id="contact">
       <h2>Parlons de vos ambitions</h2>
-      <form class="contact-form">
+
+      <!-- Formulaire Formspree -->
+      <form class="contact-form" action="https://formspree.io/f/xrbaogjv" method="POST">
         <div class="field">
-          <input type="text" placeholder="Nom" disabled>
-          <span class="hover-warning">Option non disponible pour le moment</span>
+          <input type="text" name="name" placeholder="Nom" required>
         </div>
         <div class="field">
-          <input type="email" placeholder="Email" disabled>
-          <span class="hover-warning">Option non disponible pour le moment</span>
+          <input type="email" name="email" placeholder="Email" required>
         </div>
         <div class="field">
-          <textarea placeholder="Message" disabled></textarea>
-          <span class="hover-warning">Option non disponible pour le moment</span>
+          <textarea name="message" placeholder="Message" required></textarea>
         </div>
+        <button type="submit" class="btn-submit">Envoyer</button>
       </form>
+
       <div class="contact-infos">
         <div class="contact-lines">
           <p>Email: <a href="mailto:contact.sa.synergy@gmail.com">contact.sa.synergy@gmail.com</a></p>
