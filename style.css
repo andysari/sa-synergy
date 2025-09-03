@@ -128,30 +128,27 @@ nav { display: block; }
 }
 
 .contact h2 { 
-  margin-bottom: 18px; 
-  font-size: 1.6rem; 
+  margin-bottom: 28px; 
+  font-size: 1.8rem;   /* même taille que "Formations" */
 }
 
-/* FORMULAIRE ACTIF FORMSPREE */
+/* FORMULAIRE ACTIF FORMSPREE (retour au style d’avant) */
 .contact-form.active { 
   max-width: 520px; 
-  margin: 0 auto 12px; 
-  display: flex; 
-  flex-direction: column; 
-  gap: 12px;
+  margin: 0 auto 20px; 
 }
 
 .contact-form.active .field { 
   position: relative; 
-  width: 100%; 
+  margin-bottom: 14px; 
 }
 
 .contact-form.active .field input,
 .contact-form.active .field textarea {
   width: 100%;
-  padding: 14px;
+  padding: 12px;
   border-radius: 8px;
-  border: 1px solid #555;
+  border: 1px solid rgba(255,255,255,0.06); /* style d’avant */
   background: #0f0f0f;
   color: #fff;
   resize: vertical;
@@ -175,11 +172,11 @@ nav { display: block; }
   cursor: pointer;
   transition: all 0.25s;
 }
-
 .btn-submit:hover {
   transform: translateY(-2px);
   background: #fff;
 }
+
 
 /* CONTACT INFOS */
 .contact-infos { 
