@@ -1,1 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formations À la carte</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- ---------- HEADER ---------- -->
+  <header class="header">
+    <div class="nav-wrap">
+      <a href="../index.html" class="nav-logo">
+        <img src="../logo.png" alt="Logo" class="header-logo">
+        MonSite
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../index.html#formations">Formations</a></li>
+          <li><a href="../index.html#apropos">À propos</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="burger"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- ---------- HERO ---------- -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Formations À la carte</h1>
+      <p class="slogan">Choisissez les cours qui correspondent à vos besoins et progressez à votre rythme.</p>
+    </div>
+  </section>
+
+  <!-- ---------- INTRODUCTION ---------- -->
+  <section class="formations">
+    <div class="intro-text" style="max-width:900px; margin:0 auto 40px; text-align: center; color:#ddd;">
+      <p>
+        Dans un monde en constante évolution, l'acquisition de compétences spécialisées est devenue essentielle pour se démarquer sur le marché du travail.
+        Que vous soyez un professionnel cherchant à progresser ou un étudiant désireux de compléter votre formation académique, cette offre de formation à la carte est conçue pour répondre à vos besoins spécifiques.
+        Je vous propose des cours dans des domaines clés tels que la finance, l'économie, le droit, le management, la comptabilité gestion et le marketing.
+        Grâce à une approche flexible et personnalisée, vous pouvez choisir les cours qui vous intéressent le plus et adapter votre apprentissage à votre emploi du temps.
+      </p>
+    </div>
+
+    <!-- ---------- CARDS COURS ---------- -->
+    <div class="cards">
+
+      <!-- Finance -->
+      <article class="card">
+        <div class="card-img" style="background:#222; height:180px; border-radius:12px; margin-bottom:12px;">
+          <!-- Image finance ici -->
+        </div>
+        <h3>Finance</h3>
+        <p>
+          La finance est une discipline essentielle pour comprendre le fonctionnement des marchés et des entreprises. Analyse fondamentale et technique, psychologie des marchés, trading pratique.
+        </p>
+        <a href="#contact" class="btn-espace">Contactez-nous</a>
+      </article>
+
+      <!-- Economie/Droit -->
+      <article class="card">
+        <div class="card-img" style="background:#222; height:180px; border-radius:12px; margin-bottom:12px;">
+          <!-- Image économie/droit ici -->
+        </div>
+        <h3>Economie / Droit</h3>
+        <p>
+          Comprendre les concepts économiques et le cadre juridique. Idéal pour conseiller, travailler en finance, entrepreneuriat ou organisations internationales.
+        </p>
+        <a href="#contact" class="btn-espace">Contactez-nous</a>
+      </article>
+
+      <!-- Comptabilité Gestion -->
+      <article class="card">
+        <div class="card-img" style="background:#222; height:180px; border-radius:12px; margin-bottom:12px;">
+          <!-- Image comptabilité ici -->
+        </div>
+        <h3>Comptabilité / Gestion</h3>
+        <p>
+          Maîtrisez la lecture des états financiers, l’analyse des flux, les outils de pilotage et la gestion pour comprendre la valeur générée par une entreprise.
+        </p>
+        <a href="#contact" class="btn-espace">Contactez-nous</a>
+      </article>
+
+      <!-- Management -->
+      <article class="card">
+        <div class="card-img" style="background:#222; height:180px; border-radius:12px; margin-bottom:12px;">
+          <!-- Image management ici -->
+        </div>
+        <h3>Management</h3>
+        <p>
+          Transformez une vision en actions concrètes. Stratégie, gouvernance, pilotage de projets et leadership dans un environnement en mutation.
+        </p>
+        <a href="#contact" class="btn-espace">Contactez-nous</a>
+      </article>
+
+      <!-- Marketing -->
+      <article class="card">
+        <div class="card-img" style="background:#222; height:180px; border-radius:12px; margin-bottom:12px;">
+          <!-- Image marketing ici -->
+        </div>
+        <h3>Marketing</h3>
+        <p>
+          Maîtrisez segmentation, positionnement, communication et analyse du comportement client. Transformez les données en décisions stratégiques.
+        </p>
+        <a href="#contact" class="btn-espace">Contactez-nous</a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ---------- CONTACT / FORMULAIRE ---------- -->
+  <section id="contact" class="contact">
+    <h2>Contactez-nous pour réserver votre cours</h2>
+    <div class="contact-form">
+      <form action="https://formspree.io/f/votreformid" method="POST">
+        <div class="field">
+          <input type="text" name="name" placeholder="Votre nom" required>
+        </div>
+        <div class="field">
+          <input type="email" name="email" placeholder="Votre email" required>
+        </div>
+        <div class="field">
+          <textarea name="message" placeholder="Votre message / formation souhaitée"></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Envoyer</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ---------- FOOTER ---------- -->
+  <footer class="footer">
+    <p class="footer-links">
+      <a href="../index.html">Accueil</a> | 
+      <a href="../index.html#formations">Formations</a> | 
+      <a href="../index.html#contact">Contact</a>
+    </p>
+    <p class="signature">© 2025 MonSite</p>
+  </footer>
+
+</body>
+</html>
 
