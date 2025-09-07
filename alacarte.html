@@ -1,99 +1,116 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formations À la carte</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Formations À la carte - SA Synergy</title>
+
+  <!-- Google Fonts + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ---------- HEADER ---------- -->
-<header class="header">
-  <div class="nav-wrap">
-    <a href="index.html" class="nav-logo">
-      <img src="assets/logo.png" alt="Logo SA Synergy" class="header-logo">
-      <span>SA Synergy</span>
-    </a>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="index.html#formations">Formations</a></li>
-        <li><a href="apropos.html">À propos</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-        <li><a href="#" class="btn-espace disabled">Espace Membres</a></li>
-      </ul>
-    </nav>
-    <button class="burger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
+  <!-- HEADER identique à apropos.html -->
+  <header class="header">
+    <div class="nav-wrap">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo.png" alt="Logo SA Synergy" class="header-logo">
+        <span>SA Synergy</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="index.html#formations">Formations</a></li>
+          <li><a href="apropos.html">À propos</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="#" class="btn-espace disabled">Espace Membres</a></li>
+        </ul>
+      </nav>
+      <button class="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
 
-  <!-- ---------- HERO ---------- -->
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-inner">
-    <h1>Choisissez les cours qui correspondent à vos besoins et progressez à votre rythme.</h1>
-    <p>Dans un monde en constante évolution, l'acquisition de compétences spécialisées est devenue essentielle pour se démarquer sur le marché du travail. 
-    Que vous soyez un professionnel cherchant à progresser ou un étudiant désireux de compléter votre formation académique, cette offre de formation à la carte est conçue pour répondre à vos besoins spécifiques. 
-    Je vous propose des cours dans des domaines clés tels que la finance, l'économie, le droit, le management, la comptabilité gestion et le marketing. 
-    Grâce à une approche flexible et personnalisée, vous pouvez choisir les cours qui vous intéressent le plus et adapter votre apprentissage à votre emploi du temps.</p>
-  </div>
-</section>
+  <main>
 
-<!-- CARDS COURS -->
-<section class="formations">
-  <h2>Nos cours à la carte</h2>
-  <div class="cards">
-    
-    <!-- Finance -->
-    <article class="card">
-      <h3>Finance</h3>
-      <p>La finance est une discipline essentielle pour comprendre le fonctionnement des marchés et des entreprises. Ces cours vous offrent une formation solide et structurée pour acquérir les clés de lecture et d’analyse nécessaires dans le monde financier. Vous étudierez l’analyse fondamentale, qui permet d’évaluer la performance et la solidité d’une entreprise à travers ses bilans, comptes de résultat, flux de trésorerie, et indicateurs financiers (PER, PEG, méthodes d’évaluation comme le DCF). Vous approfondirez l’analyse technique, basée sur l’observation des graphiques, des volumes, des moyennes mobiles et autres indicateurs utilisés par les acteurs de marché pour suivre les tendances. Un module spécifique est consacré à la dimension psychologique : comprendre les biais comportementaux, savoir gérer ses émotions face aux fluctuations du marché, éviter les erreurs fréquentes et réfléchir à des stratégies de diversification. Enfin, une partie pratique vous permettra de mieux comprendre le fonctionnement des plateformes de trading : choix d’un intermédiaire (broker), passage d’ordres, suivi des instruments financiers (actions, voir options pour les plus avancés).</p>
-      <a href="#contact" class="btn-espace">Contact</a>
-    </article>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Choisissez les cours qui correspondent à vos besoins et progressez à votre rythme.</h1>
+        <p>Dans un monde en constante évolution, l'acquisition de compétences spécialisées est devenue essentielle pour se démarquer sur le marché du travail. Que vous soyez un professionnel cherchant à progresser ou un étudiant désireux de compléter votre formation académique, cette offre de formation à la carte est conçue pour répondre à vos besoins spécifiques. Je vous propose des cours dans des domaines clés tels que la finance, l'économie, le droit, le management, la comptabilité gestion et le marketing. Grâce à une approche flexible et personnalisée, vous pouvez choisir les cours qui vous intéressent le plus et adapter votre apprentissage à votre emploi du temps.</p>
+      </div>
+    </section>
 
-    <!-- Economie/Droit -->
-    <article class="card">
-      <h3>Economie / Droit</h3>
-      <p>L'économie joue un rôle crucial dans le fonctionnement des sociétés et des entreprises. Ces cours d'économie vous offrent une compréhension approfondie des concepts économiques fondamentaux tels que l'offre et la demande, la croissance économique, les politiques monétaires et fiscales, et les marchés internationaux. En complément, une approche juridique est proposée pour saisir les règles qui encadrent l'activité économique. Comprendre le droit des affaires, le droit du travail, ou encore le droit international permet non seulement d’analyser les décisions économiques sous l’angle légal, mais aussi de mieux anticiper les enjeux auxquels sont confrontées les entreprises et les institutions. Allier économie et droit, c’est acquérir une double compétence très recherchée, capable d’ouvrir la voie vers des carrières variées dans le conseil, la finance, l’entrepreneuriat ou encore les organisations internationales.</p>
-      <a href="#contact" class="btn-espace">Contact</a>
-    </article>
+    <!-- CARDS COURS -->
+    <section class="formations">
+      <h2>Nos cours à la carte</h2>
+      <div class="alacarte-cards">
 
-    <!-- Comptabilité Gestion -->
-    <article class="card">
-      <h3>Comptabilité / Gestion</h3>
-      <p>La comptabilité et la gestion sont le langage universel de l’entreprise : savoir les maîtriser, c’est comprendre son fonctionnement en profondeur. Dans cette formation, vous apprendrez à lire et interpréter les états financiers (bilan, compte de résultat et annexes) afin de décrypter la santé économique d’une organisation. Vous découvrirez comment analyser un tableau de flux de trésorerie, comment exploiter une liasse fiscale et ses annexes, et ce que signifient concrètement les notions de groupe et de filiales, avec leurs implications fiscales et organisationnelles. La partie gestion vous plongera dans les principaux outils de pilotage : les Soldes Intermédiaires de Gestion (SIG) pour décoder un compte de résultat, les retraitements comptables, la distinction charges fixes/variables et directes/indirectes. Ces compétences vous donneront les clés pour comprendre comment une entreprise génère de la valeur, anticipe ses besoins et optimise ses ressources.</p>
-      <a href="#contact" class="btn-espace">Contact</a>
-    </article>
+        <!-- Finance -->
+        <article class="card">
+          <h3>Finance</h3>
+          <img src="" alt="Image Finance" style="width:100%;height:180px;background:#1a1a1a;margin-bottom:12px;border-radius:8px;">
+          <p>La finance est une discipline essentielle pour comprendre le fonctionnement des marchés et des entreprises. Ces cours vous offrent une formation solide et structurée pour acquérir les clés de lecture et d’analyse nécessaires dans le monde financier. Vous étudierez l’analyse fondamentale, l’analyse technique, la dimension psychologique et la pratique sur plateformes de trading.</p>
+          <a href="index.html#contact" class="btn-espace" style="margin-top:12px;">Contactez-nous pour vous inscrire</a>
+        </article>
 
-    <!-- Management -->
-    <article class="card">
-      <h3>Management</h3>
-      <p>Le management est l’art de transformer une vision en actions concrètes. Ces cours vous offriront une vue d’ensemble des principaux concepts et outils pour comprendre comment se construit et se déploie une stratégie d’entreprise. Au niveau corporate, vous étudierez la stratégie globale : choix de diversification, croissance externe, allocation des ressources et gouvernance. Au niveau des Business Units (BU), vous explorerez les stratégies concurrentielles : comment une unité d’affaires définit son avantage compétitif et répond aux évolutions du marché. Enfin, au niveau opérationnel, vous verrez comment la stratégie se traduit en décisions quotidiennes, organisation des équipes, gestion de la performance et pilotage de projets. L’objectif est clair : comprendre le rôle du manager comme stratège, mais aussi comme leader capable de mobiliser les talents et d’adapter l’organisation face aux défis d’un environnement en perpétuelle mutation.</p>
-      <a href="#contact" class="btn-espace">Contact</a>
-    </article>
+        <!-- Economie/Droit -->
+        <article class="card">
+          <h3>Economie / Droit</h3>
+          <img src="" alt="Image Economie/Droit" style="width:100%;height:180px;background:#1a1a1a;margin-bottom:12px;border-radius:8px;">
+          <p>L'économie joue un rôle crucial dans le fonctionnement des sociétés et des entreprises. Ces cours d'économie vous offrent une compréhension approfondie des concepts fondamentaux et s’accompagnent d’une approche juridique pour comprendre le droit des affaires, du travail et international.</p>
+          <a href="index.html#contact" class="btn-espace" style="margin-top:12px;">Contactez-nous pour vous inscrire</a>
+        </article>
 
-    <!-- Marketing -->
-    <article class="card">
-      <h3>Marketing</h3>
-      <p>Le marketing est un levier central de différenciation et de croissance pour toute organisation. Ces cours vous permettront non seulement de maîtriser les concepts fondamentaux (segmentation de marché, positionnement, stratégie de marque, communication), mais aussi de comprendre comment analyser le comportement des consommateurs, adapter une offre à ses cibles, et créer des expériences qui fidélisent. Vous découvrirez comment transformer des données en décisions stratégiques, et comment le digital redéfinit aujourd’hui les règles du jeu concurrentiel. Une formation indispensable pour quiconque souhaite évoluer dans un environnement où l’attention des clients est devenue la ressource la plus rare.</p>
-      <a href="#contact" class="btn-espace">Contact</a>
-    </article>
+        <!-- Comptabilité / Gestion -->
+        <article class="card">
+          <h3>Comptabilité / Gestion</h3>
+          <img src="" alt="Image Comptabilité/Gestion" style="width:100%;height:180px;background:#1a1a1a;margin-bottom:12px;border-radius:8px;">
+          <p>La comptabilité et la gestion sont le langage universel de l’entreprise. Apprenez à lire et interpréter les états financiers, analyser les flux de trésorerie, exploiter les liasses fiscales et utiliser les outils de pilotage comme les SIG pour comprendre comment une entreprise génère de la valeur.</p>
+          <a href="index.html#contact" class="btn-espace" style="margin-top:12px;">Contactez-nous pour vous inscrire</a>
+        </article>
 
-  </div>
-</section>
+        <!-- Management -->
+        <article class="card">
+          <h3>Management</h3>
+          <img src="" alt="Image Management" style="width:100%;height:180px;background:#1a1a1a;margin-bottom:12px;border-radius:8px;">
+          <p>Le management est l’art de transformer une vision en actions concrètes. Étudiez la stratégie corporate et opérationnelle, la gestion des équipes et la performance pour devenir un manager capable de mobiliser les talents et adapter l’organisation aux défis du marché.</p>
+          <a href="index.html#contact" class="btn-espace" style="margin-top:12px;">Contactez-nous pour vous inscrire</a>
+        </article>
 
-  <!-- ---------- FOOTER ---------- -->
+        <!-- Marketing -->
+        <article class="card">
+          <h3>Marketing</h3>
+          <img src="" alt="Image Marketing" style="width:100%;height:180px;background:#1a1a1a;margin-bottom:12px;border-radius:8px;">
+          <p>Le marketing est un levier central de différenciation et de croissance. Maîtrisez les concepts fondamentaux, analysez le comportement des consommateurs, adaptez vos offres et créez des expériences fidélisantes. Apprenez à transformer les données en décisions stratégiques dans un environnement digital compétitif.</p>
+          <a href="index.html#contact" class="btn-espace" style="margin-top:12px;">Contactez-nous pour vous inscrire</a>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER identique à apropos.html -->
   <footer class="footer">
-    <p class="footer-links">
-      <a href="index.html">Accueil</a> | 
-      <a href="index.html#formations">Formations</a> | 
-      <a href="index.html#contact">Contact</a>
-    </p>
-    <p class="signature">© 2025 MonSite</p>
+    <div class="footer-links">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <span> - </span>
+      <a href="protection-donnees.html">Charte de protection des données</a>
+      <span> - </span>
+      <a href="cookies.html">Gestion des cookies</a>
+      <span> - </span>
+      <a href="cgv.html">CGV</a>
+    </div>
+    <div class="footer-bottom">
+      <p class="signature">Andy Sari</p>
+      <p class="copyright">© SA SYNERGY 2021 - Tous droits réservés</p>
+    </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
