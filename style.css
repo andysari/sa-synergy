@@ -215,15 +215,15 @@ nav { display: block; }
   padding: 12px 24px;
   border-radius: 8px;
   border: none;
-  background: var(--accent);
-  color: #0b0b0b;
+  background: #fff;           /* blanc par défaut */
+  color: var(--accent);       /* texte vert fluo */
   font-weight: 600;
   cursor: pointer;
   transition: all 0.25s;
 }
 .btn-submit:hover {
-  transform: translateY(-2px);
-  background: #fff;
+background: var(--accent);  /* fond vert fluo au survol */
+color: #0b0b0b;             /* texte noir pour contraste */
 }
 
 /* CONTACT INFOS */
