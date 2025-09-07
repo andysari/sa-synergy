@@ -399,3 +399,9 @@ nav { display: block; }
   grid-template-columns: 1fr; /* une seule colonne */
   gap: 28px; /* espace entre les cartes */
 }
+
+/* Fond noir uniquement pour la section formations sur la page alacarte */
+.alacarte-page .formations {
+  background: var(--bg); /* même fond que la Hero */
+  padding: 48px 20px;
+}
