@@ -383,3 +383,12 @@ nav { display: block; }
   opacity: 0.6;          /* effet visuel grisé */
   cursor: not-allowed;   /* curseur interdit */
 }
+
+/* Cards verticales uniquement pour alacarte.html */
+.alacarte-cards {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr; /* une seule colonne */
+  gap: 28px; /* espace entre les cartes */
+}
