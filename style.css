@@ -384,11 +384,14 @@ nav { display: block; }
   gap: 8px; 
 }
 
-/* Bouton Espace Membres désactivé */
+/* Bouton Espace Membres désactivé (toujours juste contour) */
 .btn-espace.disabled {
-  pointer-events: none;  /* empêche tout clic */
-  opacity: 0.6;          /* effet visuel grisé */
-  cursor: not-allowed;   /* curseur interdit */
+  pointer-events: none;      
+  opacity: 0.6;              
+  cursor: not-allowed;       
+  background: transparent !important;  /* fond transparent */
+  color: var(--accent);      /* texte vert */
+  border: 2px solid var(--accent);    /* contour vert */
 }
 
 /* Cards verticales uniquement pour alacarte.html */
