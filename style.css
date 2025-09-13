@@ -390,7 +390,7 @@ nav { display: block; }
   opacity: 0.6;              
   cursor: not-allowed;       
   background: transparent !important;  /* fond transparent */
-  color: var(--accent);      /* texte vert */
+  color: #fff;                /* texte blanc comme les autres liens */
   border: 2px solid var(--accent);    /* contour vert */
 }
 
