@@ -9,107 +9,153 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+
   <style>
+    /* ==============================================
+       Corrections page alacarte
+       ============================================== */
 
-  /* --- CARDS COURS ACCORDÉON --- */
+    /* ---------- HEADER ---------- */
+    .header {
+      background: var(--anthracite);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 1px 0 rgba(255,255,255,0.02);
+    }
 
-/* Fond de la section identique au Hero (anthracite) */
-.formations {
-  background-color: #1a1a1a; /* même couleur que le Hero */
-  padding: 40px 20px;
-  color: #fff;
-}
+    .nav-wrap {
+      max-width: 1200px; 
+      margin: 0 auto; 
+      padding: 12px 20px; 
+      display: flex; 
+      align-items: center; 
+      gap: 20px; 
+      justify-content: center; 
+      position: relative;
+    }
 
-/* Cartes en noir pour ressortir sur le fond anthracite */
-.course-card {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  background: #000; /* cartes noires */
-  border-radius: 12px;
-  padding: 20px;
-  gap: 20px;
-  position: relative;
-  margin-bottom: 20px;
-  color: #fff;
-}
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+    }
 
-.course-summary {
-  flex: 1;
-}
+    .header-logo {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+    }
 
-.course-img {
-  width: 180px;
-  height: 180px;
-  border-radius: 8px;
-  object-fit: cover;
-  flex-shrink: 0;
-}
+    nav { display: block; }
+    .nav-links { display: flex; gap: 18px; list-style: none; align-items: center; justify-content: center; }
+    .nav-links a { padding: 8px 12px; border-radius: 6px; color: #f5f5f5; font-weight: 600; }
+    .nav-links a:hover {
+      background: linear-gradient(180deg, rgba(0,255,149,0.5), rgba(0,255,149,0.3));
+      color: #0b0b0b;
+      box-shadow: 0 10px 30px rgba(0,255,149,0.06);
+    }
 
-.course-full {
-  display: none;
-  margin-top: 10px;
-}
+    /* BURGER */
+    .burger { position: absolute; right: 18px; display: none; background: none; border: none; padding: 6px; }
+    .burger span { display: block; width: 22px; height: 3px; background: #fff; margin: 4px 0; border-radius: 3px; }
 
-.toggle-btn {
-  margin-top: 8px;
-  background: none;
-  border: none;
-  color: var(--accent, #ffcc00);
-  cursor: pointer;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.95rem;
-}
+    /* ---------- HERO ---------- */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      padding: 70px 20px 40px 20px;
+      min-height: 460px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: var(--bg);
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
 
-.arrow {
-  transition: transform 0.25s ease;
-  display: inline-block;
-}
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 2px; }
+    .hero .slogan { font-size: 1.35rem; font-weight: 600; color: var(--muted); }
 
-.course-card.open .course-full {
-  display: block;
-  margin-top: 12px;
-}
+    /* ---------- CARDS COURS ---------- */
+    .hero-style {
+      background-color: var(--bg);
+      padding: 48px 20px;
+    }
 
-.course-card.open .arrow {
-  transform: rotate(180deg);
-}
+    .course-card {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      background: #000;
+      border-radius: 12px;
+      padding: 20px;
+      gap: 20px;
+      position: relative;
+      margin-bottom: 20px;
+      color: #fff;
+    }
 
-.btn-espace {
-  display: inline-block;
-  margin-top: 12px;
-  background-color: var(--accent, #ffcc00);
-  color: #000;
-  padding: 8px 16px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-  float: right;
-}
+    .course-summary { flex: 1; }
+    .course-img { width: 180px; height: 180px; border-radius: 8px; object-fit: cover; flex-shrink: 0; }
+    .course-full { display: none; margin-top: 10px; }
 
-@media (max-width: 900px) {
-  .course-card {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .course-img {
-    width: 100%;
-    height: auto;
-  }
-  .btn-espace {
-    float: none;
-  }
-}
-  .hero-style {
-    background-color: #1a1a1a; /* identique à .hero */
-  }
-  
+    .toggle-btn {
+      margin-top: 8px;
+      background: none;
+      border: none;
+      color: var(--accent, #ffcc00);
+      cursor: pointer;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.95rem;
+    }
+
+    .arrow { transition: transform 0.25s ease; display: inline-block; }
+    .course-card.open .course-full { display: block; margin-top: 12px; }
+    .course-card.open .arrow { transform: rotate(180deg); }
+
+    /* Bouton Espace Membres page alacarte */
+    body.alacarte-page .nav-links .btn-espace.disabled {
+      pointer-events: none;
+      opacity: 0.6;
+      cursor: not-allowed;
+      background: transparent !important;
+      color: var(--accent);
+      border: 2px solid var(--accent);
+      margin-top: 0;
+    }
+
+    @media (max-width: 900px) {
+      .course-card { flex-direction: column; align-items: flex-start; }
+      .course-img { width: 100%; height: auto; }
+      body.alacarte-page .nav-links .btn-espace.disabled { width: 100%; text-align: center; }
+    }
+
+    /* Pour s'assurer que le header garde la même taille que sur les autres pages */
+    body.alacarte-page .header .nav-wrap {
+      padding: 12px 20px;
+      height: auto;
+    }
   </style>
 </head>
-<body>
+
+<body class="alacarte-page">
 
   <!-- HEADER -->
   <header class="header">
