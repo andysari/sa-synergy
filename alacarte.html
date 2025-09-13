@@ -10,83 +10,106 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <style>
-    /* --- CARDS COURS ACCORDÉON --- */
-    .formations {
-      background-color: var(--anthracite); /* valeur par défaut, remplacée pour alacarte */
-      padding: 40px 20px;
-      color: #fff;
-    }
 
-    .course-card {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      background: #000;
-      border-radius: 12px;
-      padding: 20px;
-      gap: 20px;
-      position: relative;
-      margin-bottom: 20px;
-      color: #fff;
-    }
+  /* --- CARDS COURS ACCORDÉON --- */
 
-    .course-summary { flex: 1; }
-    .course-img {
-      width: 180px;
-      height: 180px;
-      border-radius: 8px;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
+/* Fond de la section identique au Hero (anthracite) */
+.formations {
+  background-color: #1a1a1a; /* même couleur que le Hero */
+  padding: 40px 20px;
+  color: #fff;
+}
 
-    .course-full { display: none; margin-top: 10px; }
+/* Cartes en noir pour ressortir sur le fond anthracite */
+.course-card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background: #000; /* cartes noires */
+  border-radius: 12px;
+  padding: 20px;
+  gap: 20px;
+  position: relative;
+  margin-bottom: 20px;
+  color: #fff;
+}
 
-    .toggle-btn {
-      margin-top: 8px;
-      background: none;
-      border: none;
-      color: var(--accent, #ffcc00);
-      cursor: pointer;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.95rem;
-    }
+.course-summary {
+  flex: 1;
+}
 
-    .arrow { transition: transform 0.25s ease; display: inline-block; }
+.course-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
 
-    .course-card.open .course-full { display: block; margin-top: 12px; }
-    .course-card.open .arrow { transform: rotate(180deg); }
+.course-full {
+  display: none;
+  margin-top: 10px;
+}
 
-    .btn-espace {
-      display: inline-block;
-      margin-top: 12px;
-      background-color: var(--accent, #ffcc00);
-      color: #000;
-      padding: 8px 16px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      float: right;
-    }
+.toggle-btn {
+  margin-top: 8px;
+  background: none;
+  border: none;
+  color: var(--accent, #ffcc00);
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+}
 
-    @media (max-width: 900px) {
-      .course-card { flex-direction: column; align-items: flex-start; }
-      .course-img { width: 100%; height: auto; }
-      .btn-espace { float: none; }
-    }
+.arrow {
+  transition: transform 0.25s ease;
+  display: inline-block;
+}
 
-    /* --- ALACARTE PAGE SPECIFIC --- */
-    body.alacarte-page .formations {
-      background: var(--bg); /* identique au Hero (#121212) */
-      padding: 48px 20px;
-    }
+.course-card.open .course-full {
+  display: block;
+  margin-top: 12px;
+}
 
+.course-card.open .arrow {
+  transform: rotate(180deg);
+}
+
+.btn-espace {
+  display: inline-block;
+  margin-top: 12px;
+  background-color: var(--accent, #ffcc00);
+  color: #000;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  float: right;
+}
+
+@media (max-width: 900px) {
+  .course-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .course-img {
+    width: 100%;
+    height: auto;
+  }
+  .btn-espace {
+    float: none;
+  }
+}
+  .hero-style {
+    background-color: #1a1a1a; /* identique à .hero */
+  }
+  
   </style>
 </head>
-
-<body class="alacarte-page">
+<body>
 
   <!-- HEADER -->
   <header class="header">
